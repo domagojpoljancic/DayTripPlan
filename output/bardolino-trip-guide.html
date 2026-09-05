@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title>Bardolino · Four day trips · home before dinner</title>
+  <title>Bardolino · day trips</title>
   <style>
     :root {
       --ink: #0b3a4a;
@@ -75,14 +75,34 @@
     .sheet.open { display: flex; flex-direction: column; gap: 1rem; }
     .sheet a { color: var(--ink); font-size: 1.4rem; text-decoration: none; font-family: var(--serif); }
     .hero {
-      padding: 2.4rem 0 1.5rem;
+      padding: 1.6rem 0 0.4rem;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
+    .lake { display: none; }
+    #rank, .rules { display: none; }
+    #detail-bar {
+      display: none;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.7rem 0;
+      position: sticky;
+      top: 56px;
+      z-index: 35;
+      background: var(--foam);
+      border-bottom: 1px solid var(--line);
+    }
+    body.view-detail #detail-bar { display: flex; }
+    body.view-detail .hero,
+    body.view-detail #trips,
+    body.view-detail #compare,
+    body.view-detail #pack,
+    body.view-detail #practical { display: none; }
+    .chapter { display: none; }
+    .chapter.is-open { display: block; padding-top: 0.6rem; }
     .eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; color: var(--terra); font-weight: 650; }
-    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.08; margin: 0.35rem 0 0.8rem; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.12; margin: 0.25rem 0 0.5rem; }
     .lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 40rem; }
     .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.1rem; }
     .chip {
@@ -94,7 +114,7 @@
     .panel { margin: 1.4rem 0 2.2rem; }
     .kicker { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.6rem; }
     h2 { font-family: var(--serif); font-size: 1.85rem; font-weight: 500; margin: 0 0 0.8rem; }
-    .rank { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+    .rank { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.8rem; }
     .rank a {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
       padding: 1rem; text-decoration: none; color: inherit; display: flex; gap: 0.8rem; align-items: center;
@@ -111,9 +131,11 @@
     .filters button[aria-pressed="true"] { background: var(--ink); color: var(--foam); }
     .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     article.card {
-      background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 1.2rem 1.2rem 1.1rem;
-      box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.7rem;
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 0.9rem 1rem;
+      box-shadow: none; display: flex; flex-direction: column; gap: 0.4rem; cursor: pointer;
     }
+    article.card ul.hi { display: none; }
+    article.card h3 { font-size: 1.12rem; }
     article.card.hidden { display: none; }
     .card-top { display: flex; justify-content: space-between; gap: 0.6rem; align-items: flex-start; }
     .score { font-variant-numeric: tabular-nums; font-weight: 750; color: var(--water); font-size: 1.5rem; }
@@ -169,6 +191,15 @@
       a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; word-break: break-all; }
       .chapter, article.card { break-inside: avoid; }
       .hero { grid-template-columns: 1fr; }
+      .lake, #rank, .rules { display: none !important; }
+      .chapter { display: block !important; }
+      body.view-detail .hero,
+      body.view-detail #trips,
+      body.view-detail #compare,
+      body.view-detail #pack,
+      body.view-detail #practical { display: block !important; }
+      article.card ul.hi { display: block; }
+      #detail-bar { display: none !important; }
     }
   </style>
 </head>
@@ -176,12 +207,11 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
     <div class="wrap top-inner">
-      <a class="wordmark" href="#top">Bardolino<span>Six days · four loops · home before dinner</span></a>
+      <a class="wordmark" href="#top">Bardolino<span>Home before dinner</span></a>
       <nav class="desk" aria-label="Primary">
         <a href="#trips">Trips</a>
-        <a href="#compare">Compare</a>
         <a href="#pack">Pack</a>
-        <a href="#practical">Practical</a>
+        <a href="#practical">Notes</a>
         <button class="icon-btn" id="fav-count" type="button">♥ 0</button>
         <button class="icon-btn" id="theme-btn" type="button">Dark</button>
         <button class="icon-btn" id="print-btn" type="button">Print</button>
@@ -192,26 +222,27 @@
   <div class="sheet" id="sheet" hidden>
     <button class="icon-btn" id="close-menu" type="button">Close</button>
     <a href="#trips">Trips</a>
-    <a href="#compare">Compare</a>
     <a href="#pack">Pack</a>
-    <a href="#practical">Practical</a>
+    <a href="#practical">Notes</a>
     <button class="icon-btn" id="theme-btn-m" type="button">Dark</button>
     <button class="icon-btn" id="print-btn-m" type="button">Print</button>
   </div>
 
   <main id="main" class="wrap">
+    <div id="detail-bar">
+      <button class="btn ghost" id="back-btn" type="button">← All trips</button>
+      <strong id="detail-title">Trip</strong>
+    </div>
     <section class="hero" id="top">
       <div>
-        <p class="eyebrow">Lake Garda · family edition</p>
-        <h1>Four day trips. Apartment every night.</h1>
-        <p class="lead">You are based in Bardolino with a car, a stroller, and a baby under six months. Every recommendation is a same-day loop: leave after breakfast, park once, walk gently, and be home before 18:00. Nothing here is a road trip.</p>
+        <p class="eyebrow">Bardolino · family guide</p>
+        <h1>Tap a trip. Skip the rest.</h1>
+        <p class="lead">Same-day loops from your apartment, home by 18:00. Open one card for the plan — parking, timetable, baby notes. You will not do every trip.</p>
         <div class="chips" aria-label="Family facts">
-          <span class="chip">6 days</span>
-          <span class="chip">Car every day</span>
-          <span class="chip">Stroller</span>
           <span class="chip">Baby &lt; 6 months</span>
+          <span class="chip">Stroller</span>
+          <span class="chip">Car</span>
           <span class="chip">Back by 18:00</span>
-          <span class="chip">Max ~2 h drive</span>
         </div>
       </div>
       <svg class="lake" viewBox="0 0 480 360" role="img" aria-label="Stylised Lake Garda with a small ferry">
@@ -231,27 +262,34 @@
     <section class="panel" id="rank" aria-labelledby="rank-title">
       <p class="kicker">Trip ranking</p>
       <h2 id="rank-title">Scored for this family, not for fame</h2>
-      <p class="lead">Weights: parking 20%, baby 20%, beauty 15%, food 15%, walking 10%, safety 10%, travel effort 10%. Sirmione lost. Venice is last on points and still in the set, because you asked for it — with a train plan that can actually get you home.</p>
+      <p class="lead">Weights: parking 20%, baby 20%, beauty 15%, food 15%, walking 10%, safety 10%, travel effort 10%. You will not do all twelve. Do Venice once if you want it, one boat day, one real beach away-day, and keep two mornings at the apartment. Sirmione is on the list with a dawn protocol, not as a default.</p>
       <div class="rank">
         <a href="#trip-sigurta-borghetto"><span class="ring">90</span><span><strong>Sigurtà &amp; Borghetto</strong><br/>Gardens + tortellini</span></a>
         <a href="#trip-garda-ferry"><span class="ring">88</span><span><strong>East-shore ferry</strong><br/>Boat day, car stays home</span></a>
+        <a href="#trip-cisano-base"><span class="ring">86</span><span><strong>Cisano / Bardolino</strong><br/>Home beach day</span></a>
         <a href="#trip-peschiera-lido"><span class="ring">84</span><span><strong>Peschiera</strong><br/>Fortress + lido</span></a>
-        <a href="#trip-venice-train"><span class="ring">63</span><span><strong>Venice by train</strong><br/>Mandatory, honest score</span></a>
+        <a href="#trip-lazise"><span class="ring">82</span><span><strong>Lazise</strong><br/>Harbor and walls</span></a>
+        <a href="#trip-torri-car"><span class="ring">81</span><span><strong>Torri by car</strong><br/>Ferry backup</span></a>
+        <a href="#trip-garda-punta"><span class="ring">76</span><span><strong>Punta San Vigilio</strong><br/>Bay swim, tight parking</span></a>
+        <a href="#trip-desenzano"><span class="ring">76</span><span><strong>Desenzano</strong><br/>Promenade town</span></a>
+        <a href="#trip-salo"><span class="ring">76</span><span><strong>Salò</strong><br/>West-shore elegance</span></a>
+        <a href="#trip-verona"><span class="ring">68</span><span><strong>Verona</strong><br/>Rain / short city</span></a>
+        <a href="#trip-sirmione"><span class="ring">64</span><span><strong>Sirmione dawn</strong><br/>Castle, parking tax</span></a>
+        <a href="#trip-venice-train"><span class="ring">63</span><span><strong>Venice by train</strong><br/>Mandatory-if-you-want-it</span></a>
       </div>
     </section>
 
     <section class="panel" id="trips" aria-labelledby="trips-title">
-      <p class="kicker">The four loops</p>
-      <h2 id="trips-title">Bardolino → day trip → Bardolino</h2>
+      <p class="kicker">Choose one</p>
+      <h2 id="trips-title">Day trips</h2>
       <div class="filters" role="toolbar" aria-label="Filter trips">
         <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="city">Cities</button>
+        <button type="button" data-filter="lake">Lake</button>
         <button type="button" data-filter="beach">Beach</button>
-        <button type="button" data-filter="food">Food</button>
-        <button type="button" data-filter="easiest">Easiest</button>
-        <button type="button" data-filter="boat">Boat</button>
-        <button type="button" data-filter="city">City</button>
+        <button type="button" data-filter="easiest">Easy</button>
       </div>
-      <p class="empty" id="filter-empty">Nothing in this filter. Reset to All — there are still only four trips.</p>
+      <p class="empty" id="filter-empty">Nothing here. Tap All.</p>
       <div class="cards">
         <article class="card" data-trip="sigurta-borghetto" data-tags="food easiest garden">
           <div class="card-top">
@@ -270,7 +308,7 @@
             <button class="btn ghost heart" data-fav="sigurta-borghetto" type="button" aria-pressed="false">♡ Save</button>
           </div>
         </article>
-        <article class="card" data-trip="garda-ferry" data-tags="boat easiest scenery">
+        <article class="card" data-trip="garda-ferry" data-tags="lake boat easiest scenery close">
           <div class="card-top">
             <h3>East-shore ferry: Garda and Torri</h3>
             <div class="score">88<small>/100</small></div>
@@ -287,7 +325,7 @@
             <button class="btn ghost heart" data-fav="garda-ferry" type="button" aria-pressed="false">♡ Save</button>
           </div>
         </article>
-        <article class="card" data-trip="peschiera-lido" data-tags="beach easiest town">
+        <article class="card" data-trip="peschiera-lido" data-tags="lake beach easiest town close">
           <div class="card-top">
             <h3>Peschiera fortress and lido</h3>
             <div class="score">84<small>/100</small></div>
@@ -321,6 +359,175 @@
             <button class="btn ghost heart" data-fav="venice-train" type="button" aria-pressed="false">♡ Save</button>
           </div>
         </article>
+        <article class="card" data-trip="cisano-base" data-tags="lake beach easiest close">
+          <div class="card-top">
+            <h3>Cisano and Bardolino beaches</h3>
+            <div class="score">86<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>Flexible–17:30</b></span><span>0–4 km</span><span>Easy</span><span>Parking easy</span></div>
+          <ul class="hi">
+            <li>Highest baby score that is not a trip</li>
+            <li>Apartment nap is ten minutes away</li>
+            <li>Olive shore, lungolago, real beach time</li>
+            <li>Use two of the six days on purpose</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-cisano-base">Open trip</a>
+            <button class="btn ghost heart" data-fav="cisano-base" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="lazise" data-tags="lake easiest close food town">
+          <div class="card-top">
+            <h3>Lazise harbor and walls</h3>
+            <div class="score">82<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:20–15:20</b></span><span>8 km · 12 min</span><span>Easy</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>Bardolino’s prettier cousin, 12 minutes south</li>
+            <li>Compact old town, plane-tree shade</li>
+            <li>Walk one street inland for lunch</li>
+            <li>Short enough for a cranky morning</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-lazise">Open trip</a>
+            <button class="btn ghost heart" data-fav="lazise" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="torri-car" data-tags="lake easiest scenery town close">
+          <div class="card-top">
+            <h3>Torri del Benaco by car</h3>
+            <div class="score">81<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:15–16:00</b></span><span>18 km · 22 min</span><span>Easy</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>Use this if boats are cancelled</li>
+            <li>Castle courtyard, calmer than Malcesine</li>
+            <li>Do not also do the ferry loop the same week unless you loved Torri</li>
+            <li>Harbor lots fill — arrive morning</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-torri-car">Open trip</a>
+            <button class="btn ghost heart" data-fav="torri-car" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="garda-punta" data-tags="lake beach scenery close">
+          <div class="card-top">
+            <h3>Garda and Punta San Vigilio</h3>
+            <div class="score">76<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>08:40–14:40</b></span><span>6–12 km</span><span>Easy</span><span>Parking hard</span></div>
+          <ul class="hi">
+            <li>Prettiest swim on the east shore</li>
+            <li>Parking is the tax — weekday opening time</li>
+            <li>Backup: skip the bay, sit in Garda town</li>
+            <li>Carrier for pebbles</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-garda-punta">Open trip</a>
+            <button class="btn ghost heart" data-fav="garda-punta" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="desenzano" data-tags="lake beach town food">
+          <div class="card-top">
+            <h3>Desenzano promenade</h3>
+            <div class="score">76<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:00–16:00</b></span><span>30 km · 40 min</span><span>Easy</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>A real town: cafes, lido, services</li>
+            <li>Better indoor fallback than the villages</li>
+            <li>South-shore contrast without Sirmione ZTL</li>
+            <li>Do not stack with Peschiera the same day</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-desenzano">Open trip</a>
+            <button class="btn ghost heart" data-fav="desenzano" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="salo" data-tags="lake food scenery town">
+          <div class="card-top">
+            <h3>Salò lungolago</h3>
+            <div class="score">76<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>08:50–16:20</b></span><span>~45 km · 55 min</span><span>Moderate</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>West-shore elegance and better food</li>
+            <li>Long promenade, stroller-friendly once parked</li>
+            <li>Skip the car traghetto “for fun” with a newborn</li>
+            <li>Only if the week still has energy</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-salo">Open trip</a>
+            <button class="btn ghost heart" data-fav="salo" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="verona" data-tags="city food">
+          <div class="card-top">
+            <h3>Verona old town</h3>
+            <div class="score">68<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:00–16:40</b></span><span>32 km · 40 min</span><span>Moderate</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>Rainy-day city, not a fair-weather default</li>
+            <li>Garage only — historic centre is ZTL</li>
+            <li>Carrier in the Arena crush</li>
+            <li>Skip Casa di Giulietta</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-verona">Open</a>
+            <button class="btn ghost heart" data-fav="verona" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="mantova" data-tags="city easiest food">
+          <div class="card-top">
+            <h3>Mantua historic centre</h3>
+            <div class="score">75<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:00–16:30</b></span><span>45 km · 50 min</span><span>Easy</span><span>Parking moderate</span></div>
+          <div class="row-actions">
+            <a class="btn" href="#trip-mantova">Open</a>
+            <button class="btn ghost heart" data-fav="mantova" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="padova" data-tags="city food">
+          <div class="card-top">
+            <h3>Padua cafes and piazzas</h3>
+            <div class="score">73<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>08:45–16:40</b></span><span>~80 km · 70 min</span><span>Moderate</span><span>Parking moderate</span></div>
+          <div class="row-actions">
+            <a class="btn" href="#trip-padova">Open</a>
+            <button class="btn ghost heart" data-fav="padova" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="vicenza" data-tags="city easiest">
+          <div class="card-top">
+            <h3>Vicenza Palladian streets</h3>
+            <div class="score">71<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:00–16:20</b></span><span>~70 km · 65 min</span><span>Easy</span><span>Parking moderate</span></div>
+          <div class="row-actions">
+            <a class="btn" href="#trip-vicenza">Open</a>
+            <button class="btn ghost heart" data-fav="vicenza" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="sirmione" data-tags="lake beach scenery town">
+          <div class="card-top">
+            <h3>Sirmione, dawn protocol</h3>
+            <div class="score">64<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>07:45–14:20</b></span><span>23 km · 31+ min</span><span>Moderate</span><span>Parking severe</span></div>
+          <ul class="hi">
+            <li>Beautiful castle, ugly parking</li>
+            <li>Arrive before 08:30 or do not go</li>
+            <li>ZTL cameras past the castle bridge</li>
+            <li>Skip Grotte di Catullo with this baby</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-sirmione">Open trip</a>
+            <button class="btn ghost heart" data-fav="sirmione" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -331,7 +538,8 @@
         <li>Carrier is primary in Venice and on boat gangways. Stroller is primary at Sigurtà and on Peschiera walls.</li>
         <li>Leave before 09:15 for any car trip south — SR249 clogs late morning.</li>
         <li>Verify Trenitalia and Navigazione Laghi the night before. This guide does not invent train numbers.</li>
-        <li>Two of the six days are <em>supposed</em> to be Cisano / Bardolino beach. That is not a failed itinerary.</li>
+        <li>Two of the six days should still be Cisano / Bardolino. The extra loops are swaps, not homework.</li>
+        <li>Do not stack Venice + Peschiera, ferry + Torri-by-car, or Sirmione + Desenzano on consecutive exhausted days.</li>
       </ul>
     </section>
 
@@ -340,7 +548,7 @@
       <h2>Sigurtà gardens and Borghetto mills</h2>
       <div class="pills"><span class="pill">Leave 09:00</span><span class="pill">Home 16:20</span><span class="pill">27 km</span><span class="pill">Easy</span></div>
       <p>Selected because it won the math: parking 92, baby 90, food 92. Famous-lake lists skip inland Valeggio. You should not.</p>
-      <details class="block" open>
+      <details class="block">
         <summary>Timeline</summary>
         <ol class="timeline">
           <li><time>09:00</time><div><strong>Drive inland</strong> via Peschiera corridor. Hats, bottles, tickets.</div></li>
@@ -390,7 +598,7 @@
       <h2>East-shore ferry: Bardolino, Garda, Torri</h2>
       <div class="pills"><span class="pill">Leave 09:40</span><span class="pill">Home 16:10</span><span class="pill">Walk to dock</span><span class="pill">Easy</span></div>
       <p>A lake day that can be a half day. The slow boat to Riva is how families miss 18:00. You will not do that. Navigazione Laghi passenger boats; car stays in Bardolino.</p>
-      <details class="block" open>
+      <details class="block">
         <summary>Timeline</summary>
         <ol class="timeline">
           <li><time>09:20</time><div><strong>Change the baby at home.</strong> Boats are a bad nappy room.</div></li>
@@ -440,7 +648,7 @@
       <h2>Peschiera fortress and lido</h2>
       <div class="pills"><span class="pill">Leave 09:10</span><span class="pill">Home 15:50</span><span class="pill">14 km</span><span class="pill">Easy</span></div>
       <p>Beaches are your first priority. Peschiera is water, walls, toilets, and a named lot. It beat Lazise (too much like home) and Sirmione (parking 28/100). Do not combine this with the Venice morning.</p>
-      <details class="block" open>
+      <details class="block">
         <summary>Timeline</summary>
         <ol class="timeline">
           <li><time>09:10</time><div><strong>Drive SR249 south</strong> before it clogs.</div></li>
@@ -490,7 +698,7 @@
       <h2>Venice by lake-station train</h2>
       <div class="pills"><span class="pill">Leave 07:15</span><span class="pill">Home 17:25</span><span class="pill">Train from Peschiera</span><span class="pill">Moderate</span></div>
       <p>We compared four ways in. Driving to Tronchetto or Piazzale Roma maximizes car-seat time, garage cost, and lagoon stress. Mestre park-and-ride adds a city you do not need. Coach tours steal nap control and often return after 18:00. <strong>Winner: drive 20 minutes to Peschiera station, park, take a direct train to Venezia Santa Lucia (~1h28).</strong> You arrive in Venice, not in a garage.</p>
-      <details class="block" open>
+      <details class="block">
         <summary>Timeline</summary>
         <ol class="timeline">
           <li><time>07:15</time><div><strong>Leave the apartment.</strong> Carrier packed.</div></li>
@@ -552,9 +760,370 @@
       </details>
     </section>
 
+    <section class="chapter" id="trip-cisano-base" data-trip-id="cisano-base">
+      <p class="eyebrow">Trip · score 86 · home beach</p>
+      <h2>Cisano and Bardolino beaches</h2>
+      <div class="pills"><span class="pill">Leave whenever</span><span class="pill">Home for every nap</span><span class="pill">0–4 km</span><span class="pill">Easy</span></div>
+      <p>This is not a consolation prize. Beaches are your first priority and the apartment is on the right shore. Use two of the six days here so the away days do not wreck the baby.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:30</time><div><strong>Slow breakfast.</strong> No alarm heroics.</div></li>
+          <li><time>10:30</time><div><strong>Lungolago or Cisano olive shore.</strong> Stroller, shade, feet in water.</div></li>
+          <li><time>12:30</time><div><strong>Lunch inland Bardolino</strong> — skip the photo-menu pier.</div></li>
+          <li><time>14:00</time><div><strong>Apartment nap.</strong> This is the point.</div></li>
+          <li><time>17:30</time><div><strong>Harbor gelato</strong> after you are already home.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> walk from the apartment. If you drive to Cisano, small paid lungolago bays.</p>
+          <p><strong>Cost:</strong> €0–6. <strong>Difficulty:</strong> easy. <strong>Backup:</strong> walk back to Bardolino lots.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cisano%20Bardolino%20spiaggia">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Walk:</strong> 20–40 minutes, all stroller. <strong>Beaches:</strong> Cisano and Bardolino lidos, pebble/concrete. <strong>Food:</strong> apartment kitchen or an inland trattoria. <strong>Hidden gem:</strong> Museo dell'Olio / olive strip when the harbor is loud.</p>
+        <p><strong>Changing:</strong> go home. That is the luxury. <strong>Avoid:</strong> turning this into a “we should have gone to Sirmione” guilt day.</p>
+        <p>Parking €0–6 · Food €20–50 · Tickets €0 · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Museo del Vino / Cantina Zeni, Bardolino. Farmacia restock. Early dinner. Do not invent a Verona dash because you feel idle.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-lazise" data-trip-id="lazise">
+      <p class="eyebrow">Trip · score 82 · close harbor</p>
+      <h2>Lazise harbor and walls</h2>
+      <div class="pills"><span class="pill">Leave 09:20</span><span class="pill">Home 15:20</span><span class="pill">8 km</span><span class="pill">Easy</span></div>
+      <p>Twelve minutes south. Use it when you want an “away” gelato without a project. It lost the original four only because it feels like Bardolino’s cousin — which is exactly why it belongs on a six-day menu.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:20</time><div><strong>SR249 south.</strong></div></li>
+          <li><time>09:35</time><div><strong>Park at signed edge-of-centre lots</strong> toward the walls, not the harbor door.</div></li>
+          <li><time>09:45</time><div><strong>Walls and harbor.</strong> 30-minute loop.</div></li>
+          <li><time>12:15</time><div><strong>Lunch one street back.</strong></div></li>
+          <li><time>14:40</time><div><strong>Home</strong> before the SR249 clot, nap at the apartment.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> signed P toward the walls. Harbor bays are a trap.</p>
+          <p><strong>Cost:</strong> €5–10. <strong>Difficulty:</strong> moderate late morning. <strong>Backup:</strong> inland supermarket lots, 10–12 min walk.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Lazise%20centro">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Stroller:</strong> yes. <strong>Beach:</strong> small lido patches south of town — optional. <strong>Food:</strong> inland, not the laminated pier. <strong>Changing:</strong> cafes. <strong>Avoid:</strong> Saturday 13:00 harbor selfie crush.</p>
+        <p>Parking €5–10 · Food €35–55 · Tickets €0 · Ferry €0 (unless you hop a boat home — unnecessary).</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Cafes under the walls, then home. Or swap to Zeni. Lazise is not worth a long wet wander.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-torri-car" data-trip-id="torri-car">
+      <p class="eyebrow">Trip · score 81 · ferry backup</p>
+      <h2>Torri del Benaco by car</h2>
+      <div class="pills"><span class="pill">Leave 09:15</span><span class="pill">Home 16:00</span><span class="pill">18 km</span><span class="pill">Easy</span></div>
+      <p>The land version of the boat day. Use it when wind cancels Navigazione Laghi. Do not also do the ferry loop unless Torri became the baby’s favorite piazza.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:15</time><div><strong>North via Garda on SR249.</strong></div></li>
+          <li><time>09:40</time><div><strong>Harbor / castle lots.</strong></div></li>
+          <li><time>10:00</time><div><strong>Piazzetta and castle courtyard.</strong> Skip museum stairs.</div></li>
+          <li><time>12:30</time><div><strong>Lunch one street off the pier.</strong></div></li>
+          <li><time>15:20</time><div><strong>Drive home</strong> — SR249 south can crawl.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> harbor / castle-adjacent signed lots. <strong>Cost:</strong> €6–12. <strong>Difficulty:</strong> moderate; tighter than Peschiera.</p>
+          <p><strong>Backup:</strong> upper-town lots and walk down. Fill time: mid-morning.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Torri%20del%20Benaco%20imbarcadero">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Walk:</strong> 30 minutes. <strong>Stroller:</strong> harbor yes, castle interior no. <strong>Food:</strong> lake fish inland of the first row. <strong>Avoid:</strong> Malcesine “since we’re already north.”</p>
+        <p>Parking €6–12 · Food €40–65 · Castle ticket optional small · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>One coffee in Torri, then home, or swap to Valeggio lunch. Do not continue to Malcesine in the wet.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-garda-punta" data-trip-id="garda-punta">
+      <p class="eyebrow">Trip · score 76 · beauty tax</p>
+      <h2>Garda and Punta San Vigilio</h2>
+      <div class="pills"><span class="pill">Leave 08:40</span><span class="pill">Home 14:40</span><span class="pill">6–12 km</span><span class="pill">Easy if parking works</span></div>
+      <p>The prettiest swim nearby. Parking at Baia delle Sirene is the 20% weight doing its job (score 48 on parking). Weekday opening time or skip the bay and sit in Garda town.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>08:40</time><div><strong>Drive north.</strong> If the bay lot looks full from the road, abort to Garda town lots.</div></li>
+          <li><time>09:00</time><div><strong>Paid Punta / Baia parking</strong> and the pedestrian underpass.</div></li>
+          <li><time>09:15</time><div><strong>Shade under olives, feet in water.</strong> Carrier on pebbles.</div></li>
+          <li><time>12:00</time><div><strong>Garda town coffee</strong> if the bay bar is a crush.</div></li>
+          <li><time>14:00</time><div><strong>Home</strong> for the real nap. Do not add Malcesine.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Baia delle Sirene / Punta San Vigilio paid parking. Walk ~6 minutes plus underpass.</p>
+          <p><strong>Cost:</strong> €8–20 seasonal. <strong>Difficulty:</strong> hard. Fills weekday-late and Saturday 11:00.</p>
+          <p><strong>Backup:</strong> Garda town parking; enjoy the harbor, skip the bay. That is still a good morning.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Baia%20delle%20Sirene%20Punta%20San%20Vigilio">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Beach:</strong> Baia delle Sirene, pebble, high beauty. <strong>Stroller:</strong> mixed; carrier at the water. <strong>Avoid:</strong> peak Saturday. <strong>Do not</strong> combine with the ferry day’s Garda stop as a second project.</p>
+        <p>Parking €8–20 · Food €30–55 · Lido extras optional · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Garda cafes only, or stay in Bardolino. A wet pebble bay with an infant is a bad story.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-desenzano" data-trip-id="desenzano">
+      <p class="eyebrow">Trip · score 76 · south-shore town</p>
+      <h2>Desenzano promenade</h2>
+      <div class="pills"><span class="pill">Leave 09:00</span><span class="pill">Home 16:00</span><span class="pill">30 km</span><span class="pill">Easy</span></div>
+      <p>A larger town with a promenade, lidos, and more indoor chairs than the villages. Use it when you want services, or as a fair-weather alternative to Sirmione.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:00</time><div><strong>South around the lake foot</strong> via Peschiera. Add 15 min in peak.</div></li>
+          <li><time>09:50</time><div><strong>Harbor / castle-area signed garage or lot.</strong></div></li>
+          <li><time>10:00</time><div><strong>Promenade loop</strong> — 40 minutes easy.</div></li>
+          <li><time>12:30</time><div><strong>Sit-down lunch.</strong> Broader menu than Bardolino harbor.</div></li>
+          <li><time>14:00</time><div><strong>Optional lido sit.</strong> Home by 16:00.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> harbor / castle-area signed garages. <strong>Cost:</strong> €8–15. <strong>Difficulty:</strong> moderate. <strong>Backup:</strong> station area.</p>
+          <p>Fill risk: Saturday market and evening — you will be gone by then.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Desenzano%20del%20Garda%20porto">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Stroller:</strong> yes on the promenade. <strong>Beach:</strong> town lidos. <strong>Avoid:</strong> stacking with Peschiera the same day. <strong>Changing:</strong> better cafe density than villages.</p>
+        <p>Parking €8–15 · Food €40–70 · Lido optional · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Desenzano actually works in rain — cafes, porticoes. Stronger indoor day than Sigurtà. Still home before 18:00.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-salo" data-trip-id="salo">
+      <p class="eyebrow">Trip · score 76 · west shore</p>
+      <h2>Salò lungolago</h2>
+      <div class="pills"><span class="pill">Leave 08:50</span><span class="pill">Home 16:20</span><span class="pill">~45 km</span><span class="pill">Moderate</span></div>
+      <p>The elegant west shore. Travel effort is the tax. Drive around the south; do not put the car on the Maderno–Torri traghetto “to make it interesting” with a six-month-old. Only pick this if the week still has a long-energy day left.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>08:50</time><div><strong>Drive south then west</strong> via Peschiera / Desenzano. Peak can be 80 minutes — leave early.</div></li>
+          <li><time>10:00</time><div><strong>Lungolago-adjacent paid lot.</strong></div></li>
+          <li><time>10:15</time><div><strong>Long promenade, slow.</strong></div></li>
+          <li><time>12:45</time><div><strong>Lunch — this is the food reason to come.</strong></div></li>
+          <li><time>15:00</time><div><strong>Drive back with margin.</strong> Home ~16:20.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> lungolago-adjacent paid lots. <strong>Cost:</strong> €8–16. <strong>Difficulty:</strong> moderate. <strong>Backup:</strong> upper lots, walk down.</p>
+          <p>Do not gamble the return on the car ferry timetable with an infant who might need the apartment.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Salò%20lungolago">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Stroller:</strong> yes on the promenade. <strong>Food:</strong> stronger than east-shore tourist strips. <strong>Beaches:</strong> nearby Maderno / Gardone lidos only if you are ahead of time — usually skip. <strong>Avoid:</strong> adding Gardone Vittoriale hike.</p>
+        <p>Parking €8–16 · Food €45–75 · Ferry €0 (car traghetto not in this plan).</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Salò still has a promenade and cafes, but the drive is a lot of rain for little indoor payoff. Prefer Verona or Desenzano or Zeni.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-verona" data-trip-id="verona">
+      <p class="eyebrow">Trip · score 68 · rain city</p>
+      <h2>Verona, kept short</h2>
+      <div class="pills"><span class="pill">Leave 09:00</span><span class="pill">Home 16:40</span><span class="pill">32 km</span><span class="pill">Moderate</span></div>
+      <p>Not a beach day and not a stroller parade. Use it when the lake is a washout and cabin fever is real. Four hours in town, carrier in the crush, garage only, home before 18:00.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:00</time><div><strong>Inland toward Verona.</strong> Follow garage signs, never the historic-centre pin.</div></li>
+          <li><time>09:50</time><div><strong>Arena / Cittadella-class garage.</strong> Photo the floor.</div></li>
+          <li><time>10:10</time><div><strong>Arena from the outside</strong> + one arcade sit. Skip Juliet’s house.</div></li>
+          <li><time>12:30</time><div><strong>Indoor lunch.</strong></div></li>
+          <li><time>14:30</time><div><strong>One more arcade, then the car.</strong> No “quick Castelvecchio if we hurry.”</div></li>
+          <li><time>16:40</time><div><strong>Apartment.</strong> Margin before 18:00.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Arena / centro garages (Cittadella class). <strong>Cost:</strong> typically €2–3/h, plan €10–18.</p>
+          <p><strong>Difficulty:</strong> moderate. <strong>ZTL:</strong> camera-enforced. Day visitors do not drive into the centro.</p>
+          <p><strong>Backup:</strong> slightly further garage and walk. Avoid Arena opera event days.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Arena%20Verona">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Stroller:</strong> mixed; carrier in the Arena people-flow. <strong>Walk:</strong> cap at ~55 minutes. <strong>Food:</strong> excellent if you sit away from the balcony. <strong>Avoid:</strong> pickpocket trophy spots, opera-night traffic.</p>
+        <p>Parking €10–18 · Food €45–75 · Tickets €0 if you skip interiors · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>This <em>is</em> the rain plan. Arcades help. Still the 16:40 return. If it is only drizzle, prefer Desenzano or Zeni instead.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-sirmione" data-trip-id="sirmione">
+      <p class="eyebrow">Trip · score 64 · dawn only</p>
+      <h2>Sirmione, dawn protocol</h2>
+      <div class="pills"><span class="pill">Leave 07:45</span><span class="pill">Home 14:20</span><span class="pill">23 km</span><span class="pill">Moderate</span></div>
+      <p>On the menu because you will hear about it. It lost a fair fight: parking 28/100. If you still go, you go early, you do the castle and a coffee, you skip Grotte di Catullo, and you leave before the peninsula becomes a queue.</p>
+      <details class="block">
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>07:45</time><div><strong>Drive south.</strong> Last kilometres crawl after 09:30.</div></li>
+          <li><time>08:20</time><div><strong>Parcheggio Monte Baldo</strong> (or Marconi if a space exists). If both full, Colombare overflow and an 18-minute flat walk — or abort to Peschiera.</div></li>
+          <li><time>08:30</time><div><strong>Scaliger castle + old town coffee.</strong> Do not enter the ZTL by car.</div></li>
+          <li><time>11:30</time><div><strong>Optional short lido sit</strong> only if the baby is content. Not the Grotte.</div></li>
+          <li><time>13:15</time><div><strong>Leave the peninsula.</strong> Home ~14:20.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Parcheggio Monte Baldo (largest, opposite the castle approach) or Marconi (closest, tiny). High season fills by ~10:00, weekends earlier.</p>
+          <p><strong>Cost:</strong> ~€2.20–2.50/h, daily often €16–25. <strong>Difficulty:</strong> severe after 09:30.</p>
+          <p><strong>Backup:</strong> Colombare overflow, ~18 min flat walk. <strong>ZTL:</strong> historic centre cameras 24/7. Day visitors do not drive past the castle bridge.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Monte%20Baldo%20Sirmione">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience · family · costs</summary>
+        <p><strong>Walk:</strong> castle + lanes only. Grotte di Catullo is a hike — skip. <strong>Stroller:</strong> mixed cobbles and crowds. <strong>Beach:</strong> Lido delle Bionde is further down the peninsula; usually too much. <strong>Avoid:</strong> 11:00 arrival in August.</p>
+        <p>Parking €16–25 · Food €40–70 · Castle ticket extra · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Do not go. Wet cobbles plus ZTL plus a garage hunt is how the morning dies. Use Verona or Desenzano cafes or Zeni.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-mantova" data-trip-id="mantova">
+      <p class="eyebrow">City · score 75</p>
+      <h2>Mantua historic centre</h2>
+      <div class="pills"><span class="pill">Leave 09:00</span><span class="pill">Home 16:30</span><span class="pill">~50 min</span></div>
+      <p>The calmest city sightseeing day: compact piazzas, a ducal skyline, and a real lunch. Skip palace interiors with a newborn. Walk Piazza Sordello → Piazza delle Erbe → lakeside glance, then sit.</p>
+      <details class="block">
+        <summary>Plan</summary>
+        <ol class="timeline">
+          <li><time>09:00</time><div>Drive via Peschiera / A22 or local roads toward Mantova centro.</div></li>
+          <li><time>10:00</time><div>Park in a signed garage outside the tight lanes (follow P / Centro, not a piazza pin).</div></li>
+          <li><time>10:15</time><div>Piazza Sordello and a slow loop of the centre. Carrier if cobbles annoy the stroller.</div></li>
+          <li><time>13:00</time><div>Lunch. Pumpkin tortelli if you did not already do Valeggio.</div></li>
+          <li><time>15:30</time><div>Back to the car. Home ~16:30.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> signed centro / castle-area garages. Do not enter ZTL. <strong>Cost:</strong> ~€8–14. <strong>Backup:</strong> slightly further lot and walk the walls.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Mantova%20Piazza%20Sordello">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Baby · rain</summary>
+        <p>Changing in cafes. Shade in arcades. Rain: this city still works — more indoor chairs than a village harbor. Skip Palazzo Ducale ticket queues.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-padova" data-trip-id="padova">
+      <p class="eyebrow">City · score 73</p>
+      <h2>Padua cafes and piazzas</h2>
+      <div class="pills"><span class="pill">Leave 08:45</span><span class="pill">Home 16:40</span><span class="pill">~70 min</span></div>
+      <p>A living university city: Prato della Valle, Piazza delle Erbe, coffee under porticoes. Skip the Scrovegni timed entry with a baby. Easier sightseeing rhythm than Venice, longer drive.</p>
+      <details class="block">
+        <summary>Plan</summary>
+        <ol class="timeline">
+          <li><time>08:45</time><div>A4 toward Padova. Garage, not historic-centre GPS.</div></li>
+          <li><time>10:10</time><div>Piazza delle Erbe / della Frutta. One market loop.</div></li>
+          <li><time>11:30</time><div>Prato della Valle sit. Stroller-friendly oval.</div></li>
+          <li><time>13:00</time><div>Lunch under porticoes.</div></li>
+          <li><time>15:20</time><div>Hard leave for the drive. Home ~16:40.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Padova centro garages (follow P). ZTL is camera-enforced. <strong>Cost:</strong> ~€10–16. <strong>Backup:</strong> park near the station and walk/tram one stop if the centre garages look full.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Padova%20Prato%20della%20Valle">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Baby · rain</summary>
+        <p>Porticoes are the rain plan. Carrier in market crowds. Do not add Venice “since we’re halfway” — that blows 18:00.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-vicenza" data-trip-id="vicenza">
+      <p class="eyebrow">City · score 71</p>
+      <h2>Vicenza Palladian streets</h2>
+      <div class="pills"><span class="pill">Leave 09:00</span><span class="pill">Home 16:20</span><span class="pill">~65 min</span></div>
+      <p>Quieter than Verona or Padua. Corso Palladio is a straight, readable walk: palaces as scenery, not a museum march. Skip the Teatro Olimpico interior with a newborn unless you are ahead and the queue is empty.</p>
+      <details class="block">
+        <summary>Plan</summary>
+        <ol class="timeline">
+          <li><time>09:00</time><div>A4 toward Vicenza. Park in a signed garage off the centro.</div></li>
+          <li><time>10:20</time><div>Corso Palladio, Piazza dei Signori. One coffee, one slow street.</div></li>
+          <li><time>13:00</time><div>Lunch. Then the car by 15:00.</div></li>
+          <li><time>16:20</time><div>Apartment.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> centro garages (Corso / Duomo area class). ZTL cameras. <strong>Cost:</strong> ~€8–14.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Vicenza%20Piazza%20dei%20Signori">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Baby · rain</summary>
+        <p>Arcade stretches help. This is the low-stress city if Verona feels too famous and Venice too hard.</p>
+      </details>
+    </section>
+
     <section class="panel" id="compare" aria-labelledby="cmp-title">
-      <p class="kicker">Side by side</p>
-      <h2 id="cmp-title">Comparison</h2>
+      <details class="block">
+        <summary>Compare a few trips</summary>
+        <p class="lead">Only if you are choosing between two. Otherwise skip this table.</p>
       <div class="table-scroll">
         <table class="cmp">
           <thead>
@@ -579,12 +1148,12 @@
           </tbody>
         </table>
       </div>
+      </details>
     </section>
 
     <section class="panel" id="pack" aria-labelledby="pack-title">
-      <p class="kicker">Lists that persist on this device</p>
-      <h2 id="pack-title">Packing and baby</h2>
-      <p>Checks save in this browser. AirDrop the HTML file to the phone before you lose wifi.</p>
+      <p class="kicker">On this phone</p>
+      <h2 id="pack-title">Pack</h2>
       <div class="grid-2">
         <div class="card">
           <h3>Packing</h3>
@@ -614,9 +1183,9 @@
     </section>
 
     <section class="panel" id="practical" aria-labelledby="prac-title">
-      <p class="kicker">Use this instead of opening twelve tabs</p>
-      <h2 id="prac-title">Practical</h2>
-      <details class="block" open>
+      <p class="kicker">If you need it</p>
+      <h2 id="prac-title">Notes</h2>
+      <details class="block">
         <summary>Weather</summary>
         <p>Summer Garda is hot, then a short thunderstorm. Boats and exposed walls are the days to watch wind. If the lake is angry in the morning, cancel the ferry — do not “see how it feels at Malcesine.” Venice in rain is still the train plan. Sigurtà is outdoor; lunch in Valeggio still works.</p>
       </details>
@@ -733,7 +1302,8 @@
       }
       paintFavs();
       document.querySelectorAll("[data-fav]").forEach(function (btn) {
-        btn.addEventListener("click", function () {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
           var id = btn.getAttribute("data-fav");
           var i = favs.indexOf(id);
           if (i === -1) favs.push(id); else favs.splice(i, 1);
@@ -741,6 +1311,48 @@
           paintFavs();
         });
       });
+
+      var chapters = document.querySelectorAll("section.chapter[data-trip-id]");
+      var detailTitle = document.getElementById("detail-title");
+      function showList() {
+        document.body.classList.remove("view-detail");
+        chapters.forEach(function (ch) { ch.classList.remove("is-open"); });
+        if (location.hash && location.hash.indexOf("#trip-") === 0) {
+          history.replaceState("", "", location.pathname + location.search);
+        }
+        var trips = document.getElementById("trips");
+        if (trips) trips.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      function openTrip(id) {
+        if (!id) return;
+        var found = false;
+        chapters.forEach(function (ch) {
+          var on = ch.getAttribute("data-trip-id") === id;
+          ch.classList.toggle("is-open", on);
+          if (on) found = true;
+        });
+        if (!found) return;
+        document.body.classList.add("view-detail");
+        var card = document.querySelector('article.card[data-trip="' + id + '"] h3');
+        if (detailTitle) detailTitle.textContent = card ? card.textContent : "Trip";
+        var openCh = document.querySelector("section.chapter.is-open");
+        if (openCh) openCh.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      document.getElementById("back-btn").addEventListener("click", showList);
+      document.querySelector(".wordmark").addEventListener("click", function () {
+        document.body.classList.remove("view-detail");
+        chapters.forEach(function (ch) { ch.classList.remove("is-open"); });
+      });
+      document.querySelectorAll("article.card[data-trip]").forEach(function (card) {
+        card.addEventListener("click", function (e) {
+          if (e.target.closest("[data-fav]")) return;
+          e.preventDefault();
+          openTrip(card.getAttribute("data-trip"));
+        });
+      });
+      if (location.hash && location.hash.indexOf("#trip-") === 0) {
+        openTrip(location.hash.replace("#trip-", ""));
+      }
 
       var cards = document.querySelectorAll("article.card[data-tags]");
       var empty = document.getElementById("filter-empty");
@@ -787,6 +1399,8 @@
       var openedForPrint = [];
       window.addEventListener("beforeprint", function () {
         openedForPrint = [];
+        document.body.classList.remove("view-detail");
+        chapters.forEach(function (ch) { ch.classList.add("is-open"); });
         document.querySelectorAll("details.block").forEach(function (d) {
           if (!d.open) {
             d.open = true;
