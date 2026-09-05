@@ -1,6 +1,6 @@
 # Italy Trip Planner
 
-> **Status:** Offline family guide in `output/bardolino-trip-guide.html` — **22 same-day loops**, browse-first list (city + lake + beach + food + easy + close, with sort), score tooltips, full agency guide pages. Pipeline JSON in `shared/` matches. Unzip, open in Cursor, or run `/generate-bardolino-guide`.
+> **Status:** Offline family guide in `output/bardolino-trip-guide.html` — **22 same-day loops**, real Wikimedia photos, Google Maps + official links for every place and parking lot, browse-first list, score tooltips, full agency guide pages. Pipeline JSON in `shared/` matches. Unzip, open in Cursor, or run `/generate-bardolino-guide`.
 
 An autonomous multi-agent Cursor project that builds a **premium offline HTML travel guide** for a family staying in **Bardolino, Lake Garda, Italy**.
 
@@ -30,7 +30,7 @@ Open that file on a laptop or phone. No internet. No build step. No framework.
 | One-click Cursor command `/generate-bardolino-guide` | **Works** | Orchestrator launches the full pipeline |
 | Shared family + scoring rules | **Works** | Locked in `PLAN.md` and agent files |
 | Sample pipeline outputs in `shared/` | **Works** | Research, local, Venice, scores, itinerary, UX, QA |
-| Final offline HTML guide | **Works** | 22 trips; browse-first cards with descriptions; city + lake filters; score tooltips; JS-rendered guide pages |
+| Final offline HTML guide | **Works** | 22 trips; real local photos; Google Maps + official place/parking links; browse-first cards; city + lake filters; score tooltips |
 | Live web preview (dev server) | **Works** | `./scripts/serve.sh` |
 | Schema validator | **Works** | `python3 scripts/validate_pipeline.py` |
 | Real-time ferry/train tickets | **TBD at travel time** | Guide tells you exactly which official sites to check the night before |
@@ -80,6 +80,8 @@ open output/bardolino-trip-guide.html
 xdg-open output/bardolino-trip-guide.html
 ```
 
+Open `output/bardolino-trip-guide.html` together with the `output/images/` folder (relative paths). Photos are local Wikimedia copies so the guide still works without a CDN. Google Maps and official site buttons need a network.
+
 Or serve it locally:
 
 ```bash
@@ -111,8 +113,8 @@ python3 scripts/validate_pipeline.py
 ├── prompts/                 ← bootstrap / execute / review / improve
 ├── schemas/                 ← JSON contracts + HTML requirements
 ├── shared/                  ← agent outputs (the handshake layer)
-├── output/                  ← the only user-facing product
-├── scripts/                 ← validate + serve
+├── output/                  ← HTML guide + local Wikimedia photos (`images/`)
+├── scripts/                 ← validate, serve, fetch photos, inject media
 └── .cursor/commands/        ← /generate-bardolino-guide
 ```
 

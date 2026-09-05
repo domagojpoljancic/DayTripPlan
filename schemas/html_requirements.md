@@ -16,7 +16,7 @@ output/bardolino-trip-guide.html
 | Frameworks | None |
 | Build | None |
 | Fonts | System stack only (no Google Fonts, no downloaded woff) |
-| Images | Inline SVG or CSS only (no remote images) |
+| Images | Local files in `output/images/` (Wikimedia copies). No remote hotlinks. SVG fallback if a trip has no photo. |
 | Offline | Usable via `file://` with network disabled |
 | Maps | Buttons may point at `https://maps.google.com/...` but the address/lot name must remain visible as text |
 | Responsive | Mobile-first |
@@ -54,7 +54,9 @@ output/bardolino-trip-guide.html
 - Why selected
 - Best departure / expected return
 - Timeline
-- Transport: distance, duration, route, parking location, parking cost, parking difficulty, maps button
+- Transport: distance, duration, route, named parking lot, parking cost, parking difficulty
+- Place links: Google Maps **and** the official tourism/attraction page
+- Parking links: Google Maps to the named lot **and** the operator or comune parking page
 - Walking route + duration
 - Stroller friendliness
 - Viewpoints, beaches, restaurants, coffee, hidden gems
@@ -70,6 +72,7 @@ output/bardolino-trip-guide.html
 - Timeline view
 - Comparison table of the four trips
 - Maps buttons
+- Official site buttons (place + parking)
 - Favorites (`localStorage`)
 - Checklist (`localStorage`)
 - Dark mode
