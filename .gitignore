@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+*.log
+.cursor/*.log
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+*.swp
+.env
+.env.local
+agent-tools/

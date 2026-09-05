@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://italy-trip-planner.local/schemas/destination.schema.json",
+  "title": "Destination",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "name",
+    "category",
+    "drive_km_one_way",
+    "drive_minutes_one_way_typical",
+    "parking",
+    "baby",
+    "stroller",
+    "walking",
+    "food",
+    "safety",
+    "maps_url",
+    "confidence"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 2 },
+    "category": {
+      "type": "string",
+      "enum": [
+        "town",
+        "village",
+        "beach",
+        "garden",
+        "city",
+        "ferry-loop",
+        "viewpoint",
+        "base-day"
+      ]
+    },
+    "drive_km_one_way": { "type": "number", "minimum": 0 },
+    "drive_minutes_one_way_typical": { "type": "integer", "minimum": 0, "maximum": 180 },
+    "drive_minutes_one_way_peak": { "type": "integer", "minimum": 0 },
+    "route_summary": { "type": "string" },
+    "parking": {
+      "type": "object",
+      "required": ["lots", "difficulty"],
+      "properties": {
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "moderate", "hard", "severe"]
+        },
+        "lots": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "cost_eur": { "type": "string" },
+              "walk_minutes": { "type": "integer" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "backup_lot": { "type": "string" },
+        "ztl_warning": { "type": "string" },
+        "fill_time": { "type": "string" }
+      }
+    },
+    "baby": {
+      "type": "object",
+      "properties": {
+        "changing": { "type": "string" },
+        "shade": { "type": "string" },
+        "feeding": { "type": "string" },
+        "crowd_stress": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "extreme"]
+        }
+      }
+    },
+    "stroller": {
+      "type": "object",
+      "required": ["rating"],
+      "properties": {
+        "rating": { "type": "string", "enum": ["yes", "mixed", "carrier-primary"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "walking": {
+      "type": "object",
+      "properties": {
+        "loop_minutes": { "type": "integer" },
+        "hike_risk": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "beaches": { "type": "array", "items": { "type": "string" } },
+    "food": { "type": "array", "items": { "type": "string" } },
+    "safety": { "type": "string" },
+    "costs_eur": { "type": "object" },
+    "maps_url": { "type": "string" },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+    "unsuitable_if": { "type": "array", "items": { "type": "string" } }
+  }
+}

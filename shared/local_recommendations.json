@@ -1,0 +1,244 @@
+{
+  "generated_at": "2026-09-05T08:00:00Z",
+  "persona": "east-shore local",
+  "hidden_gems": [
+    {
+      "id": "borghetto-mulini",
+      "name": "Borghetto sul Mincio at the Visconteo bridge",
+      "near": "Valeggio sul Mincio",
+      "why": "A mill village on a green river, not a lake selfie. One of I Borghi più belli d'Italia. With a newborn you can see the whole postcard in 20–30 minutes, then sit down.",
+      "how_from_bardolino": "South via Lazise/Peschiera or inland via Calmasino. About 25–30 minutes.",
+      "minutes": 28,
+      "parking_note": "Park above the village or at the signed lots near the river; do not attempt the tiny lanes. Sigurtà lots work if you combine the two.",
+      "stroller_note": "Stone and short slopes to the mills; carrier for the last photogenic alleys, stroller fine on the upper paths.",
+      "best_time": "Arrive 09:15 or after 15:00. Skip Saturday lunch unless you booked.",
+      "avoid_if": "You only have energy for a harbor gelato — this is inland and worth the drive, not a filler.",
+      "maps_query": "Borghetto sul Mincio parking"
+    },
+    {
+      "id": "cisano-olives",
+      "name": "Cisano olive shore and Museo dell'Olio",
+      "near": "Bardolino",
+      "why": "The quiet neighbor beach/olive strip when Bardolino harbor is loud. Use on rest days, not as one of the four trips.",
+      "how_from_bardolino": "5–8 minutes south on the lake road, or a long stroller walk.",
+      "minutes": 8,
+      "parking_note": "Small paid bays; if full, return to Bardolino lungolago lots.",
+      "stroller_note": "Mostly paved lungolago.",
+      "best_time": "Late afternoon, weekday.",
+      "avoid_if": "Stormy lake (waves on the wall).",
+      "maps_query": "Cisano Bardolino lungolago"
+    },
+    {
+      "id": "torri-castello",
+      "name": "Castello Scaligero di Torri del Benaco (courtyard + small museum)",
+      "near": "Torri del Benaco",
+      "why": "The east-shore castle people actually enjoy with a baby: compact, lakeside, no peninsula traffic jam.",
+      "how_from_bardolino": "Best as a ferry hop from Bardolino/Garda. By car 20–25 minutes north, parking tighter in August.",
+      "minutes": 22,
+      "parking_note": "Harbor lots fill; ferry avoids the problem.",
+      "stroller_note": "Piazzetta is easy; museum stairs are not. Courtyard is enough.",
+      "best_time": "Late morning ferry, lunch in town, early boat back.",
+      "avoid_if": "Bora-style wind days; boats get cancelled.",
+      "maps_query": "Imbarcadero Torri del Benaco"
+    },
+    {
+      "id": "peschiera-walls",
+      "name": "Peschiera fortress canals at Fortezza",
+      "near": "Peschiera del Garda",
+      "why": "Austrian star-fort, water on both sides, gelato, and a real lido. It photographs like a mini-Venice without 400 bridges.",
+      "how_from_bardolino": "SR249 south, 15–25 minutes.",
+      "minutes": 20,
+      "parking_note": "Parcheggio Fortezza / lots near the walls. Easier than Sirmione by a wide margin.",
+      "stroller_note": "Flat walls and bridges with manageable ramps if you pick the main circuit.",
+      "best_time": "Morning for parking; swim after 11:00 if the baby is in shade.",
+      "avoid_if": "You expected a wild beach — this is a fortress town with lidos.",
+      "maps_query": "Parcheggio Fortezza Peschiera del Garda"
+    }
+  ],
+  "authentic_food": [
+    {
+      "id": "valeggio-tortellini",
+      "name": "Tortellini di Valeggio",
+      "near": "Valeggio sul Mincio",
+      "why": "The dish to plan a day around. Broth or burro e salvia. Baby can sleep in the carrier while you eat a proper lunch.",
+      "how_from_bardolino": "Combine with Sigurtà / Borghetto.",
+      "minutes": 28,
+      "parking_note": "Town lots, not lake-front chaos.",
+      "stroller_note": "Historic centre is compact.",
+      "best_time": "Lunch sitting. Many kitchens rest on one weekday — check.",
+      "avoid_if": "You only want a lake-view menu turistico.",
+      "maps_query": "Ristorante Valeggio sul Mincio tortellini"
+    },
+    {
+      "id": "lake-fish",
+      "name": "Persico and coregone on the east shore",
+      "near": "Bardolino / Garda / Torri",
+      "why": "Order lake fish, not frozen sea prawns. Harbor fronts in Bardolino are mixed: walk one street inland for better value.",
+      "how_from_bardolino": "On foot from the apartment for dinner after any day trip.",
+      "minutes": 5,
+      "parking_note": "N/A for evening in town; use the apartment.",
+      "stroller_note": "Lungolago is the easiest stroll of the holiday.",
+      "best_time": "Dinner back in Bardolino — you must be home anyway.",
+      "avoid_if": "Laminated 12-language menus with photos of carbonara.",
+      "maps_query": "Bardolino ristorante pesce di lago"
+    },
+    {
+      "id": "olive-oil-tastings",
+      "name": "Olio extravergine and Bardolino Classico",
+      "near": "Bardolino",
+      "why": "Cantina Zeni / Museo del Vino is a rainy or rest-day move: short, indoor, stroller-possible, and you still sleep in your own bed.",
+      "how_from_bardolino": "Local.",
+      "minutes": 8,
+      "parking_note": "On-site or nearby.",
+      "stroller_note": "Mostly indoor floors.",
+      "best_time": "A rest day or a storm.",
+      "avoid_if": "The baby is overstimulated — keep it to 45 minutes.",
+      "maps_query": "Museo del Vino Zeni Bardolino"
+    }
+  ],
+  "less_crowded_alternatives": [
+    {
+      "id": "skip-sirmione",
+      "name": "Skip Sirmione unless you win the 08:15 parking lottery",
+      "near": "Sirmione",
+      "why": "The castle is real. The peninsula traffic and ZTL are also real. Peschiera gives water + walls + a swim without the Marconi queue.",
+      "how_from_bardolino": "Do Peschiera instead.",
+      "minutes": 20,
+      "parking_note": "Sirmione: Monte Baldo / Marconi fill by 10:00 in high season; Colombare is the honest backup with a long walk.",
+      "stroller_note": "Old town cobbles + crowds. Grotte di Catullo is a hike — do not.",
+      "best_time": "If you insist: arrive before 08:30, castle, coffee, leave by 13:00.",
+      "avoid_if": "August weekend, late start, or a baby who needs a feed in a crush.",
+      "maps_query": "Parcheggio Monte Baldo Sirmione"
+    },
+    {
+      "id": "torri-not-malcesine",
+      "name": "Torri del Benaco instead of Malcesine",
+      "near": "Mid-lake east shore",
+      "why": "Malcesine is beautiful and packed; the cable car is a queue machine. Torri is the calmer castle-and-harbor town, and the ferry already goes there from Bardolino.",
+      "how_from_bardolino": "Boat.",
+      "minutes": 35,
+      "parking_note": "Leave the car in Bardolino.",
+      "stroller_note": "Harbor yes; castle museum limited.",
+      "best_time": "Any fair-weather morning.",
+      "avoid_if": "You came specifically for Monte Baldo views — then Malcesine, but not with this infant plan.",
+      "maps_query": "Torri del Benaco centro"
+    }
+  ],
+  "scenic_spots": [
+    {
+      "id": "punta-san-vigilio",
+      "name": "Punta San Vigilio and Baia delle Sirene",
+      "near": "Garda",
+      "why": "The prettiest swimming corner of the east shore. Limited parking is the tax you pay. Better as a short add-on from Garda town than as a late arrival.",
+      "how_from_bardolino": "10–15 minutes north, or ferry to Garda plus a short taxi/walk depending on energy.",
+      "minutes": 12,
+      "parking_note": "Paid, fills, pedestrian underpass from the lot. Have a backup: swim at Cisano or Peschiera lido instead.",
+      "stroller_note": "Short walk from the lot; bay paths mixed. Carrier for pebbles.",
+      "best_time": "Weekday opening time.",
+      "avoid_if": "Peak Saturday 11:00.",
+      "maps_query": "Baia delle Sirene Punta San Vigilio parking"
+    },
+    {
+      "id": "bardolino-cisano-sunset",
+      "name": "Bardolino harbor at golden hour — after you are already home",
+      "near": "Bardolino",
+      "why": "You do not need another town for a sunset. The 18:00 rule is a feature: gelato, lungolago, bed.",
+      "how_from_bardolino": "Walk.",
+      "minutes": 10,
+      "parking_note": "Apartment.",
+      "stroller_note": "Excellent.",
+      "best_time": "17:30–19:30 at base.",
+      "avoid_if": "N/A",
+      "maps_query": "Piazza Matteotti Bardolino"
+    }
+  ],
+  "ferry_opportunities": [
+    {
+      "id": "ferry-short",
+      "name": "Bardolino → Garda → Torri del Benaco → Bardolino",
+      "near": "East shore mid-lake",
+      "why": "The correct boat day for a six-month-old: two pretty harbors, a castle courtyard, lunch, home for a nap. Not the 4-hour slow boat to Riva.",
+      "how_from_bardolino": "Walk or 4-minute drive to Bardolino imbarcadero. Buy tickets 20 minutes early at the Navigazione Laghi window or app.",
+      "minutes": 5,
+      "parking_note": "Leave the car at the apartment or the imbarcadero lots. This is the easiest parking day of the holiday.",
+      "stroller_note": "Carrier for boarding and swell. Fold stroller. Boats have steps/gaps.",
+      "best_time": "Late morning departure, back mid-afternoon. Check the seasonal PDF the night before.",
+      "avoid_if": "Wind warnings, sciopero, or a baby with ear pain (discuss with a doctor; lake boats are usually fine).",
+      "maps_query": "Imbarcadero Bardolino Navigazione Laghi"
+    },
+    {
+      "id": "ferry-maderno",
+      "name": "Optional foot crossing Torri ↔ Maderno",
+      "near": "West shore",
+      "why": "The car traghetto is the lake's only vehicle ferry. You do not need the car. As foot passengers it is a 30-minute scenery hop if the short loop felt too short and the timetable still gets you home.",
+      "how_from_bardolino": "Only after arriving in Torri by passenger boat. Do not drive the traghetto 'for fun' with a newborn unless you already planned a west-shore parking day.",
+      "minutes": 50,
+      "parking_note": "Car stays in Bardolino.",
+      "stroller_note": "Vehicle deck is noisy; stay in passenger areas; carrier on.",
+      "best_time": "If the first Torri lunch ended early.",
+      "avoid_if": "Behind schedule. Never chase Maderno if the return Bardolino boat is the last sensible one.",
+      "maps_query": "Traghetto Maderno Torri del Benaco"
+    }
+  ],
+  "tourist_traps": [
+    {
+      "id": "trap-sirmione-noon",
+      "name": "Sirmione at midday in high season",
+      "near": "Sirmione",
+      "why": "You will spend the baby's good hours in a car queue and then pay €16–25 to walk into a crush.",
+      "how_from_bardolino": "Don't, unless the dawn protocol.",
+      "minutes": 35,
+      "parking_note": "Severe.",
+      "stroller_note": "Bad in crowds.",
+      "best_time": "Never at 11:00.",
+      "avoid_if": "Always, for this family, unless scores somehow invert.",
+      "maps_query": "Sirmione ZTL"
+    },
+    {
+      "id": "trap-gardaland",
+      "name": "Gardaland with a 6-month-old",
+      "near": "Castelnuovo del Garda",
+      "why": "A theme park is noise, sun, and queues. It does not serve this baby.",
+      "how_from_bardolino": "Skip.",
+      "minutes": 20,
+      "parking_note": "Huge lots, irrelevant.",
+      "stroller_note": "Irrelevant.",
+      "best_time": "N/A",
+      "avoid_if": "You are this family.",
+      "maps_query": "Gardaland"
+    },
+    {
+      "id": "trap-harbor-menu",
+      "name": "Photo menus on the Bardolino / Lazise piers",
+      "near": "East shore harbors",
+      "why": "Not dangerous, just sad. Walk inland one block.",
+      "how_from_bardolino": "Walk.",
+      "minutes": 5,
+      "parking_note": "N/A",
+      "stroller_note": "Fine.",
+      "best_time": "N/A",
+      "avoid_if": "You like paying sea-fish prices for frozen product.",
+      "maps_query": "Bardolino centro storico ristoranti"
+    }
+  ],
+  "timing_rules": [
+    "East-shore lake road (SR249) crawls in late morning high season. Leave before 09:00 for any car trip south.",
+    "Monday inland restaurants may close. Check Valeggio the night before.",
+    "Ferries: ticket office 20 minutes early. Seasonal timetables change in April/May and mid-October.",
+    "Venice: weekday only if you can choose. Weekend Santa Lucia is a harder stroller/carrier day.",
+    "Never schedule a 'sunset in another town.' You live in Bardolino. Use it."
+  ],
+  "baby_local_tips": [
+    "Farmacie: look for the green cross; after hours the door lists the farmacia di turno.",
+    "Bardolino tourist medical studio (seasonal): Via Croce 35, typically morning hours, tel +39 045 511 7746 — confirm season dates at the comune.",
+    "Nearest hospital emergency pointer on the east shore: Ospedale Pederzoli, Peschiera del Garda.",
+    "Lungolago benches in Bardolino and Garda are the real feeding infrastructure.",
+    "Lake water is not a bathtub. For a 6-month-old, shade and a dip of feet beat a lido marathon."
+  ],
+  "rainy_local": [
+    "Museo del Vino / Cantina Zeni, Bardolino — short, indoor, local.",
+    "Valeggio lunch + covered walks in town if Sigurtà is a wash (the park is still outdoor).",
+    "Peschiera has more arcades and cafe indoor seating than the pretty villages.",
+    "Verona is the nuclear rainy option — only if you accept cobbles and a carrier-only historic centre. Keep it to 4 hours and still be home before 18:00."
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-09-05T08:00:00Z",
+  "decision": {
+    "winner_mode_id": "C",
+    "winner_name": "Drive Bardolino → Peschiera del Garda station → direct train to Venezia Santa Lucia",
+    "rationale": "This is the lowest-stress infant day that still reaches the real Venice (Santa Lucia, not Mestre). The car is parked once, in a normal station town 20 minutes from the apartment, instead of after 90–120 minutes of A4/lagoon traffic. Regional and Frecciarossa trains both run this corridor in about 1h28–1h50; infants ride free on regional services and are straightforward on high-speed with a reservation. You arrive already in the historic city, not in a garage on Tronchetto. The stroller stays folded; the baby lives in a carrier on the 400 stepped bridges. Organized Garda–Venice coaches were rejected because they steal nap control and often return after this family's 18:00 curfew. Driving to Piazzale Roma or Tronchetto was rejected because it maximizes time in a car seat, adds lagoon congestion, expensive garages, and a vaporetto transfer before the day even starts.",
+    "rejected_reasons": {
+      "A": "Longer baby-in-car-seat time, lagoon traffic, ZTL camera risk if you miss a sign, €21–45 garages, then still a vaporetto or People Mover. Stress peaks at the exact moment you wanted to be calm.",
+      "B": "Mestre parking is cheaper, but you add a second urban layer (garage → Mestre station → train) for almost no gain versus parking at Peschiera, which you already pass geographically. Peschiera is the family's lake-side station; Mestre is a mainland city they do not need to learn.",
+      "D": "Coach tours from the lake are rigid, often include Murano glass shops, pack the return, and frequently land back after 18:00. A six-month-old cannot vote to leave early."
+    }
+  },
+  "modes": [
+    {
+      "id": "A",
+      "name": "Drive to Tronchetto or Piazzale Roma",
+      "door_to_venice_minutes": 130,
+      "infant_comfort": 42,
+      "stroller_logistics": 40,
+      "stress": 28,
+      "timing_reliability": 45,
+      "cost": 48,
+      "walking_after": 55,
+      "total": 43,
+      "cost_eur": "Parking €21–45 plus fuel plus vaporetto",
+      "notes": "Piazzale Roma garages ~€35–45/24h, closest. Tronchetto ~€21–30, more space, People Mover or vaporetto after. Historic Venice is a ZTL. Peak A4 + Padova/Mestre beltway can blow the 18:00 return.",
+      "verdict": "rejected"
+    },
+    {
+      "id": "B",
+      "name": "Park in Mestre + train to Santa Lucia",
+      "door_to_venice_minutes": 120,
+      "infant_comfort": 58,
+      "stroller_logistics": 55,
+      "stress": 52,
+      "timing_reliability": 62,
+      "cost": 70,
+      "walking_after": 70,
+      "total": 61,
+      "cost_eur": "Mestre garage ~€10–18 plus train",
+      "notes": "Valid if Peschiera parking were full, which is the backup, not the plan. Extra drive past the family's natural station.",
+      "verdict": "backup_only"
+    },
+    {
+      "id": "C",
+      "name": "Bardolino car → Peschiera station → train → Venezia S. Lucia",
+      "door_to_venice_minutes": 110,
+      "infant_comfort": 78,
+      "stroller_logistics": 72,
+      "stress": 80,
+      "timing_reliability": 78,
+      "cost": 74,
+      "walking_after": 70,
+      "total": 75,
+      "cost_eur": "Peschiera station parking ~€1.50/h or ~€15/day; regional seats from ~€11–15 adult; high-speed more",
+      "notes": "Drive 14 km / ~20 minutes via SR249. Park at Piazzale Stazione (24/7). Direct trains typically 1h28. Arrive in Venice, not at a garage. This is the winner.",
+      "verdict": "winner"
+    },
+    {
+      "id": "D",
+      "name": "Organized bus/boat day tour from Lake Garda",
+      "door_to_venice_minutes": 150,
+      "infant_comfort": 35,
+      "stroller_logistics": 30,
+      "stress": 32,
+      "timing_reliability": 40,
+      "cost": 50,
+      "walking_after": 40,
+      "total": 38,
+      "cost_eur": "Often €70–120 adult, infant policies vary",
+      "notes": "You cannot leave when the baby melts down. Many itineraries advertise Venice + shopping stops and return early evening.",
+      "verdict": "rejected"
+    }
+  ],
+  "day_plan": {
+    "weekday_assumption": true,
+    "apartment_depart": "07:15",
+    "peschiera_park_by": "07:40",
+    "target_train_window": "07:50–08:20 (verify Trenitalia the night before; prefer a direct train ~1h28)",
+    "arrive_santa_lucia": "09:20–09:50",
+    "hard_leave_santa_lucia": "15:20",
+    "back_at_car": "16:55",
+    "bardolino_return": "17:25",
+    "loop": [
+      "Arrive Santa Lucia. Change nappy in station toilets. Carrier on. Stroller folded.",
+      "Optional: ACTV vaporetto Line 1 one stop-rich ride down the Grand Canal as a seated rest — buy singles unless you will ride twice (24h cards are usually waste on this short plan). Skip if the boat looks crushed; walk Lista di Spagna instead.",
+      "Rialto campo: coffee, shade, watch boats. Do not climb the Rialto steps with a fully loaded stroller.",
+      "Early lunch away from the bridge crush (San Polo side or Strada Nova cafes with indoor seats).",
+      "One extra campo only if the baby is actually asleep or content. Not San Marco and not Burano.",
+      "Back to Santa Lucia with 20 minutes platform buffer."
+    ],
+    "skip": [
+      "Murano and Burano (time + extra boats)",
+      "St Mark's queues",
+      "Gondola as a default",
+      "Anything that requires a timed entry after 14:00"
+    ]
+  },
+  "stroller_protocol": {
+    "primary": "Soft structured carrier. Venice is not stroller-friendly: 400+ stepped bridges.",
+    "secondary": "Compact stroller for Peschiera platform, Santa Lucia concourse, and emergency nap if you find a long flat fondamenta.",
+    "vaporetto": "Fold. Gaps and crowds. Carrier is safer at the boarding edge.",
+    "do_not": "Do not attempt a full San Marco circuit with a full-size stroller."
+  },
+  "costs_eur": {
+    "parking_peschiera": "8–15",
+    "train_two_adults_return_regional": "44–70",
+    "train_high_speed_two_adults_return": "80–160",
+    "infant_train": "Usually free on regional; check high-speed occupancy rules",
+    "vaporetto_two_singles": "20–25",
+    "lunch": "45–70",
+    "total_band": "120–250"
+  },
+  "rainy_variant": {
+    "summary": "Train plan still wins in rain — more indoor stretches at the station and cafes. Shorten the outdoor loop. Buy the earlier return. Do not 'add a museum marathon' that overruns 15:20.",
+    "indoor_ideas": ["Santa Lucia / nearby cafes", "A short bookshop or supermarket run for supplies", "Skip vaporetto if decks are wet and crowded"]
+  },
+  "verify_night_before": [
+    "Trenitalia or Trenord app: pick a direct Peschiera → Venezia S. Lucia and the return that lands you on a train departing Venice by 15:20.",
+    "Peschiera station parking occupancy is rarely bookable — have Mestre as a nuclear backup only.",
+    "ACTV vaporetto prices if you still want Line 1.",
+    "Scioperi (strikes) on trenitalia.com / local news."
+  ],
+  "maps": {
+    "peschiera_station": "https://www.google.com/maps/search/?api=1&query=Peschiera%20del%20Garda%20station%20parking",
+    "directions_bardolino_peschiera": "https://www.google.com/maps/dir/Bardolino%2C%20VR%2C%20Italy/Peschiera%20del%20Garda%20station",
+    "santa_lucia": "https://www.google.com/maps/search/?api=1&query=Venezia%20Santa%20Lucia"
+  }
+}

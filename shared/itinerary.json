@@ -1,0 +1,270 @@
+{
+  "generated_at": "2026-09-05T09:00:00Z",
+  "base": "Bardolino",
+  "trips": [
+    {
+      "id": "venice-train",
+      "name": "Venice by lake-station train",
+      "mandatory": true,
+      "score": 63,
+      "why_selected": "Mandatory city. Access mode was compared, not assumed: driving to Tronchetto/Piazzale Roma, Mestre park-and-ride, Peschiera train, and a Garda coach tour. The train from Peschiera wins on infant time out of the car seat, predictable timing, and arrival already in historic Venice. Score stays an honest 63 — bridges and crowds are real — and the day is designed small enough to be home before 18:00.",
+      "difficulty": "moderate",
+      "best_departure": "07:15",
+      "expected_return": "17:25",
+      "tags": ["city", "train", "once"],
+      "transport": {
+        "mode_summary": "Car Bardolino → Peschiera station park → direct train → Venezia Santa Lucia. Reverse in the afternoon. No lagoon driving.",
+        "driving_distance_km": 14,
+        "driving_duration_minutes": 20,
+        "route": "Apartment → SR249 south through Cisano/Lazise → Peschiera → Piazzale Stazione.",
+        "parking_location": "Peschiera del Garda station car park, Piazzale Stazione (24/7).",
+        "parking_cost": "About €1.50/hour or ~€15/day. Confirm the board on the day.",
+        "parking_difficulty": "Moderate — arrive by 07:40. Backup: Mestre garages only if this lot is truly full (it rarely should be at this hour).",
+        "maps_url": "https://www.google.com/maps/dir/Bardolino%2C%20VR%2C%20Italy/Peschiera%20del%20Garda%20station",
+        "notes": "Prefer a direct train ~1h28. Verify Trenitalia the night before. Infant typically free on regional trains."
+      },
+      "experience": {
+        "walking_route": "Santa Lucia → (optional vaporetto Line 1 as a seated rest) → Rialto campo → lunch on the quieter San Polo edge → straight back to the station. No San Marco. No Burano.",
+        "walking_duration": "40–55 minutes of actual walking, broken by sits and one boat.",
+        "stroller_friendliness": "Carrier-primary. Compact stroller only for platforms and the concourse. 400+ stepped bridges.",
+        "viewpoints": ["Grand Canal from Line 1 or from the station steps", "Rialto campo at water level — do not need the bridge climb"],
+        "beaches": [],
+        "restaurants": ["A sit-down trattoria one street off the Rialto flow", "Skip laminated photo menus on the bridge"],
+        "coffee_stops": ["Lista di Spagna cafe if you skip the boat", "Campo near Rialto with indoor chairs"],
+        "hidden_gems": ["Any quiet campo 4 minutes off Strada Nova is worth more than St Mark's queue"]
+      },
+      "family": {
+        "baby_changing": "Do the first change at Santa Lucia on arrival. Do not wait for a picturesque WC that does not exist on a bridge.",
+        "places_to_rest": "Station benches, vaporetto seats, indoor cafe, one campo in shade.",
+        "stroller_notes": "Soft carrier on before you leave the station. Fold the stroller. Do not negotiate 400 bridges.",
+        "crowded_areas_to_avoid": ["Piazza San Marco", "Rialto Bridge roadway at noon", "Gondola touts"]
+      },
+      "costs": {
+        "parking": "€8–15",
+        "food_estimate": "€45–70 for two adults, infant not eating à la carte",
+        "tickets": "Two adult returns Peschiera–Venezia: regional roughly €44–70; high-speed more. Optional two vaporetto singles ~€20–25.",
+        "ferry": "€0 (lake not used this day). Vaporetto is optional city water bus."
+      },
+      "backup": {
+        "rainy_day_alternative": "Keep the train — rain is better on a regional seat than in a lagoon traffic jam. Shorten the outdoor loop, sit in cafes, take an earlier return (leave Venice by 14:40 if miserable). If trains strike, do not drive Tronchetto as a 'save'; switch to the Sigurtà/Borghetto day or a Bardolino indoor wine museum morning."
+      },
+      "timeline": [
+        { "time": "07:15", "title": "Leave the apartment", "detail": "Carrier packed, bottles, change kit, tickets downloaded." },
+        { "time": "07:40", "title": "Park at Peschiera station", "detail": "Piazzale Stazione. Photo the parking row." },
+        { "time": "08:10", "title": "Train toward Venezia S. Lucia", "detail": "Exact minute from last night's check. Direct preferred." },
+        { "time": "09:40", "title": "Arrive Santa Lucia", "detail": "Change nappy. Carrier on." },
+        { "time": "10:00", "title": "Canal rest", "detail": "Line 1 if calm; otherwise Lista di Spagna walk." },
+        { "time": "12:00", "title": "Lunch off-bridge", "detail": "Indoor seats." },
+        { "time": "14:30", "title": "Begin return drift", "detail": "No new sestiere." },
+        { "time": "15:20", "title": "Hard leave from Santa Lucia", "detail": "On a train by this time." },
+        { "time": "16:55", "title": "Back at the car", "detail": "Water, nappy, 20-minute drive." },
+        { "time": "17:25", "title": "Apartment Bardolino", "detail": "Before 18:00 with margin." }
+      ],
+      "venice_modes_included": true
+    },
+    {
+      "id": "garda-ferry",
+      "name": "East-shore ferry: Bardolino, Garda, Torri",
+      "mandatory": true,
+      "score": 88,
+      "why_selected": "Mandatory lake boat day, designed as a half-to-three-quarter day, not a Riva endurance cruise. Leaving the car in Bardolino makes this the easiest parking day. Torri's castle courtyard is the cultural bite; Garda is the pretty harbor in between.",
+      "difficulty": "easy",
+      "best_departure": "09:40",
+      "expected_return": "16:10",
+      "tags": ["boat", "easy", "scenery"],
+      "transport": {
+        "mode_summary": "Walk or 4-minute drive to Bardolino imbarcadero. Navigazione Laghi passenger boats Bardolino → Garda → Torri del Benaco and back. Car stays home.",
+        "driving_distance_km": 1,
+        "driving_duration_minutes": 5,
+        "route": "Apartment to Bardolino ferry landing (imbarcadero).",
+        "parking_location": "Apartment first. If you drive the last 400 m, use signed imbarcadero / lungolago paid bays — still trivial compared with every other trip.",
+        "parking_cost": "€0 if you walk from the apartment; otherwise a few euros local rate.",
+        "parking_difficulty": "Easy",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Imbarcadero%20Bardolino%20Navigazione%20Laghi",
+        "notes": "Buy tickets ~20 minutes early. Seasonal PDFs on navigazionelaghi.it. Wind can cancel — decide by 09:00."
+      },
+      "experience": {
+        "walking_route": "Garda harbor stroll (15 min) → boat to Torri → piazzetta and castle courtyard (not a full museum assault) → lunch → boat home.",
+        "walking_duration": "30–40 minutes total on land.",
+        "stroller_friendliness": "Mixed. Fold for gangways; carrier during boarding and on deck if there is swell.",
+        "viewpoints": ["Deck view back to the olive hills", "Torri castle on the water", "Garda promenade"],
+        "beaches": ["Look, don't commit. Pebbly edges at Garda. A full Baia delle Sirene detour is optional only if boats and baby agree — not required."],
+        "restaurants": ["Torri: sit one street off the first pier front if the menus are laminated", "Garda: coffee and a pastry rather than a second lunch"],
+        "coffee_stops": ["Garda waterfront bar with shade", "Bardolino gelato on return — you are already home"],
+        "hidden_gems": ["Optional foot passenger hop Torri↔Maderno only if you are ahead of timetable; skip if not"]
+      },
+      "family": {
+        "baby_changing": "Before boarding in a Bardolino cafe. Boats are a bad nappy room. Torri cafe on arrival.",
+        "places_to_rest": "Indoor cabin seats, Torri piazzetta, Garda benches.",
+        "stroller_notes": "One adult boards first with the carrier. Second adult handles the folded stroller. Never block the gangway.",
+        "crowded_areas_to_avoid": ["First-and-last boats of the day in August", "Vehicle deck of the Maderno traghetto"]
+      },
+      "costs": {
+        "parking": "€0–8",
+        "food_estimate": "€40–65",
+        "tickets": "€0 land attractions if you only do the courtyard exterior; small castle ticket optional.",
+        "ferry": "Adult medium-route band often ~€6–12 each way; infant policy: check current Navigazione Laghi (very young children usually reduced/free). Budget ~€25–45 for two adults return plus Garda hop."
+      },
+      "backup": {
+        "rainy_day_alternative": "If boats cancelled or the deck is a wind tunnel: drive 22 minutes to Torri only if rain is light, or switch this calendar slot with Sigurtà (also outdoor) / Peschiera cafes / Museo del Vino Zeni in Bardolino. Do not start a slow boat toward Riva 'because we already bought the idea of a long cruise'."
+      },
+      "timeline": [
+        { "time": "09:20", "title": "Nappy and snacks at the apartment", "detail": "Change now." },
+        { "time": "09:40", "title": "Walk to the imbarcadero", "detail": "Tickets." },
+        { "time": "10:10", "title": "Boat toward Garda / Torri", "detail": "Exact sailing from last night's PDF." },
+        { "time": "10:40", "title": "Garda pause", "detail": "Coffee, shade, photos. Do not overstay." },
+        { "time": "11:20", "title": "Torri del Benaco", "detail": "Castle courtyard, harbor." },
+        { "time": "12:30", "title": "Lunch in Torri", "detail": "Indoor option if sun is harsh." },
+        { "time": "14:40", "title": "Return boat", "detail": "Leave earlier if clouds stack." },
+        { "time": "16:10", "title": "Back in Bardolino", "detail": "Nap at home, not on a further boat." }
+      ]
+    },
+    {
+      "id": "sigurta-borghetto",
+      "name": "Sigurtà gardens and Borghetto mills",
+      "mandatory": false,
+      "score": 90,
+      "why_selected": "Highest score in the pool (90). Parking, baby, walking, and food all win. This is the local-expert inland day the famous-lake list would skip. Tortellini in Valeggio plus a stroller-native garden is a better family memory than a castle queue.",
+      "difficulty": "easy",
+      "best_departure": "09:00",
+      "expected_return": "16:20",
+      "tags": ["food", "easy", "garden"],
+      "transport": {
+        "mode_summary": "Car the whole way. Bardolino → Peschiera corridor → Valeggio sul Mincio.",
+        "driving_distance_km": 27,
+        "driving_duration_minutes": 28,
+        "route": "SR249 south, then inland signed Valeggio / Parco Sigurtà. Do not detour via Gardaland.",
+        "parking_location": "Sigurtà park lots (Rosso/Giallo). After the garden, short drive to signed Borghetto / Valeggio lots. Do not enter mill lanes.",
+        "parking_cost": "Park lots typically free/unattended. Village lots cheap or free. Budget €0–5.",
+        "parking_difficulty": "Easy",
+        "maps_url": "https://www.google.com/maps/dir/Bardolino%2C%20VR%2C%20Italy/Parco%20Giardino%20Sigurtà",
+        "notes": "Buy Sigurtà tickets online if the queue looks likely in tulip/high season. Ages 0–4 usually free — verify sigurta.it."
+      },
+      "experience": {
+        "walking_route": "Short garden circuit (rose avenue viewpoint + lawn) → optional panoramic train → drive 5 minutes to Borghetto → mill village loop on the Mincio → lunch in Valeggio.",
+        "walking_duration": "45–60 minutes easy, plus optional train rest.",
+        "stroller_friendliness": "Yes on park avenues. Carrier for Borghetto's last photogenic steps.",
+        "viewpoints": ["Viale delle rose toward the Scaliger castle of Valeggio", "Visconteo bridge at Borghetto"],
+        "beaches": [],
+        "restaurants": ["Tortellini di Valeggio in brodo or burro e salvia", "Park cafe only as a snack, not the point of the day"],
+        "coffee_stops": ["Valeggio bar after the village photos", "Not a third course"],
+        "hidden_gems": ["The mill race at Borghetto in late afternoon light if lunch ran long — still leave by 15:40"]
+      },
+      "family": {
+        "baby_changing": "Accessible toilets on the Sigurtà main circuit. Do a change on arrival.",
+        "places_to_rest": "Shaded benches, lawns, panoramic train, restaurant high-chair / carrier nap.",
+        "stroller_notes": "Bring your own; the park does not rent. Compact gravel/porphyry — it works.",
+        "crowded_areas_to_avoid": ["Tulip-season weekend gates at opening selfie hour", "Borghetto bridge at Saturday 13:00"]
+      },
+      "costs": {
+        "parking": "€0–5",
+        "food_estimate": "€40–70 (this is the lunch to spend on)",
+        "tickets": "Sigurtà adult ~€18; 0–4 usually free; train/golf-cart extra if used.",
+        "ferry": "€0"
+      },
+      "backup": {
+        "rainy_day_alternative": "If the park is a sheet of rain: keep Valeggio lunch (the point of the food score) and do covered town walks. Add Museo del Vino Zeni back in Bardolino after. Do not 'swap in Sirmione' because it is famous in the wet — the ZTL does not get kinder."
+      },
+      "timeline": [
+        { "time": "09:00", "title": "Drive inland", "detail": "Bottles, hats, park tickets." },
+        { "time": "09:35", "title": "Park at Sigurtà", "detail": "Stroller out." },
+        { "time": "09:45", "title": "Garden loop", "detail": "Shade first, photos second." },
+        { "time": "11:15", "title": "Optional panoramic train", "detail": "If anyone is tired." },
+        { "time": "12:00", "title": "Borghetto mills", "detail": "Short, slow, cameras down when the baby needs you." },
+        { "time": "13:00", "title": "Tortellini in Valeggio", "detail": "Sit. This is the destination." },
+        { "time": "15:40", "title": "Drive back", "detail": "SR249 may be busier; you have margin." },
+        { "time": "16:20", "title": "Apartment", "detail": "Nap." }
+      ]
+    },
+    {
+      "id": "peschiera-lido",
+      "name": "Peschiera fortress and lido",
+      "mandatory": false,
+      "score": 84,
+      "why_selected": "Second-highest eligible non-mandatory destination. User priority #1 is beaches; Peschiera is the rare Garda town that combines a swim, shade, toilets, gelato, and parking that is not a peninsula trap. Beat Lazise (82) because it feels like going somewhere and has a stronger beach story. Sirmione (64) lost on parking.",
+      "difficulty": "easy",
+      "best_departure": "09:10",
+      "expected_return": "15:50",
+      "tags": ["beach", "easy", "town"],
+      "transport": {
+        "mode_summary": "Car SR249 south. Park at the fortress lots. Walk the walls. Swim. Drive home for the baby's afternoon nap — do not linger into the 17:00 gelato crush.",
+        "driving_distance_km": 14,
+        "driving_duration_minutes": 20,
+        "route": "Bardolino → Cisano → Lazise → Peschiera. Stay on the lake road unless maps show a jam; then inland via Calmasino.",
+        "parking_location": "Parcheggio Fortezza / signed wall-side lots. Not the historic-centre door.",
+        "parking_cost": "Typical Garda hourly, plan €6–12 for the stay.",
+        "parking_difficulty": "Moderate if you arrive ~09:30. Hard after 11:30 in August — then use station-area overflow and walk.",
+        "maps_url": "https://www.google.com/maps/dir/Bardolino%2C%20VR%2C%20Italy/Parcheggio%20Fortezza%20Peschiera%20del%20Garda",
+        "notes": "Do not attach this to the Venice day. Two different uses of the same town."
+      },
+      "experience": {
+        "walking_route": "Fortezza parking → wall circuit over the canals → harbor gelato → lido for a short, shaded sit and optional feet-in-water for the baby → reverse.",
+        "walking_duration": "35–45 minutes plus beach sit.",
+        "stroller_friendliness": "Yes on the main fortress circuit. Watch cyclists. Carrier for any stepped bastion.",
+        "viewpoints": ["Canal cuts through the star fort", "Lago di Garda from the south-east walls"],
+        "beaches": ["Family lidos on the Peschiera waterfront (pebble/concrete, not fine sand). Shade tent beats a sunbed marathon."],
+        "restaurants": ["Simple lunch near Porta Verona / walls, not a 90-minute tasting menu", "Gelato is mandatory and sufficient dessert"],
+        "coffee_stops": ["Cafe on the walls with a view of water both sides"],
+        "hidden_gems": ["The quieter stretches of wall away from the bus-tour pause point"]
+      },
+      "family": {
+        "baby_changing": "Lido changing rooms in season; otherwise a cafe WC before the beach sit.",
+        "places_to_rest": "Shade trees on the walls, lido umbrellas, cafe interiors.",
+        "stroller_notes": "This is the stroller's best 'away' day. Still bring the carrier for the car.",
+        "crowded_areas_to_avoid": ["Harbor bus-photo corner at noon", "Gardaland-bound traffic on the ring — ignore the theme-park signs"]
+      },
+      "costs": {
+        "parking": "€6–12",
+        "food_estimate": "€35–60",
+        "tickets": "Fortress exterior is a walk. Lido sunbed optional €10–20. No castle ticket required.",
+        "ferry": "€0 unless you take a joy ride from Peschiera pier — unnecessary today."
+      },
+      "backup": {
+        "rainy_day_alternative": "Keep Peschiera for arcades and cafe indoor time, skip the lido. Or swap the calendar day with Venice if the forecast is a single-day washout (Venice cafes + train). If both are wet, Museo del Vino Zeni + apartment rest."
+      },
+      "timeline": [
+        { "time": "09:10", "title": "Drive south", "detail": "Before the SR249 clog." },
+        { "time": "09:35", "title": "Park Fortezza", "detail": "Stroller out, hats on." },
+        { "time": "09:45", "title": "Walls and canals", "detail": "Slow circuit." },
+        { "time": "11:15", "title": "Coffee", "detail": "Feed the baby in shade." },
+        { "time": "12:15", "title": "Lunch", "detail": "Short." },
+        { "time": "13:15", "title": "Lido sit", "detail": "Feet in water, not a swim lesson." },
+        { "time": "15:10", "title": "Drive home", "detail": "Beat the late-afternoon lake road." },
+        { "time": "15:50", "title": "Apartment", "detail": "Nap. You still have Bardolino harbor for a 17:30 gelato." }
+      ]
+    }
+  ],
+  "ranking_overview": [
+    { "id": "sigurta-borghetto", "name": "Sigurtà gardens and Borghetto mills", "score": 90, "rank": 1 },
+    { "id": "garda-ferry", "name": "East-shore ferry: Bardolino, Garda, Torri", "score": 88, "rank": 2 },
+    { "id": "peschiera-lido", "name": "Peschiera fortress and lido", "score": 84, "rank": 3 },
+    { "id": "venice-train", "name": "Venice by lake-station train", "score": 63, "rank": 4 }
+  ],
+  "suggested_sequence": [
+    { "day": 1, "plan": "Base Bardolino / Cisano beach. Unpack, pharmacy, gelato, learn the lungolago. No trip." },
+    { "day": 2, "plan": "Peschiera fortress and lido — confidence-building easy away day, beach priority." },
+    { "day": 3, "plan": "Sigurtà + Borghetto + tortellini." },
+    { "day": 4, "plan": "Rest / Bardolino. Laundry, naps, olive museum if restless." },
+    { "day": 5, "plan": "Venice (weekday if the stay allows). Earliest alarm of the week." },
+    { "day": 6, "plan": "Ferry loop if weather is kind; if not, swap with day 4 rest and take the boat earlier in the week." }
+  ],
+  "rejected": [
+    { "id": "sirmione", "score": 64, "reason": "Beauty 93 cannot outvote parking 28 for this family. ZTL + 10:00 lot death." },
+    { "id": "lazise", "score": 82, "reason": "Too similar to home harbor; lost a close race to Peschiera's beach + fortress combo." },
+    { "id": "malcesine", "score": 65, "reason": "Crowds, hills, cable-car gravity, longer drive." },
+    { "id": "verona", "score": 68, "reason": "Rainy backup only." },
+    { "id": "gardaland", "score": 0, "reason": "Disqualified for a 6-month-old." }
+  ],
+  "base_days": [
+    {
+      "name": "Bardolino and Cisano",
+      "note": "Two of six days should be here on purpose. Beaches without a trip. Dinner always here."
+    }
+  ],
+  "family_operating_system": {
+    "naps": "Protect an afternoon nap at the apartment after every trip. Do not schedule 17:00 'one more village'.",
+    "carrier": "Primary in Venice and on boat gangways. Stroller primary at Sigurtà and Peschiera walls.",
+    "leave_stroller": "If a lot is a long walk and the baby is asleep in the carrier, one adult can stay with the car only as a last resort — usually better to complete a shorter loop together.",
+    "verify": "Trenitalia and Navigazione Laghi the night before. No invented train numbers in this file on purpose."
+  }
+}

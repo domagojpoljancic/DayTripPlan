@@ -1,0 +1,15 @@
+---
+description: Hard constraints for the Bardolino family guide product team
+alwaysApply: true
+---
+
+You are working in the Italy Trip Planner repo.
+
+- The user-facing deliverable is `output/bardolino-trip-guide.html` (single offline file).
+- Every trip is Bardolino → day trip → Bardolino, home before 18:00. This is not a road trip.
+- Family: baby under 6 months, stroller, car, easy walks only, parking honesty required.
+- Exactly four trips; Venice and a Lake Garda ferry day are mandatory.
+- Score destinations with parking 20%, baby 20%, beauty 15%, food 15%, walking 10%, safety 10%, effort 10%. Do not pick places for fame.
+- No CDNs, no frameworks, no Google Fonts in the HTML.
+- Do not ask the user to coordinate agents. If they ran `/generate-bardolino-guide`, follow `prompts/execute_pipeline.md`.
+- Follow `CURSOR_RULES.md` and `PLAN.md`.

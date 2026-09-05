@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://italy-trip-planner.local/schemas/itinerary.schema.json",
+  "title": "BardolinoFamilyItinerary",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["generated_at", "base", "trips", "ranking_overview"],
+  "properties": {
+    "generated_at": { "type": "string" },
+    "base": { "type": "string", "const": "Bardolino" },
+    "trips": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "$ref": "#/$defs/trip" }
+    },
+    "ranking_overview": { "type": "array", "minItems": 4, "maxItems": 4 },
+    "suggested_sequence": { "type": "array" },
+    "rejected": { "type": "array" },
+    "base_days": { "type": "array" },
+    "family_operating_system": { "type": "object" }
+  },
+  "$defs": {
+    "trip": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "score",
+        "why_selected",
+        "difficulty",
+        "best_departure",
+        "expected_return",
+        "transport",
+        "experience",
+        "family",
+        "costs",
+        "backup"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "mandatory": { "type": "boolean" },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "why_selected": { "type": "string" },
+        "difficulty": { "type": "string", "enum": ["easy", "moderate", "demanding"] },
+        "best_departure": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" },
+        "expected_return": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "transport": {
+          "type": "object",
+          "required": [
+            "mode_summary",
+            "driving_distance_km",
+            "driving_duration_minutes",
+            "route",
+            "parking_location",
+            "parking_cost",
+            "parking_difficulty",
+            "maps_url"
+          ],
+          "properties": {
+            "mode_summary": { "type": "string" },
+            "driving_distance_km": { "type": "number" },
+            "driving_duration_minutes": { "type": "integer" },
+            "route": { "type": "string" },
+            "parking_location": { "type": "string" },
+            "parking_cost": { "type": "string" },
+            "parking_difficulty": { "type": "string" },
+            "maps_url": { "type": "string" },
+            "notes": { "type": "string" }
+          }
+        },
+        "experience": {
+          "type": "object",
+          "required": [
+            "walking_route",
+            "walking_duration",
+            "stroller_friendliness",
+            "viewpoints",
+            "beaches",
+            "restaurants",
+            "coffee_stops",
+            "hidden_gems"
+          ]
+        },
+        "family": {
+          "type": "object",
+          "required": [
+            "baby_changing",
+            "places_to_rest",
+            "stroller_notes",
+            "crowded_areas_to_avoid"
+          ]
+        },
+        "costs": {
+          "type": "object",
+          "required": ["parking", "food_estimate", "tickets", "ferry"]
+        },
+        "backup": {
+          "type": "object",
+          "required": ["rainy_day_alternative"]
+        },
+        "timeline": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["time", "title"],
+            "properties": {
+              "time": { "type": "string" },
+              "title": { "type": "string" },
+              "detail": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

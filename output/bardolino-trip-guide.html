@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Bardolino · Four day trips · home before dinner</title>
+  <style>
+    :root {
+      --ink: #0b3a4a;
+      --ink-soft: #3d5d68;
+      --water: #1c6b7a;
+      --foam: #f6f1e8;
+      --sand: #e4d3b4;
+      --terra: #c45c26;
+      --gold: #c4a574;
+      --card: #fffbf5;
+      --line: rgba(11, 58, 74, 0.12);
+      --shadow: 0 18px 50px rgba(11, 58, 74, 0.08);
+      --radius: 22px;
+      --serif: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    html[data-theme="dark"] {
+      --ink: #e7f0f2;
+      --ink-soft: #b7c9ce;
+      --water: #7ec8d4;
+      --foam: #0a161c;
+      --sand: #1b2c34;
+      --terra: #e08a55;
+      --gold: #c4a574;
+      --card: #13242c;
+      --line: rgba(231, 240, 242, 0.12);
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--foam);
+      line-height: 1.55;
+    }
+    a { color: var(--water); }
+    .skip {
+      position: absolute; left: -999px; top: 0;
+      background: var(--ink); color: var(--foam); padding: 0.6rem 1rem;
+    }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 80; }
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    header.top {
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--foam) 86%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem 0; }
+    .wordmark { font-family: var(--serif); font-size: 1.35rem; letter-spacing: 0.02em; color: var(--ink); text-decoration: none; }
+    .wordmark span { display: block; font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+    nav.desk { display: flex; gap: 1.1rem; align-items: center; }
+    nav.desk a { color: var(--ink); text-decoration: none; font-size: 0.92rem; }
+    .icon-btn {
+      border: 1px solid var(--line); background: var(--card); color: var(--ink);
+      border-radius: 999px; padding: 0.45rem 0.75rem; cursor: pointer; font: inherit;
+    }
+    .hamburger { display: none; }
+    .sheet {
+      display: none; position: fixed; inset: 0; background: var(--foam); z-index: 50; padding: 1.5rem;
+    }
+    .sheet.open { display: flex; flex-direction: column; gap: 1rem; }
+    .sheet a { color: var(--ink); font-size: 1.4rem; text-decoration: none; font-family: var(--serif); }
+    .hero {
+      padding: 2.4rem 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; color: var(--terra); font-weight: 650; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.08; margin: 0.35rem 0 0.8rem; }
+    .lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 40rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.1rem; }
+    .chip {
+      background: var(--sand); color: var(--ink); border-radius: 999px; padding: 0.28rem 0.7rem; font-size: 0.82rem;
+    }
+    .lake {
+      width: 100%; height: auto; border-radius: 28px; background: var(--card); box-shadow: var(--shadow);
+    }
+    .panel { margin: 1.4rem 0 2.2rem; }
+    .kicker { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.6rem; }
+    h2 { font-family: var(--serif); font-size: 1.85rem; font-weight: 500; margin: 0 0 0.8rem; }
+    .rank { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+    .rank a {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1rem; text-decoration: none; color: inherit; display: flex; gap: 0.8rem; align-items: center;
+    }
+    .ring {
+      width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+      border: 3px solid var(--gold); font-weight: 700; color: var(--ink); flex: none;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.4rem 0 1.1rem; }
+    .filters button {
+      border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px;
+      padding: 0.4rem 0.8rem; cursor: pointer; font: inherit;
+    }
+    .filters button[aria-pressed="true"] { background: var(--ink); color: var(--foam); }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    article.card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 1.2rem 1.2rem 1.1rem;
+      box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.7rem;
+    }
+    article.card.hidden { display: none; }
+    .card-top { display: flex; justify-content: space-between; gap: 0.6rem; align-items: flex-start; }
+    .score { font-variant-numeric: tabular-nums; font-weight: 750; color: var(--water); font-size: 1.5rem; }
+    .score small { display: block; font-size: 0.7rem; font-weight: 500; color: var(--ink-soft); }
+    h3 { font-family: var(--serif); font-size: 1.45rem; margin: 0; font-weight: 500; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.4rem; font-size: 0.82rem; color: var(--ink-soft); }
+    .meta b { color: var(--ink); font-weight: 650; }
+    ul.hi { margin: 0; padding-left: 1.1rem; }
+    .row-actions { display: flex; gap: 0.5rem; margin-top: auto; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem;
+      background: var(--ink); color: var(--foam); text-decoration: none; border: 0;
+      border-radius: 999px; padding: 0.55rem 0.95rem; font: inherit; cursor: pointer;
+    }
+    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .heart[aria-pressed="true"] { color: var(--terra); border-color: var(--terra); }
+    .empty { display: none; padding: 1rem; border: 1px dashed var(--line); border-radius: 16px; }
+    .empty.show { display: block; }
+    .rules { background: var(--card); border-radius: 28px; padding: 1.2rem 1.3rem; border: 1px solid var(--line); }
+    details.block { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 0.85rem 1rem; margin: 0.55rem 0; }
+    details.block summary { cursor: pointer; font-weight: 650; }
+    .chapter { padding: 1.6rem 0 2rem; border-top: 1px solid var(--line); }
+    .pills { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.4rem 0 1rem; }
+    .pill { font-size: 0.75rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.6rem; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li { display: grid; grid-template-columns: 4.6rem 1fr; gap: 0.8rem; padding: 0.55rem 0; border-left: 2px solid var(--gold); margin-left: 0.4rem; padding-left: 1rem; }
+    .timeline time { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--water); }
+    .park {
+      background: var(--sand); border-radius: 18px; padding: 1rem 1.1rem; margin: 0.8rem 0;
+    }
+    html[data-theme="dark"] .park { background: #1b333c; }
+    table.cmp { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 720px; }
+    .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+    table.cmp th, table.cmp td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    table.cmp th { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    table.cmp td:first-child, table.cmp th:first-child { position: sticky; left: 0; background: var(--card); font-weight: 650; }
+    .winner { background: color-mix(in srgb, var(--gold) 28%, transparent); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .check label { display: flex; gap: 0.55rem; align-items: flex-start; padding: 0.35rem 0; }
+    footer.foot { padding: 2rem 0 3rem; color: var(--ink-soft); font-size: 0.88rem; }
+    .emer a { color: inherit; font-weight: 700; }
+    @media (max-width: 860px) {
+      .hero, .cards, .rank, .grid-2 { grid-template-columns: 1fr; }
+      nav.desk { display: none; }
+      .hamburger { display: inline-flex; }
+    }
+    @media print {
+      header.top, .filters, .hamburger, .icon-btn, .sheet, .heart, .row-actions .ghost { display: none !important; }
+      details.block { border: 0; padding-left: 0; }
+      details.block summary { font-weight: 700; }
+      details.block > *:not(summary) { display: block !important; }
+      html, body { background: white; color: #111; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; word-break: break-all; }
+      .chapter, article.card { break-inside: avoid; }
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="wordmark" href="#top">Bardolino<span>Six days · four loops · home before dinner</span></a>
+      <nav class="desk" aria-label="Primary">
+        <a href="#trips">Trips</a>
+        <a href="#compare">Compare</a>
+        <a href="#pack">Pack</a>
+        <a href="#practical">Practical</a>
+        <button class="icon-btn" id="fav-count" type="button">♥ 0</button>
+        <button class="icon-btn" id="theme-btn" type="button">Dark</button>
+        <button class="icon-btn" id="print-btn" type="button">Print</button>
+      </nav>
+      <button class="icon-btn hamburger" id="menu-btn" type="button" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+  <div class="sheet" id="sheet" hidden>
+    <button class="icon-btn" id="close-menu" type="button">Close</button>
+    <a href="#trips">Trips</a>
+    <a href="#compare">Compare</a>
+    <a href="#pack">Pack</a>
+    <a href="#practical">Practical</a>
+    <button class="icon-btn" id="theme-btn-m" type="button">Dark</button>
+    <button class="icon-btn" id="print-btn-m" type="button">Print</button>
+  </div>
+
+  <main id="main" class="wrap">
+    <section class="hero" id="top">
+      <div>
+        <p class="eyebrow">Lake Garda · family edition</p>
+        <h1>Four day trips. Apartment every night.</h1>
+        <p class="lead">You are based in Bardolino with a car, a stroller, and a baby under six months. Every recommendation is a same-day loop: leave after breakfast, park once, walk gently, and be home before 18:00. Nothing here is a road trip.</p>
+        <div class="chips" aria-label="Family facts">
+          <span class="chip">6 days</span>
+          <span class="chip">Car every day</span>
+          <span class="chip">Stroller</span>
+          <span class="chip">Baby &lt; 6 months</span>
+          <span class="chip">Back by 18:00</span>
+          <span class="chip">Max ~2 h drive</span>
+        </div>
+      </div>
+      <svg class="lake" viewBox="0 0 480 360" role="img" aria-label="Stylised Lake Garda with a small ferry">
+        <rect width="480" height="360" fill="#d9eee9"/>
+        <path d="M0 210 C80 160 140 190 220 150 C300 110 340 130 480 90 L480 360 L0 360 Z" fill="#1c6b7a"/>
+        <path d="M0 250 C120 220 200 260 310 230 C390 208 430 220 480 200 L480 360 L0 360 Z" fill="#0b3a4a"/>
+        <ellipse cx="390" cy="72" rx="28" ry="28" fill="#f6f1e8" opacity="0.9"/>
+        <g transform="translate(160 200)">
+          <rect x="20" y="8" width="88" height="18" rx="4" fill="#f6f1e8"/>
+          <polygon points="108,17 128,17 118,8" fill="#f6f1e8"/>
+          <rect x="48" y="-10" width="8" height="22" fill="#c45c26"/>
+        </g>
+        <text x="24" y="40" fill="#0b3a4a" font-size="18" font-family="Georgia, serif">East shore · Bardolino</text>
+      </svg>
+    </section>
+
+    <section class="panel" id="rank" aria-labelledby="rank-title">
+      <p class="kicker">Trip ranking</p>
+      <h2 id="rank-title">Scored for this family, not for fame</h2>
+      <p class="lead">Weights: parking 20%, baby 20%, beauty 15%, food 15%, walking 10%, safety 10%, travel effort 10%. Sirmione lost. Venice is last on points and still in the set, because you asked for it — with a train plan that can actually get you home.</p>
+      <div class="rank">
+        <a href="#trip-sigurta-borghetto"><span class="ring">90</span><span><strong>Sigurtà &amp; Borghetto</strong><br/>Gardens + tortellini</span></a>
+        <a href="#trip-garda-ferry"><span class="ring">88</span><span><strong>East-shore ferry</strong><br/>Boat day, car stays home</span></a>
+        <a href="#trip-peschiera-lido"><span class="ring">84</span><span><strong>Peschiera</strong><br/>Fortress + lido</span></a>
+        <a href="#trip-venice-train"><span class="ring">63</span><span><strong>Venice by train</strong><br/>Mandatory, honest score</span></a>
+      </div>
+    </section>
+
+    <section class="panel" id="trips" aria-labelledby="trips-title">
+      <p class="kicker">The four loops</p>
+      <h2 id="trips-title">Bardolino → day trip → Bardolino</h2>
+      <div class="filters" role="toolbar" aria-label="Filter trips">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="beach">Beach</button>
+        <button type="button" data-filter="food">Food</button>
+        <button type="button" data-filter="easiest">Easiest</button>
+        <button type="button" data-filter="boat">Boat</button>
+        <button type="button" data-filter="city">City</button>
+      </div>
+      <p class="empty" id="filter-empty">Nothing in this filter. Reset to All — there are still only four trips.</p>
+      <div class="cards">
+        <article class="card" data-trip="sigurta-borghetto" data-tags="food easiest garden">
+          <div class="card-top">
+            <h3>Sigurtà gardens and Borghetto mills</h3>
+            <div class="score">90<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:00–16:20</b></span><span>27 km · 28 min</span><span>Easy</span><span>Parking easy</span></div>
+          <ul class="hi">
+            <li>Highest score in the pool</li>
+            <li>Stroller-native garden + panoramic train</li>
+            <li>Tortellini di Valeggio</li>
+            <li>Named, easy parking</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-sigurta-borghetto">Open trip</a>
+            <button class="btn ghost heart" data-fav="sigurta-borghetto" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="garda-ferry" data-tags="boat easiest scenery">
+          <div class="card-top">
+            <h3>East-shore ferry: Garda and Torri</h3>
+            <div class="score">88<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:40–16:10</b></span><span>1 km · walk to dock</span><span>Easy</span><span>Parking easy</span></div>
+          <ul class="hi">
+            <li>Mandatory boat day, not a Riva odyssey</li>
+            <li>Car stays in Bardolino</li>
+            <li>Torri castle courtyard</li>
+            <li>Home for the nap</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-garda-ferry">Open trip</a>
+            <button class="btn ghost heart" data-fav="garda-ferry" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="peschiera-lido" data-tags="beach easiest town">
+          <div class="card-top">
+            <h3>Peschiera fortress and lido</h3>
+            <div class="score">84<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>09:10–15:50</b></span><span>14 km · 20 min</span><span>Easy</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>Beach priority, without Sirmione traffic</li>
+            <li>Star-fort canals and gelato</li>
+            <li>Best stroller “away” day</li>
+            <li>Skip Gardaland signs</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-peschiera-lido">Open trip</a>
+            <button class="btn ghost heart" data-fav="peschiera-lido" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+        <article class="card" data-trip="venice-train" data-tags="city">
+          <div class="card-top">
+            <h3>Venice by lake-station train</h3>
+            <div class="score">63<small>/100</small></div>
+          </div>
+          <div class="meta"><span><b>07:15–17:25</b></span><span>14 km then train</span><span>Moderate</span><span>Parking moderate</span></div>
+          <ul class="hi">
+            <li>Train from Peschiera, not lagoon garages</li>
+            <li>Carrier-primary — 400 bridges</li>
+            <li>Leave Venice by 15:20</li>
+            <li>San Marco and Burano skipped on purpose</li>
+          </ul>
+          <div class="row-actions">
+            <a class="btn" href="#trip-venice-train">Open trip</a>
+            <button class="btn ghost heart" data-fav="venice-train" type="button" aria-pressed="false">♡ Save</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel rules" aria-labelledby="ops-title">
+      <h2 id="ops-title">Today’s operating rules</h2>
+      <p>Protect an afternoon nap at the apartment. The 18:00 rule is the product. Dinner is always Bardolino.</p>
+      <ul>
+        <li>Carrier is primary in Venice and on boat gangways. Stroller is primary at Sigurtà and on Peschiera walls.</li>
+        <li>Leave before 09:15 for any car trip south — SR249 clogs late morning.</li>
+        <li>Verify Trenitalia and Navigazione Laghi the night before. This guide does not invent train numbers.</li>
+        <li>Two of the six days are <em>supposed</em> to be Cisano / Bardolino beach. That is not a failed itinerary.</li>
+      </ul>
+    </section>
+
+    <section class="chapter" id="trip-sigurta-borghetto" data-trip-id="sigurta-borghetto">
+      <p class="eyebrow">Trip · score 90 · easiest food day</p>
+      <h2>Sigurtà gardens and Borghetto mills</h2>
+      <div class="pills"><span class="pill">Leave 09:00</span><span class="pill">Home 16:20</span><span class="pill">27 km</span><span class="pill">Easy</span></div>
+      <p>Selected because it won the math: parking 92, baby 90, food 92. Famous-lake lists skip inland Valeggio. You should not.</p>
+      <details class="block" open>
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:00</time><div><strong>Drive inland</strong> via Peschiera corridor. Hats, bottles, tickets.</div></li>
+          <li><time>09:35</time><div><strong>Park at Sigurtà</strong> (Rosso/Giallo lots). Stroller out.</div></li>
+          <li><time>09:45</time><div><strong>Short garden loop</strong> — shade first. Optional panoramic train if anyone is tired.</div></li>
+          <li><time>12:00</time><div><strong>Borghetto mills</strong> — 20–30 minutes, no mill-lane driving.</div></li>
+          <li><time>13:00</time><div><strong>Tortellini in Valeggio</strong> in brodo or burro e salvia.</div></li>
+          <li><time>15:40</time><div><strong>Drive back.</strong> Apartment by 16:20.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Parco Giardino Sigurtà (Rosso / Giallo). Then signed Borghetto / Valeggio lots. Do not enter mill lanes.</p>
+          <p><strong>Cost:</strong> typically €0–5. <strong>Difficulty:</strong> easy. <strong>Backup:</strong> Italmark / via Cavour lots in Valeggio.</p>
+          <p>Route: SR249 south, then inland to Valeggio / Sigurtà. Ignore Gardaland.</p>
+          <p>Maps: Parco Giardino Sigurtà, Valeggio sul Mincio — <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parco%20Giardino%20Sigurtà">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience</summary>
+        <p><strong>Walk:</strong> 45–60 minutes easy on porphyry avenues, plus a village amble. Not 10 km of garden paths.</p>
+        <p><strong>Stroller:</strong> yes in the park. Carrier for Borghetto’s last photogenic steps. The park does not rent strollers.</p>
+        <p><strong>Viewpoints:</strong> Viale delle rose toward Valeggio castle; Visconteo bridge.</p>
+        <p><strong>Beaches:</strong> none — that is tomorrow’s job, or a Bardolino rest day.</p>
+        <p><strong>Food:</strong> tortellini di Valeggio is the lunch to spend on. Park cafe is a snack only.</p>
+        <p><strong>Coffee:</strong> Valeggio bar after photos. <strong>Hidden gem:</strong> mill race light, if you still leave by 15:40.</p>
+      </details>
+      <details class="block">
+        <summary>Family</summary>
+        <p><strong>Changing:</strong> accessible toilets on the Sigurtà main circuit — change on arrival.</p>
+        <p><strong>Rest:</strong> benches, lawns, panoramic train, restaurant nap in the carrier.</p>
+        <p><strong>Avoid:</strong> tulip-season gate crush; Borghetto bridge at Saturday 13:00. Check Monday restaurant closures.</p>
+      </details>
+      <details class="block">
+        <summary>Costs</summary>
+        <p>Parking €0–5 · Food €40–70 · Tickets adult ~€18, ages 0–4 usually free (verify sigurta.it) · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Keep Valeggio lunch. Skip the wet lawn. Add Museo del Vino / Cantina Zeni back in Bardolino. Do not “save the day” with Sirmione — the ZTL does not get kinder in the rain.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-garda-ferry" data-trip-id="garda-ferry">
+      <p class="eyebrow">Trip · score 88 · mandatory boat</p>
+      <h2>East-shore ferry: Bardolino, Garda, Torri</h2>
+      <div class="pills"><span class="pill">Leave 09:40</span><span class="pill">Home 16:10</span><span class="pill">Walk to dock</span><span class="pill">Easy</span></div>
+      <p>A lake day that can be a half day. The slow boat to Riva is how families miss 18:00. You will not do that. Navigazione Laghi passenger boats; car stays in Bardolino.</p>
+      <details class="block" open>
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:20</time><div><strong>Change the baby at home.</strong> Boats are a bad nappy room.</div></li>
+          <li><time>09:40</time><div><strong>Imbarcadero Bardolino.</strong> Tickets 20 minutes early.</div></li>
+          <li><time>10:10</time><div><strong>Boat</strong> toward Garda / Torri — exact sailing from last night’s PDF.</div></li>
+          <li><time>10:40</time><div><strong>Garda pause</strong> — coffee, shade, no extra hike.</div></li>
+          <li><time>11:20</time><div><strong>Torri del Benaco</strong> — courtyard, harbor, lunch.</div></li>
+          <li><time>14:40</time><div><strong>Return boat.</strong> Apartment ~16:10.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> apartment first. If you drive 400 m, signed imbarcadero / lungolago bays.</p>
+          <p><strong>Cost:</strong> €0–8. <strong>Difficulty:</strong> easy — the easiest parking day of the holiday.</p>
+          <p><strong>Backup:</strong> Bardolino centro paid lots a few minutes’ walk. Wind can cancel boats: decide by 09:00.</p>
+          <p>Maps: Imbarcadero Bardolino — <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Imbarcadero%20Bardolino%20Navigazione%20Laghi">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience</summary>
+        <p><strong>Walk:</strong> 30–40 minutes on land. Castle interior stairs optional and skippable.</p>
+        <p><strong>Stroller:</strong> mixed. Fold for gangways; carrier during boarding and if there is swell.</p>
+        <p><strong>Viewpoints:</strong> deck, Torri castle on water, Garda promenade.</p>
+        <p><strong>Beaches:</strong> look, don’t commit. Baia delle Sirene is optional only if time and the baby agree.</p>
+        <p><strong>Food:</strong> Torri trattoria one street off the first pier if the menus are laminated. Garda is coffee, not a second lunch.</p>
+        <p><strong>Hidden gem:</strong> foot passenger Torri↔Maderno only if you are ahead of timetable. Never chase it.</p>
+      </details>
+      <details class="block">
+        <summary>Family</summary>
+        <p><strong>Changing:</strong> Bardolino cafe before boarding; Torri cafe on arrival.</p>
+        <p><strong>Rest:</strong> indoor cabin, Torri piazzetta, Garda benches.</p>
+        <p><strong>Avoid:</strong> first-and-last August boats; the noisy car deck of the Maderno traghetto.</p>
+      </details>
+      <details class="block">
+        <summary>Costs</summary>
+        <p>Parking €0–8 · Food €40–65 · Optional small castle ticket · Ferry ~€25–45 for two adults return plus Garda hop; check infant fare on navigazionelaghi.it.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains or blows</summary>
+        <p>Do not start a long cruise “because we imagined a boat.” Swap with a Bardolino indoor morning (Zeni) or the Peschiera cafe version. Light rain in Torri by car is a last resort, not a plan.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-peschiera-lido" data-trip-id="peschiera-lido">
+      <p class="eyebrow">Trip · score 84 · beach day</p>
+      <h2>Peschiera fortress and lido</h2>
+      <div class="pills"><span class="pill">Leave 09:10</span><span class="pill">Home 15:50</span><span class="pill">14 km</span><span class="pill">Easy</span></div>
+      <p>Beaches are your first priority. Peschiera is water, walls, toilets, and a named lot. It beat Lazise (too much like home) and Sirmione (parking 28/100). Do not combine this with the Venice morning.</p>
+      <details class="block" open>
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>09:10</time><div><strong>Drive SR249 south</strong> before it clogs.</div></li>
+          <li><time>09:35</time><div><strong>Parcheggio Fortezza.</strong></div></li>
+          <li><time>09:45</time><div><strong>Walls and canals</strong> — slow circuit, watch bikes.</div></li>
+          <li><time>12:15</time><div><strong>Short lunch</strong> near Porta Verona.</div></li>
+          <li><time>13:15</time><div><strong>Lido sit</strong> — feet in water, shade tent, not a lesson.</div></li>
+          <li><time>15:10</time><div><strong>Home</strong> for the nap. Gelato can wait until Bardolino at 17:30.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Parcheggio Fortezza / signed wall-side lots. Not a historic-centre door.</p>
+          <p><strong>Cost:</strong> €6–12. <strong>Difficulty:</strong> moderate at 09:30; hard after 11:30 in August.</p>
+          <p><strong>Backup:</strong> station-area overflow and walk. ZTL is not the Sirmione problem here, but still do not follow GPS through pedestrian cuts.</p>
+          <p>Maps: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Fortezza%20Peschiera%20del%20Garda">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience</summary>
+        <p><strong>Walk:</strong> 35–45 minutes plus a beach sit.</p>
+        <p><strong>Stroller:</strong> yes on the main fortress circuit. Carrier for any stepped bastion.</p>
+        <p><strong>Viewpoints:</strong> canal cuts; lake from the south-east walls.</p>
+        <p><strong>Beaches:</strong> family lidos, pebble/concrete, not fine sand. Shade beats sunbeds.</p>
+        <p><strong>Food:</strong> simple lunch, gelato as dessert. <strong>Coffee:</strong> wall cafe with water both sides.</p>
+        <p><strong>Hidden gem:</strong> quieter wall stretches away from the bus-tour pause.</p>
+      </details>
+      <details class="block">
+        <summary>Family</summary>
+        <p><strong>Changing:</strong> lido rooms in season, else a cafe WC before the sit.</p>
+        <p><strong>Rest:</strong> shade trees, umbrellas, cafe interiors. Nearest east-shore ER pointer is also here (Pederzoli) — know it, do not tour it.</p>
+        <p><strong>Avoid:</strong> harbor bus-photo corner at noon; every sign toward Gardaland.</p>
+      </details>
+      <details class="block">
+        <summary>Costs</summary>
+        <p>Parking €6–12 · Food €35–60 · Lido sunbed optional €10–20 · Ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains</summary>
+        <p>Keep Peschiera for cafes and arcades, skip the lido. Or swap the calendar day with Venice. If both are wet: Zeni museum + apartment.</p>
+      </details>
+    </section>
+
+    <section class="chapter" id="trip-venice-train" data-trip-id="venice-train">
+      <p class="eyebrow">Trip · score 63 · mandatory · hardest day</p>
+      <h2>Venice by lake-station train</h2>
+      <div class="pills"><span class="pill">Leave 07:15</span><span class="pill">Home 17:25</span><span class="pill">Train from Peschiera</span><span class="pill">Moderate</span></div>
+      <p>We compared four ways in. Driving to Tronchetto or Piazzale Roma maximizes car-seat time, garage cost, and lagoon stress. Mestre park-and-ride adds a city you do not need. Coach tours steal nap control and often return after 18:00. <strong>Winner: drive 20 minutes to Peschiera station, park, take a direct train to Venezia Santa Lucia (~1h28).</strong> You arrive in Venice, not in a garage.</p>
+      <details class="block" open>
+        <summary>Timeline</summary>
+        <ol class="timeline">
+          <li><time>07:15</time><div><strong>Leave the apartment.</strong> Carrier packed.</div></li>
+          <li><time>07:40</time><div><strong>Park Piazzale Stazione, Peschiera.</strong> Photo the row.</div></li>
+          <li><time>08:10</time><div><strong>Train</strong> — exact minute from last night’s Trenitalia check. Direct preferred.</div></li>
+          <li><time>09:40</time><div><strong>Santa Lucia.</strong> Change nappy. Carrier on. Stroller folded.</div></li>
+          <li><time>10:00</time><div><strong>Canal rest:</strong> Line 1 if the boat is calm; otherwise Lista di Spagna.</div></li>
+          <li><time>12:00</time><div><strong>Lunch off the Rialto flow.</strong></div></li>
+          <li><time>15:20</time><div><strong>Hard leave</strong> from Santa Lucia. Not 15:21.</div></li>
+          <li><time>17:25</time><div><strong>Apartment.</strong> Margin before 18:00.</div></li>
+        </ol>
+      </details>
+      <details class="block">
+        <summary>Transport and parking</summary>
+        <div class="park">
+          <p><strong>Lot:</strong> Peschiera del Garda station, Piazzale Stazione, 24/7.</p>
+          <p><strong>Cost:</strong> about €1.50/h or ~€15/day. <strong>Difficulty:</strong> moderate — arrive by 07:40.</p>
+          <p><strong>Backup:</strong> Mestre garages only if this lot is truly full (nuclear option). Historic Venice is car-free; do not follow GPS into mainland ZTL.</p>
+          <p>Directions Bardolino → Peschiera station: <a class="btn" href="https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Peschiera%20del%20Garda%20station">Open Google Maps</a></p>
+        </div>
+      </details>
+      <details class="block">
+        <summary>How we chose the route</summary>
+        <div class="table-scroll">
+          <table class="cmp">
+            <thead>
+              <tr><th>Mode</th><th>Infant</th><th>Stress</th><th>Timing</th><th>Verdict</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A. Drive Tronchetto / Piazzale Roma</td><td>Low</td><td>High — traffic, €21–45 garage, then a boat</td><td>Fragile in peaks</td><td>Rejected</td></tr>
+              <tr><td>B. Park Mestre + train</td><td>OK</td><td>Extra urban layer</td><td>Fine</td><td>Backup only</td></tr>
+              <tr class="winner"><td>C. Peschiera station + train</td><td>Best</td><td>One parking, then seats</td><td>Direct ~1h28</td><td>Winner</td></tr>
+              <tr><td>D. Organized Garda coach</td><td>Poor</td><td>No leave-early vote</td><td>Often after 18:00</td><td>Rejected</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+      <details class="block">
+        <summary>Experience</summary>
+        <p><strong>Walk:</strong> 40–55 minutes broken by sits and one optional vaporetto. Not “see Venice.”</p>
+        <p><strong>Stroller:</strong> carrier-primary. 400+ stepped bridges. Compact stroller for platforms only.</p>
+        <p><strong>Viewpoints:</strong> Grand Canal from a seat, Rialto campo at water level. You do not need the bridge climb.</p>
+        <p><strong>Beaches:</strong> none. <strong>Skip:</strong> San Marco queues, Murano, Burano, gondola as default.</p>
+        <p><strong>Food:</strong> sit-down one street off the bridge. <strong>Coffee:</strong> indoor chairs. <strong>Hidden gem:</strong> any quiet campo four minutes off Strada Nova.</p>
+      </details>
+      <details class="block">
+        <summary>Family</summary>
+        <p><strong>Changing:</strong> Santa Lucia on arrival. Do not wait for a picturesque WC.</p>
+        <p><strong>Rest:</strong> station, vaporetto seats, cafe, one shaded campo.</p>
+        <p><strong>Avoid:</strong> Piazza San Marco, Rialto bridge roadway at noon, pickpocket gravity in trophy spots.</p>
+      </details>
+      <details class="block">
+        <summary>Costs</summary>
+        <p>Parking €8–15 · Food €45–70 · Two adult returns regional roughly €44–70 (high-speed more); infant usually free on regional · Optional two vaporetto singles ~€20–25 · Lake ferry €0.</p>
+      </details>
+      <details class="block">
+        <summary>If it rains or strikes</summary>
+        <p>Rain: keep the train, shorten the loop, earlier return (leave Venice by 14:40 if miserable). Strike: do not “save it” by driving Tronchetto. Swap to Sigurtà lunch or Zeni. Verify scioperi the night before.</p>
+      </details>
+    </section>
+
+    <section class="panel" id="compare" aria-labelledby="cmp-title">
+      <p class="kicker">Side by side</p>
+      <h2 id="cmp-title">Comparison</h2>
+      <div class="table-scroll">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Sigurtà / Borghetto</th>
+              <th>Ferry</th>
+              <th>Peschiera</th>
+              <th>Venice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Score</td><td>90</td><td>88</td><td>84</td><td>63</td></tr>
+            <tr><td>Leave</td><td>09:00</td><td>09:40</td><td>09:10</td><td>07:15</td></tr>
+            <tr><td>Return</td><td>16:20</td><td>16:10</td><td>15:50</td><td>17:25</td></tr>
+            <tr><td>Drive</td><td>27 km / 28 min</td><td>Walk to dock</td><td>14 km / 20 min</td><td>14 km then train</td></tr>
+            <tr><td>Parking</td><td>Easy, named lots</td><td>Apartment</td><td>Fortezza, morning</td><td>Peschiera station</td></tr>
+            <tr><td>Stroller</td><td>Yes</td><td>Fold + carrier</td><td>Yes on walls</td><td>Carrier-primary</td></tr>
+            <tr><td>Beach</td><td>No</td><td>Optional look</td><td>Yes, lido</td><td>No</td></tr>
+            <tr><td>Food</td><td>Tortellini</td><td>Torri lake fish</td><td>Gelato + simple lunch</td><td>Off-bridge trattoria</td></tr>
+            <tr><td>Difficulty</td><td>Easy</td><td>Easy</td><td>Easy</td><td>Moderate</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" id="pack" aria-labelledby="pack-title">
+      <p class="kicker">Lists that persist on this device</p>
+      <h2 id="pack-title">Packing and baby</h2>
+      <p>Checks save in this browser. AirDrop the HTML file to the phone before you lose wifi.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Packing</h3>
+          <p id="pack-progress">0 packed</p>
+          <div class="check" data-list="pack">
+            <label><input type="checkbox" data-k="hats"/> Sun hats + light layers</label>
+            <label><input type="checkbox" data-k="water"/> Two water bottles + a thermos</label>
+            <label><input type="checkbox" data-k="cash"/> Small cash for lots and boats</label>
+            <label><input type="checkbox" data-k="power"/> Phone + Trenitalia / maps offline area</label>
+            <label><input type="checkbox" data-k="shoes"/> Flat shoes (Venice stones, boat decks)</label>
+            <label><input type="checkbox" data-k="print"/> This HTML file on both phones</label>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Baby</h3>
+          <p id="baby-progress">0 packed</p>
+          <div class="check" data-list="baby">
+            <label><input type="checkbox" data-k="carrier"/> Soft carrier (non-negotiable for Venice)</label>
+            <label><input type="checkbox" data-k="stroller"/> Compact stroller + rain cover</label>
+            <label><input type="checkbox" data-k="spf"/> Shade / muslin / infant-appropriate sun plan</label>
+            <label><input type="checkbox" data-k="nappies"/> Nappies, spare outfit, plastic bags</label>
+            <label><input type="checkbox" data-k="feed"/> Feeds as you actually use them, ice pack if needed</label>
+            <label><input type="checkbox" data-k="white"/> White noise on the phone for the train</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="practical" aria-labelledby="prac-title">
+      <p class="kicker">Use this instead of opening twelve tabs</p>
+      <h2 id="prac-title">Practical</h2>
+      <details class="block" open>
+        <summary>Weather</summary>
+        <p>Summer Garda is hot, then a short thunderstorm. Boats and exposed walls are the days to watch wind. If the lake is angry in the morning, cancel the ferry — do not “see how it feels at Malcesine.” Venice in rain is still the train plan. Sigurtà is outdoor; lunch in Valeggio still works.</p>
+      </details>
+      <details class="block">
+        <summary>Etiquette</summary>
+        <p>Buongiorno before you order. Shade in restaurants is a kindness — take it. Do not picnic on Sigurtà flowerbeds. On boats, let people off first; keep the gangway clear. Bardolino is a living town after 18:00: keep voices down on residential streets when the baby is finally asleep.</p>
+      </details>
+      <details class="block">
+        <summary>Tourist traps and things to avoid</summary>
+        <ul>
+          <li>Sirmione at 11:00 in high season — parking death + ZTL cameras.</li>
+          <li>Gardaland with a six-month-old.</li>
+          <li>Photo menus on Bardolino and Lazise piers; walk one street inland.</li>
+          <li>Monte Baldo cable car queues.</li>
+          <li>Chasing sunset in another town. You live on the lake.</li>
+          <li>Venice: San Marco with a stroller, Burano as a “quick extra.”</li>
+        </ul>
+      </details>
+      <details class="block">
+        <summary>Rainy-day plan</summary>
+        <ol>
+          <li>Museo del Vino / Cantina Zeni, Bardolino — short, indoor, local.</li>
+          <li>Valeggio lunch even if Sigurtà is closed by weather.</li>
+          <li>Peschiera cafes and fortress under an arcade.</li>
+          <li>Venice train still wins versus lagoon traffic.</li>
+          <li>Nuclear option: Verona cobbles, carrier only, four hours, home before 18:00. Not a fair-weather choice.</li>
+        </ol>
+      </details>
+      <details class="block emer">
+        <summary>Emergency</summary>
+        <p>Italy single emergency number <a href="tel:112">112</a>. Ambulance <a href="tel:118">118</a>. Police 113. Fire 115. Roadside ACI 803.116.</p>
+        <p>Bardolino seasonal tourist medical studio: Via Croce 35, typically morning hours in season, tel <a href="tel:+390455117746">+39 045 511 7746</a>. Confirm current dates at the comune. Farmacie: green cross; after hours the door lists the farmacia di turno.</p>
+        <p>East-shore hospital ER pointer: Ospedale Pederzoli, Via Monte Baldo 24, Peschiera del Garda. Tourist office: Piazzale Aldo Moro 5, Bardolino, tel +39 045 721 0078.</p>
+      </details>
+      <details class="block">
+        <summary>Suggested six-day shape</summary>
+        <ol>
+          <li>Day 1 — Bardolino / Cisano. Unpack. Learn the lungolago.</li>
+          <li>Day 2 — Peschiera fortress and lido.</li>
+          <li>Day 3 — Sigurtà and Borghetto.</li>
+          <li>Day 4 — Rest. Laundry. Olive / wine museum if restless.</li>
+          <li>Day 5 — Venice (weekday if you can choose).</li>
+          <li>Day 6 — Ferry if the lake is kind; swap with day 4 if the forecast was backwards.</li>
+        </ol>
+      </details>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="wrap">
+      <p>Offline by design: copy this file to the phone. Maps buttons need data; every lot name is printed so you can still drive there. Train and ferry times change — check Trenitalia and navigazionelaghi.it the night before. This is not affiliated with those operators. Scores are for one family in one apartment in Bardolino, not a universal ranking of Italy.</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var storeFav = "bardolino-favorites";
+      var storeList = "bardolino-checklist";
+      var storeTheme = "bardolino-theme";
+
+      function read(key, fallback) {
+        try {
+          var raw = localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : fallback;
+        } catch (e) { return fallback; }
+      }
+      function write(key, val) {
+        try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
+      }
+
+      function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        var label = theme === "dark" ? "Light" : "Dark";
+        ["theme-btn", "theme-btn-m"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.textContent = label;
+        });
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(storeTheme); } catch (e) {}
+      if (saved === "dark" || saved === "light") applyTheme(saved);
+      else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) applyTheme("dark");
+
+      function toggleTheme() {
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(next);
+        try { localStorage.setItem(storeTheme, next); } catch (e) {}
+      }
+      document.getElementById("theme-btn").addEventListener("click", toggleTheme);
+      document.getElementById("theme-btn-m").addEventListener("click", toggleTheme);
+      document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+      document.getElementById("print-btn-m").addEventListener("click", function () { window.print(); });
+
+      var sheet = document.getElementById("sheet");
+      var menuBtn = document.getElementById("menu-btn");
+      function openMenu(open) {
+        sheet.hidden = !open;
+        sheet.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      menuBtn.addEventListener("click", function () { openMenu(true); });
+      document.getElementById("close-menu").addEventListener("click", function () { openMenu(false); });
+      sheet.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { openMenu(false); });
+      });
+
+      var favs = read(storeFav, []);
+      function paintFavs() {
+        document.querySelectorAll("[data-fav]").forEach(function (btn) {
+          var on = favs.indexOf(btn.getAttribute("data-fav")) !== -1;
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
+          btn.textContent = on ? "♥ Saved" : "♡ Save";
+        });
+        document.getElementById("fav-count").textContent = "♥ " + favs.length;
+      }
+      paintFavs();
+      document.querySelectorAll("[data-fav]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var id = btn.getAttribute("data-fav");
+          var i = favs.indexOf(id);
+          if (i === -1) favs.push(id); else favs.splice(i, 1);
+          write(storeFav, favs);
+          paintFavs();
+        });
+      });
+
+      var cards = document.querySelectorAll("article.card[data-tags]");
+      var empty = document.getElementById("filter-empty");
+      document.querySelectorAll(".filters button").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".filters button").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          btn.setAttribute("aria-pressed", "true");
+          var f = btn.getAttribute("data-filter");
+          var shown = 0;
+          cards.forEach(function (card) {
+            var tags = card.getAttribute("data-tags") || "";
+            var ok = f === "all" || tags.indexOf(f) !== -1;
+            card.classList.toggle("hidden", !ok);
+            if (ok) shown += 1;
+          });
+          empty.classList.toggle("show", shown === 0);
+        });
+      });
+
+      var checks = read(storeList, {});
+      function paintLists() {
+        document.querySelectorAll(".check input").forEach(function (input) {
+          input.checked = !!checks[input.getAttribute("data-k")];
+        });
+        ["pack", "baby"].forEach(function (list) {
+          var box = document.querySelector('.check[data-list="' + list + '"]');
+          if (!box) return;
+          var all = box.querySelectorAll("input");
+          var n = 0;
+          all.forEach(function (i) { if (i.checked) n += 1; });
+          var el = document.getElementById(list === "pack" ? "pack-progress" : "baby-progress");
+          if (el) el.textContent = n + " / " + all.length + " packed";
+        });
+      }
+      paintLists();
+      document.querySelectorAll(".check input").forEach(function (input) {
+        input.addEventListener("change", function () {
+          checks[input.getAttribute("data-k")] = input.checked;
+          write(storeList, checks);
+          paintLists();
+        });
+      });
+
+      var openedForPrint = [];
+      window.addEventListener("beforeprint", function () {
+        openedForPrint = [];
+        document.querySelectorAll("details.block").forEach(function (d) {
+          if (!d.open) {
+            d.open = true;
+            openedForPrint.push(d);
+          }
+        });
+      });
+      window.addEventListener("afterprint", function () {
+        openedForPrint.forEach(function (d) { d.open = false; });
+        openedForPrint = [];
+      });
+    })();
+  </script>
+</body>
+</html>
