@@ -11,10 +11,9 @@
     "trips": {
       "type": "array",
       "minItems": 4,
-      "maxItems": 4,
       "items": { "$ref": "#/$defs/trip" }
     },
-    "ranking_overview": { "type": "array", "minItems": 4, "maxItems": 4 },
+    "ranking_overview": { "type": "array", "minItems": 4 },
     "suggested_sequence": { "type": "array" },
     "rejected": { "type": "array" },
     "base_days": { "type": "array" },

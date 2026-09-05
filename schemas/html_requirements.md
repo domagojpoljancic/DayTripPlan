@@ -33,20 +33,21 @@ output/bardolino-trip-guide.html
 
 - Hero (place, stay length, promise: home before 18:00)
 - Family facts (baby, stroller, car, apartment)
-- Overview of **four** trips
-- Trip ranking by score
-- Filter chips
+- Overview of the **trip menu** (about 18–22 same-day loops; the family picks 5–6 across a 6-day stay)
+- Filter + sort toolbar
+- Score tooltips / popovers with the seven-component breakdown
 
 ## Each trip card must show without expanding
 
 - Name
+- 1–2 sentence description under the headline (what the day feels like)
 - Score /100
 - Duration (leave–return)
 - Distance
 - Difficulty
-- 3–5 highlights
 - Parking difficulty
 - Favorite toggle
+- Do **not** hide the description. Do **not** dump 4 bullets on the card.
 
 ## Each trip detail must include
 
@@ -100,4 +101,4 @@ Fail if the HTML contains:
 - `fonts.googleapis`
 - `tailwindcss`
 - `react`
-- more than four `data-trip-id` (or equivalent) trip records
+- a trip menu smaller than 4 records (the live product is a browseable menu, not a locked four)

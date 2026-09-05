@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T08:30:00Z",
+  "generated_at": "2026-09-05T10:00:00Z",
   "weights": {
     "parking": 0.2,
     "baby": 0.2,
@@ -10,198 +10,773 @@
     "travel_effort": 0.1
   },
   "formula": "round(parking*0.20 + baby*0.20 + beauty*0.15 + food*0.15 + walking*0.10 + safety*0.10 + travel_effort*0.10)",
+  "formula_note": "Parking and baby still dominate. City sightseeing is not an extra weight. Higher travel_effort means easier travel. Recalculated for the 22-trip menu plus omitted Malcesine and Riva.",
   "destinations": [
     {
       "id": "sigurta-borghetto",
-      "name": "Parco Giardino Sigurtà and Borghetto sul Mincio",
+      "name": "Sigurtà gardens and Borghetto mills",
       "category": "garden",
-      "scores": { "parking": 92, "baby": 90, "beauty": 88, "food": 92, "walking": 90, "safety": 95, "travel_effort": 85, "total": 90 },
-      "explanation": "Parking is named, close, and usually free at the garden. The park was built for slow walking: shade, toilets, lawns, a panoramic train if anyone is tired. Borghetto is a 20-minute postcard, not a hike. Tortellini di Valeggio is the best lunch of the week. Travel is ~28 minutes inland, away from SR249 harbor jams. Beauty is river-and-garden rather than famous-castle, which is the point.",
-      "pros": ["Easiest parking", "Stroller-native paths", "Ages 0–4 typically free at Sigurtà", "Destination-quality food", "Low crowds vs Sirmione"],
-      "cons": ["No beach", "Park is outdoor (rain hurts)", "Monday restaurant closures possible"],
-      "why_suitable": "This family gets beauty, food, and baby logistics without fighting a ZTL.",
-      "why_not_suitable": "If they refuse to leave the lake shoreline even for three hours — still go; it is the highest score.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "scores": {
+        "parking": 92,
+        "baby": 90,
+        "beauty": 88,
+        "food": 92,
+        "walking": 90,
+        "safety": 95,
+        "travel_effort": 85,
+        "total": 90
+      },
+      "explanation": "Named lots, shade, toilets, and a panoramic train if anyone folds — parking and baby both near the top of the scale. Beauty is river-and-garden rather than a famous castle, which is the point of the ranking.",
+      "pros": [
+        "A shaded garden built for slow walking, then a mill-race postcard, then the tortellini this family will talk about at dinner. Inland, unhurried, home for the nap."
+      ],
+      "cons": [
+        "The full garden circuit, golf-cart FOMO, and driving into mill lanes for a closer photo."
+      ],
+      "why_suitable": "Famous-lake lists skip inland Valeggio. You should not. This is the highest-scoring day in the menu: easy parking, a stroller-native garden, and a lunch with a name. You are not here to collect a castle queue. You are here because a six-month-old and a good plate of tortellini can share the same morning.",
+      "why_not_suitable": "Keep Valeggio lunch — that is the food score. Skip wet lawns. Add Museo del Vino Zeni back in Bardolino after. Do not ‘save the day’ with Sirmione; the ZTL does not get kinder in rain.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
-      "id": "lake-garda-ferry",
-      "name": "Lake Garda ferry loop (Bardolino–Garda–Torri)",
+      "id": "bardolino-wine-oil",
+      "name": "Bardolino wine and olive oil morning",
+      "category": "base-day",
+      "scores": {
+        "parking": 90,
+        "baby": 93,
+        "beauty": 70,
+        "food": 88,
+        "walking": 95,
+        "safety": 95,
+        "travel_effort": 98,
+        "total": 89
+      },
+      "explanation": "Parking is the apartment or a named cantina lot; baby score is near-max because you can go home between stops. Beauty is local hillside, not a postcard castle — honest, and still a better morning than a forced city.",
+      "pros": [
+        "The rest-day product: a cantina museum, an olive mill, lunch inland of the pier, and the apartment for the nap. No trophy town. No SR249 project."
+      ],
+      "cons": [
+        "A ‘since we’re up, let’s add Lazise’ add-on. That turns a rest day into a trip."
+      ],
+      "why_suitable": "Six days is too many away days. This is how a Garda specialist sells a rest morning without calling it a wasted day: Zeni’s wine museum, the olive strip toward Cisano, a proper lunch one street inland, and a nap in a real cot. You still live on the lake at 17:30.",
+      "why_not_suitable": "This is already the rain-friendly rest day. Stay inside Zeni, skip the olive walk, go home. Do not invent a Verona dash because you feel idle.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": true
+      }
+    },
+    {
+      "id": "garda-ferry",
+      "name": "East-shore ferry: Garda and Torri",
       "category": "ferry-loop",
-      "scores": { "parking": 95, "baby": 80, "beauty": 92, "food": 82, "walking": 85, "safety": 90, "travel_effort": 95, "total": 88 },
-      "explanation": "Car stays in Bardolino (parking 95, effort 95). The lake is the scenery. Baby score is 80 not 95 because boarding gaps, sun, and possible swell — solved with a carrier and a short timetable, not a Riva odyssey. Walking is harbor-scale. Food is good if you step off the first pier menu.",
-      "pros": ["No destination parking", "True lake day", "Can be a half day", "Torri castle courtyard is compact"],
-      "cons": ["Wind cancellations", "Boats are not stroller-native", "Limited changing on board"],
-      "why_suitable": "Mandatory water experience that respects the 18:00 rule and an infant nap.",
-      "why_not_suitable": "Storm days — use the land backup.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": true, "base_day": false }
+      "scores": {
+        "parking": 95,
+        "baby": 80,
+        "beauty": 92,
+        "food": 82,
+        "walking": 85,
+        "safety": 90,
+        "travel_effort": 95,
+        "total": 88
+      },
+      "explanation": "Parking is almost a perfect score because the car stays home. Baby is 80, not 95: gangways, sun, and possible swell are real, and a carrier plus a short timetable is the fix — not a longer cruise.",
+      "pros": [
+        "The lake from the water, car at the apartment, Torri’s courtyard as the cultural bite. A half-to-three-quarter day — not a slow boat to Riva."
+      ],
+      "cons": [
+        "Riva, Malcesine, the Maderno car traghetto ‘for fun’, and a Baia delle Sirene detour unless the baby is angelic and the timetable agrees."
+      ],
+      "why_suitable": "You asked for a Garda boat day. The specialist version is Bardolino → Garda → Torri on Navigazione Laghi passenger boats, then home. The slow boat to Riva is how families miss 18:00. You will not do that. Wind can cancel; that is a land day, not a stubbornness test.",
+      "why_not_suitable": "If boats cancel or the deck is a wind tunnel: do not start a long cruise because you imagined a boat. Swap to Zeni, Peschiera cafes, or Torri by car in light rain only.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": true,
+        "base_day": false
+      }
     },
     {
-      "id": "peschiera",
-      "name": "Peschiera del Garda",
+      "id": "cavaion-wine",
+      "name": "Cavaion and the Bardolino Classico road",
+      "category": "wine",
+      "scores": {
+        "parking": 88,
+        "baby": 88,
+        "beauty": 78,
+        "food": 90,
+        "walking": 90,
+        "safety": 92,
+        "travel_effort": 92,
+        "total": 88
+      },
+      "explanation": "Cantina visitor lots are the parking story — short, signed, usually empty compared with harbour towns. Baby score is high because this is indoor, air-conditioned, and close enough to abort. Food is the second priority after beaches, and this is how you honour it without a city.",
+      "pros": [
+        "Fifteen minutes inland to visitor-ready cantinas, shade, and a tasting you can skip if you are driving. The baby sleeps in the carrier while you look at barrels."
+      ],
+      "cons": [
+        "A three-cantina crawl, San Zeno viewpoint, and ‘we’re halfway to Valpolicella so let’s keep going’."
+      ],
+      "why_suitable": "The Classico hills behind Bardolino are a morning, not a wine-tour odyssey. Cavaion Veronese sits on SP31 with estates that expect cars. You park at a named cantina, you do one visit, you eat, you come home. Two estates is greed with a newborn.",
+      "why_not_suitable": "Cellars love rain. Keep the booking, skip any terrace, go home after lunch. Strong rest-day swap for Sigurtà.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "cisano-base",
+      "name": "Cisano and Bardolino beaches",
+      "category": "base-day",
+      "scores": {
+        "parking": 80,
+        "baby": 92,
+        "beauty": 74,
+        "food": 80,
+        "walking": 95,
+        "safety": 95,
+        "travel_effort": 98,
+        "total": 86
+      },
+      "explanation": "Baby and walking nearly max out because the cot is ten minutes away. Beauty is honest east-shore olive, not Punta. Effort is almost perfect: this is not a trip, and that is why it scores like a gift.",
+      "pros": [
+        "Home shore, pebble lidos, shade, and gelato after the nap. Two of the six days belong here on purpose — beaches are the first priority, and you already live on the right bank."
+      ],
+      "cons": [
+        "Turning this into ‘we should have gone to Sirmione’ guilt. Also skip water-park signs."
+      ],
+      "why_suitable": "Beaches are priority one. The apartment is on the east shore. A Garda specialist does not send you to Sirmione for a swim you can take at Cisano before lunch. Use two of six days here so the away days do not wreck the baby.",
+      "why_not_suitable": "Zeni wine museum, farmacia restock, early dinner. Do not invent a city dash because you feel idle.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": true
+      }
+    },
+    {
+      "id": "castellaro-lagusello",
+      "name": "Castellaro Lagusello",
       "category": "town",
-      "scores": { "parking": 82, "baby": 85, "beauty": 78, "food": 78, "walking": 88, "safety": 88, "travel_effort": 92, "total": 84 },
-      "explanation": "Beaches are the family's #1 priority and this is the easiest proper swim-and-stroll town that is still a day trip. Fortress walls are flat enough. Parking is not Sirmione. 20 minutes door to walls. Beauty is military-picturesque rather than dreamy, which is why it is 78 not 95 — honesty, not a penalty.",
-      "pros": ["Lido + fortress", "Stroller circuit", "Gelato infrastructure", "Near ER hospital pointer"],
-      "cons": ["Can feel busy", "Not 'secret'", "Overlap with the Venice parking town — different day, different use"],
-      "why_suitable": "Converts 'we want a beach' into a loop with shade, toilets, and a named lot.",
-      "why_not_suitable": "Do not combine with the Venice train morning.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "scores": {
+        "parking": 88,
+        "baby": 85,
+        "beauty": 87,
+        "food": 78,
+        "walking": 85,
+        "safety": 92,
+        "travel_effort": 80,
+        "total": 85
+      },
+      "explanation": "A village car park with a short walk beats every harbour scramble. Baby is high because the loop is small and the streets empty out. Food is a notch below Valeggio — one trattoria, not a destination cuisine — and the score says so.",
+      "pros": [
+        "A tiny walled village on its own lagoon — quieter than Borghetto’s selfie hour, with one lot and one slow loop. Do this or Sigurtà, not both in the same breathless weekend."
+      ],
+      "cons": [
+        "Combining with Sigurtà/Borghetto the same day. Combining with Mantua ‘since we’re south’."
+      ],
+      "why_suitable": "Castellaro is Borghetto’s shy cousin: a castle, a lagoon, almost no coach parking. It is not a Sigurtà duplicate. It is the morning you pick when you want walls and water without mill-lane chaos. If you already did Borghetto this week, skip this — same inland direction, diminishing returns.",
+      "why_not_suitable": "A wet cobble village with one bar is a thin morning. Swap to Valeggio lunch + Zeni, or keep Cavaion’s cellar.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "peschiera-lido",
+      "name": "Peschiera fortress and lido",
+      "category": "town",
+      "scores": {
+        "parking": 82,
+        "baby": 85,
+        "beauty": 78,
+        "food": 78,
+        "walking": 88,
+        "safety": 88,
+        "travel_effort": 92,
+        "total": 84
+      },
+      "explanation": "Beaches are priority one; this is the easiest proper swim-and-stroll that still feels like going somewhere. Beauty is military-picturesque, scored 78 on purpose. Parking is not Sirmione, and that 20% weight is why this beats the famous castle.",
+      "pros": [
+        "The rare Garda town that gives you a swim, shade, toilets, gelato, and a named lot that is not a peninsula trap. Fortress walls, then feet in the water, then home for the nap."
+      ],
+      "cons": [
+        "Gardaland, a second village, and the harbour bus-photo corner at noon."
+      ],
+      "why_suitable": "You live in a harbour town already. Peschiera is the away-day that still honours the beach brief: star-fort canals, a lido, gelato, and Parcheggio Fortezza. It beat Lazise because it feels like a destination. It beat Sirmione because you will actually find a space. Do not combine it with the Venice morning.",
+      "why_not_suitable": "Keep Peschiera for cafes and arcades, skip the lido. Or swap the calendar day with Venice if the forecast is a single-day washout. If both are wet: Zeni + apartment.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "soave",
+      "name": "Soave castle town",
+      "category": "town",
+      "scores": {
+        "parking": 85,
+        "baby": 82,
+        "beauty": 84,
+        "food": 86,
+        "walking": 85,
+        "safety": 90,
+        "travel_effort": 80,
+        "total": 84
+      },
+      "explanation": "Parking outside the walls is the whole Soave trick, and it works — 85 is earned. Baby is high for a castle town because the centro is compact and mostly flat. Effort 80 is the A4/local 45 minutes, not a logistics drama.",
+      "pros": [
+        "A real castle town with wine in the streets, parking outside the walls, and a 45-minute drive that still gets you home by tea. Easy, readable, baby-tolerant if you skip the keep."
+      ],
+      "cons": [
+        "The keep with a stroller, a second town (Verona) on the way home, and cellar-hopping beyond one tasting."
+      ],
+      "why_suitable": "Soave is what people think Sirmione will feel like: a castle, a wall, wine, and a piazza — except you can park. It is east of Verona, about 45 minutes, and it is a town you can read in two hours. Skip the steep keep with the stroller; the streets are the visit.",
+      "why_not_suitable": "Porticoes are limited; cafes still work. Soave in rain is better than Sigurtà in rain. Home by 16:00 still stands.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "garda-town",
+      "name": "Garda town",
+      "category": "town",
+      "scores": {
+        "parking": 70,
+        "baby": 82,
+        "beauty": 86,
+        "food": 80,
+        "walking": 88,
+        "safety": 90,
+        "travel_effort": 94,
+        "total": 83
+      },
+      "explanation": "Parking is 70 — town lots, not the Punta bay tax, and not apartment-easy either. Baby and walking are high because the lungolago is flat. Effort is excellent: ten minutes north. Distinct from the ferry’s Garda pause and from Punta’s swim.",
+      "pros": [
+        "The east-shore harbour that is not Punta and not Bardolino: a proper promenade, shops, a sit-down lunch, and town lots that usually exist if you arrive in the morning."
+      ],
+      "cons": [
+        "Punta San Vigilio, Torri, Malcesine, and a second lunch."
+      ],
+      "why_suitable": "Garda is a real town, not a bay. Palaces on the water, a piazza, gelato that is not Bardolino’s, and a lungolago you can do with a stroller. Do not bolt on Baia delle Sirene; that is a different product with a different parking problem. Do not also do this the same week as the ferry if you already paused here on the boat — unless you loved it.",
+      "why_not_suitable": "Garda cafes work. A short wet promenade is optional. Home is ten minutes — use that.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "valpolicella-sangiorgio",
+      "name": "San Giorgio di Valpolicella",
+      "category": "town",
+      "scores": {
+        "parking": 80,
+        "baby": 80,
+        "beauty": 86,
+        "food": 88,
+        "walking": 82,
+        "safety": 90,
+        "travel_effort": 78,
+        "total": 83
+      },
+      "explanation": "Parking at the village is usually a signed lot, not a miracle. Baby 80 because there is a gentle slope and one square — fine, not Cisano. Food is the reason to come. Effort 78 is forty minutes via Affi, honest for a village this small.",
+      "pros": [
+        "A short village terrace over the vines, one church square, a serious lunch. The view is from the piazza — skip the hike, skip the full-valley crawl."
+      ],
+      "cons": [
+        "Ridge paths, a second village, Verona on the return, and cellar number two."
+      ],
+      "why_suitable": "San Giorgio Ingannapoltron is a name you will not see on a default Garda postcard, which is why a specialist sells it: a Romanesque church, a terrace over Valpolicella, lunch with a point. You do not walk the ridges. You park, you sit, you eat, you leave. If the baby hates the slope, the day is still a lunch with a view.",
+      "why_not_suitable": "A village square in rain is short. Keep lunch if you have a reservation; otherwise swap to Cavaion cellars or Zeni.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
       "id": "lazise",
-      "name": "Lazise",
+      "name": "Lazise harbor and walls",
       "category": "town",
-      "scores": { "parking": 72, "baby": 80, "beauty": 80, "food": 80, "walking": 90, "safety": 90, "travel_effort": 96, "total": 82 },
-      "explanation": "A lovely harbor 12 minutes south. High effort score because it is easy. Slightly lower parking than Peschiera's fortress lots. The hidden cost is sameness: it is Bardolino's cousin. Ranked below Peschiera because the family already lives in an east-shore harbor town and asked for beaches + a sense of going somewhere.",
-      "pros": ["Very close", "Walls and harbor", "Easy walking"],
-      "cons": ["Feels like a longer Bardolino", "Harbor menus", "Weaker beach story than Peschiera"],
-      "why_suitable": "Emergency easy day if Peschiera is event-packed.",
-      "why_not_suitable": "As a headline trip it under-delivers distinctness.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "scores": {
+        "parking": 72,
+        "baby": 80,
+        "beauty": 80,
+        "food": 80,
+        "walking": 90,
+        "safety": 90,
+        "travel_effort": 96,
+        "total": 82
+      },
+      "explanation": "Effort is almost perfect — it is next door. Parking is a notch below Peschiera’s fortress lots, which is why it sits under Peschiera. Distinctness is the hidden cost: it is your harbour with different walls. Still a legitimate six-day menu item.",
+      "pros": [
+        "Twelve minutes south: Bardolino’s prettier cousin, a compact old town, plane-tree shade, and lunch one street inland. The easy ‘away’ gelato when you do not want a project."
+      ],
+      "cons": [
+        "Saturday 13:00 harbour selfie crush, and stacking with Peschiera the same day."
+      ],
+      "why_suitable": "Lazise lost the original ‘headline four’ because it feels like home. On a six-day menu that is exactly why it belongs: a walls-and-harbour loop you can finish before a cranky noon. Use it when Peschiera is event-packed or you want away without a briefing.",
+      "why_not_suitable": "Cafes under the walls, then home. Or swap to Zeni. Lazise is not worth a long wet wander.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
-      "id": "torri",
-      "name": "Torri del Benaco (by car)",
+      "id": "torri-car",
+      "name": "Torri del Benaco by car",
       "category": "town",
-      "scores": { "parking": 75, "baby": 78, "beauty": 88, "food": 80, "walking": 82, "safety": 90, "travel_effort": 78, "total": 81 },
-      "explanation": "Strong town, weaker than taking the ferry there. Driving north on SR249 spends parking luck you do not need to spend. Scored for completeness; the ferry composite already captures the right version of Torri.",
-      "pros": ["Castle", "Calmer than Malcesine"],
-      "cons": ["Duplicates the ferry day if both selected", "Harbor parking tighter than Peschiera"],
-      "why_suitable": "If boats are cancelled, drive this instead of inventing Malcesine.",
-      "why_not_suitable": "Do not pick as trip 3/4 if the ferry day already includes Torri.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "scores": {
+        "parking": 75,
+        "baby": 78,
+        "beauty": 88,
+        "food": 80,
+        "walking": 82,
+        "safety": 90,
+        "travel_effort": 78,
+        "total": 81
+      },
+      "explanation": "Beauty is high; parking is tighter than Peschiera, correctly. Effort 78 because SR249 north spends luck you do not need if the boat is running. Ranked as the honest ferry backup, not a duplicate headline.",
+      "pros": [
+        "The land version of the boat day: castle courtyard, calmer than Malcesine, a harbour lunch. Use it when wind cancels Navigazione Laghi — not as a second Torri in the same week."
+      ],
+      "cons": [
+        "Malcesine ‘since we’re already north’. Cable cars. A second castle."
+      ],
+      "why_suitable": "Torri is the right north-shore town for this family: castle on the water, a piazzetta, no cable car gravity. Driving it is plan B when boats cancel. If you already did the ferry loop, skip this unless the baby adopted the piazza.",
+      "why_not_suitable": "One coffee in Torri, then home, or swap to Valeggio lunch. Do not continue to Malcesine in the wet.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "mantova",
+      "name": "Mantua historic centre",
+      "category": "city",
+      "scores": {
+        "parking": 68,
+        "baby": 72,
+        "beauty": 88,
+        "food": 90,
+        "walking": 70,
+        "safety": 85,
+        "travel_effort": 72,
+        "total": 77
+      },
+      "explanation": "Food and beauty carry the city brief. Walking 70 is honest cobbles, not a hike. Parking 68 is a centro garage with a ZTL you must obey. Effort 72 is a 50-minute drive — easier than Padua or Brescia, harder than Soave.",
+      "pros": [
+        "The calmest city sightseeing day from Bardolino: compact piazzas, a ducal skyline, pumpkin tortelli, and a walk you can actually finish. Skip palace interiors with a newborn."
+      ],
+      "cons": [
+        "Palazzo Ducale ticket queues, Palazzo Te (extra walk), and adding Borghetto on the way home."
+      ],
+      "why_suitable": "Mantua is the city a Garda specialist actually recommends with a baby: smaller than Verona, calmer than Venice, lunch that rivals Valeggio, and a centro you can loop without a museum ticket. Piazza Sordello, Piazza delle Erbe, a glance at the lakes, then sit. You are sightseeing, not collecting palaces.",
+      "why_not_suitable": "This city still works — more indoor chairs than a village harbour. Arcades help. Skip any courtyard queue. Home by 16:30.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "desenzano",
+      "name": "Desenzano promenade",
+      "category": "town",
+      "scores": {
+        "parking": 70,
+        "baby": 75,
+        "beauty": 72,
+        "food": 80,
+        "walking": 80,
+        "safety": 82,
+        "travel_effort": 75,
+        "total": 76
+      },
+      "explanation": "Competent larger town. Parking is a harbour garage, not a gift. Beauty 72 is honest — it is a working town, not a dream. Effort 75 is the drive around the lake foot. It loses to Peschiera on identity and to Sigurtà on baby/parking.",
+      "pros": [
+        "A larger south-shore town: cafes, a lido, services, and more indoor chairs than the villages. The fair-weather alternative to Sirmione without the ZTL panic."
+      ],
+      "cons": [
+        "Sirmione add-on, castle keep, stacking with Peschiera."
+      ],
+      "why_suitable": "Desenzano is useful: ATMs that work, a promenade, lidos, a castle silhouette you do not have to climb, and cafes that take rain seriously. Use it when you want a town with services, or when Sirmione is a story you refuse to audition. Do not stack with Peschiera the same day.",
+      "why_not_suitable": "Desenzano actually works in rain — cafes, porticoes. Stronger indoor day than Sigurtà. Still home before 18:00.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "salo",
+      "name": "Salò lungolago",
+      "category": "town",
+      "scores": {
+        "parking": 65,
+        "baby": 72,
+        "beauty": 85,
+        "food": 85,
+        "walking": 78,
+        "safety": 88,
+        "travel_effort": 62,
+        "total": 76
+      },
+      "explanation": "Food and promenade are excellent. Travel effort 62 is the tax: you drive around the south, not the fun car ferry. That 10% weight is doing its job. Only pick this if the week still has a long-energy day left.",
+      "pros": [
+        "West-shore elegance and a better lunch, bought with a longer drive. Stroller-friendly once parked. Skip the car traghetto ‘to make it interesting’ with a six-month-old."
+      ],
+      "cons": [
+        "Vittoriale, Isola del Garda, Maderno lidos unless you are absurdly ahead — usually skip."
+      ],
+      "why_suitable": "Salò is the elegant west shore: a long lungolago, Liberty facades, lunch that outclasses east-shore tourist strips. A specialist sells it as an optional, not a default. Peak can be 80 minutes; leave early. Do not put the car on the Maderno–Torri traghetto with a newborn who might need the apartment.",
+      "why_not_suitable": "Salò still has a promenade and cafes, but the drive is a lot of rain for little indoor payoff. Prefer Verona, Desenzano, or Zeni.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
       "id": "garda-punta",
       "name": "Garda and Punta San Vigilio",
       "category": "beach",
-      "scores": { "parking": 48, "baby": 75, "beauty": 94, "food": 78, "walking": 80, "safety": 88, "travel_effort": 90, "total": 76 },
-      "explanation": "Beauty almost maxes. Parking at the bay is the tax (48). That 20% weight hurts, correctly. A weekday dawn attempt can work; a scored headline trip cannot pretend the lot is easy.",
-      "pros": ["Best swimming scenery nearby", "Short drive"],
-      "cons": ["Capacity-limited parking", "Peak crowds at the bay"],
-      "why_suitable": "Optional add-on from Garda if the ferry lands there and a taxi is sane — not a fourth trip.",
-      "why_not_suitable": "Saturday 11:00.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "scores": {
+        "parking": 48,
+        "baby": 75,
+        "beauty": 94,
+        "food": 78,
+        "walking": 80,
+        "safety": 88,
+        "travel_effort": 90,
+        "total": 76
+      },
+      "explanation": "Beauty almost maxes. Parking at the bay is 48, and the 20% weight hurts, correctly. A weekday dawn-ish attempt can work; a scored headline trip cannot pretend the lot is easy. Do not inflate this.",
+      "pros": [
+        "The prettiest swim nearby, with parking as the tax. Weekday opening time, or skip the bay and sit in Garda town. Saturday 11:00 is how the morning dies."
+      ],
+      "cons": [
+        "Peak Saturday, Malcesine, and combining with the ferry Garda stop."
+      ],
+      "why_suitable": "Baia delle Sirene is the east-shore swim people mean when they say Punta. It is beautiful and capacity-limited. If the lot looks full from the road, abort to Garda town — that is still a good morning. Do not combine with the ferry day’s Garda pause as a second project.",
+      "why_not_suitable": "Garda cafes only, or stay in Bardolino. A wet pebble bay with an infant is a bad story.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
-      "id": "desenzano",
-      "name": "Desenzano del Garda",
-      "category": "town",
-      "scores": { "parking": 70, "baby": 75, "beauty": 72, "food": 80, "walking": 80, "safety": 82, "travel_effort": 75, "total": 76 },
-      "explanation": "Competent larger town. Loses to Peschiera on effort and to Sigurtà on baby/parking/food identity. Fine rainy cafe town, not a top-four winner.",
-      "pros": ["Services", "Beaches", "Train hub"],
-      "cons": ["Longer drive around the lake foot", "Less magic per minute"],
-      "why_suitable": "Backup urban lake town.",
-      "why_not_suitable": "Does not beat Peschiera on this family's weights.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "id": "vicenza",
+      "name": "Vicenza Palladian streets",
+      "category": "city",
+      "scores": {
+        "parking": 68,
+        "baby": 70,
+        "beauty": 80,
+        "food": 78,
+        "walking": 72,
+        "safety": 85,
+        "travel_effort": 65,
+        "total": 74
+      },
+      "explanation": "Walking 72 is a straight corso with some cobbles — better than Venice, not a garden path. Baby 70 is honest city density. Effort 65 is about 65 minutes on the A4. Beauty is architecture, scored 80, not a lake 94.",
+      "pros": [
+        "Quieter than Verona or Padua: Corso Palladio as a straight, readable walk. Palaces as scenery, not a museum march. The low-stress city if Venice is too hard and Verona too famous."
+      ],
+      "cons": [
+        "Teatro Olimpico interiors with a queue, Villa Rotonda (extra drive and a hill), and adding Padua."
+      ],
+      "why_suitable": "Vicenza is Palladio as a street, not a homework assignment. Park in a garage, walk Corso Palladio, sit in Piazza dei Signori, eat, leave. Skip Teatro Olimpico interiors unless the queue is empty and the baby is asleep in the carrier. You will be home before the 18:00 rule feels tight.",
+      "why_not_suitable": "Arcade stretches help. This is the low-stress rainy city if Verona feels too famous.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
-      "id": "salo",
-      "name": "Salò",
-      "category": "town",
-      "scores": { "parking": 65, "baby": 72, "beauty": 85, "food": 85, "walking": 78, "safety": 88, "travel_effort": 62, "total": 76 },
-      "explanation": "Elegant west shore. Travel effort 62 because you either drive around or involve the car traghetto. With a 6-month-old, that logistics tax is real. Food and promenade are excellent and still not enough to beat inland Sigurtà or east-shore Peschiera.",
-      "pros": ["Promenade", "Food"],
-      "cons": ["Time", "Car ferry complexity if used"],
-      "why_suitable": "A future trip without an infant.",
-      "why_not_suitable": "This week.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "id": "padova",
+      "name": "Padua cafes and piazzas",
+      "category": "city",
+      "scores": {
+        "parking": 65,
+        "baby": 68,
+        "beauty": 82,
+        "food": 86,
+        "walking": 62,
+        "safety": 80,
+        "travel_effort": 62,
+        "total": 72
+      },
+      "explanation": "Porticoes help baby and rain; walking 62 is still a city with tram tracks and a huge oval to resist circling twice. Effort 62 is ~70 minutes — inside the cap, not casual. Food is a university-town 86. Do not add Venice ‘since we’re halfway’.",
+      "pros": [
+        "A living university city: Prato della Valle, market piazzas, coffee under porticoes. Easier sightseeing rhythm than Venice, longer drive. Skip the Scrovegni timed entry with a baby."
+      ],
+      "cons": [
+        "Scrovegni timed entry, the Santo interior queue, and Venice."
+      ],
+      "why_suitable": "Padua is a working city with a market breakfast energy Verona sometimes loses to Romeo. You park in a garage, you do Piazza delle Erbe / della Frutta, you sit at Prato della Valle, you eat under porticoes, you leave by 15:20. Scrovegni is a timed indoor queue — skip it with a six-month-old.",
+      "why_not_suitable": "Porticoes are the rain plan. Keep the city. Still leave by 15:20.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "brescia",
+      "name": "Brescia castle park and old town",
+      "category": "city",
+      "scores": {
+        "parking": 70,
+        "baby": 68,
+        "beauty": 80,
+        "food": 80,
+        "walking": 65,
+        "safety": 82,
+        "travel_effort": 60,
+        "total": 72
+      },
+      "explanation": "Parking 70 is Piazza Vittoria / lower lots — doable. Walking 65 because the castle is a hill; we score the old-town-plus-lower-terrace version, not the keep. Effort 60 is ~75 minutes. Bergamo Alta is hillier and tighter on 18:00 — we are not selling it.",
+      "pros": [
+        "A Lombard city with a castle hill you treat as a park terrace, not a hike. Old town piazzas, a lunch, home by 16:45. Easier than Milan, more honest than Bergamo Alta."
+      ],
+      "cons": [
+        "Keep stairs, a viewpoint hike, Santa Giulia museum marathon, and Bergamo ‘on the way’ (it is not)."
+      ],
+      "why_suitable": "Brescia is the city you do instead of inventing Milan. Castle on Cidneo Hill, a centro with piazzas, Roman fragments as scenery. With this baby you park below, you do the old town, you take the lower castle park if the path is kind, and you skip the keep stairs. Bergamo Alta looks romantic and is a slope plus a clock you will miss. This is the honest substitute.",
+      "why_not_suitable": "Old town cafes work. Skip the castle path entirely. Still leave by 15:15 — the A4 is the risk, not the rain.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
+    },
+    {
+      "id": "verona",
+      "name": "Verona old town",
+      "category": "city",
+      "scores": {
+        "parking": 62,
+        "baby": 54,
+        "beauty": 88,
+        "food": 90,
+        "walking": 56,
+        "safety": 76,
+        "travel_effort": 72,
+        "total": 70
+      },
+      "explanation": "Food and beauty are why Verona is on the menu as sightseeing, not as a wet-weather apology. Baby 54 and walking 56 are cobbles, ZTL, and the Arena crush — honest. Parking 62 is an Arena-class garage if you follow signs, not if you pin the centro.",
+      "pros": [
+        "A real city day: Arena from the outside, arcades, a proper lunch, four hours in town. Garage only. Skip Juliet’s house. Not a rain-only leftover — and not a stroller parade either."
+      ],
+      "cons": [
+        "Casa di Giulietta, opera-night traffic, Castelvecchio ‘if we hurry’, and adding Soave."
+      ],
+      "why_suitable": "Verona is forty minutes inland and it is a city, not a backup plan. You come for the Arena as architecture, for lunch, for porticoes if the sky turns. You do not come for Casa di Giulietta, opera-night traffic, or a Castelvecchio dash. Four hours, carrier in the people-flow, home before 18:00.",
+      "why_not_suitable": "Arcades help; this remains a four-hour loop with a 16:40 return. If it is only drizzle and you wanted water, prefer Desenzano or Zeni instead — not because Verona is ‘rain-only’, but because beaches were priority one.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
       "id": "riva",
       "name": "Riva del Garda",
       "category": "town",
-      "scores": { "parking": 55, "baby": 60, "beauty": 88, "food": 78, "walking": 70, "safety": 85, "travel_effort": 48, "total": 68 },
-      "explanation": "Head of the lake is a different climate and a long car. Against the spirit of 'approximately 2 hours' on a bad day. Wind-sport energy is the opposite of a newborn nap.",
-      "pros": ["Dramatic mountains", "Promenade"],
-      "cons": ["Drive", "Wind", "Parking"],
+      "scores": {
+        "parking": 55,
+        "baby": 60,
+        "beauty": 88,
+        "food": 78,
+        "walking": 70,
+        "safety": 85,
+        "travel_effort": 48,
+        "total": 68
+      },
+      "explanation": "Head of the lake is a different climate and a long car. Against the 18:00 rule on a bad day. Omitted from the menu.",
+      "pros": [
+        "Dramatic mountains",
+        "Promenade"
+      ],
+      "cons": [
+        "Drive",
+        "Wind",
+        "Parking"
+      ],
       "why_suitable": "Not this family, this stay.",
       "why_not_suitable": "Travel effort.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
-    },
-    {
-      "id": "verona",
-      "name": "Verona",
-      "category": "city",
-      "scores": { "parking": 60, "baby": 50, "beauty": 85, "food": 88, "walking": 55, "safety": 75, "travel_effort": 70, "total": 68 },
-      "explanation": "Food and beauty are high. Baby and walking take the hit: cobbles, ZTL, Romeo-and-Juliet crush. Keep as the indoor rainy nuclear option, not as a scored fourth trip.",
-      "pros": ["Arena (outside)", "Food", "Arcades in rain"],
-      "cons": ["ZTL", "Cobbles", "Crowds", "No beach"],
-      "why_suitable": "Rain + cabin fever.",
-      "why_not_suitable": "Fair weather with this infant.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
       "id": "malcesine",
       "name": "Malcesine",
       "category": "town",
-      "scores": { "parking": 50, "baby": 58, "beauty": 90, "food": 75, "walking": 50, "safety": 85, "travel_effort": 55, "total": 65 },
-      "explanation": "Postcard famous. Cable car and castle queues are anti-infant. Parking and hills hurt. Local expert already substituted Torri.",
-      "pros": ["Views", "Castle postcard"],
-      "cons": ["Crowds", "Hills", "Drive", "Funivia temptation"],
-      "why_suitable": "Not now.",
+      "scores": {
+        "parking": 50,
+        "baby": 58,
+        "beauty": 90,
+        "food": 75,
+        "walking": 50,
+        "safety": 85,
+        "travel_effort": 55,
+        "total": 65
+      },
+      "explanation": "Postcard famous. Cable car and castle queues are anti-infant. Omitted from the sold menu; Torri is the north-shore town.",
+      "pros": [
+        "Views",
+        "Castle postcard"
+      ],
+      "cons": [
+        "Crowds",
+        "Hills",
+        "Drive",
+        "Funivia temptation"
+      ],
+      "why_suitable": "Not this stay.",
       "why_not_suitable": "Everything except beauty.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
       "id": "sirmione",
-      "name": "Sirmione",
+      "name": "Sirmione, dawn protocol",
       "category": "town",
-      "scores": { "parking": 28, "baby": 55, "beauty": 93, "food": 80, "walking": 58, "safety": 85, "travel_effort": 70, "total": 64 },
-      "explanation": "Parking is 28 because the peninsula is a ZTL with lots that die by 10:00 and a Colombare backup that adds a long walk. That 20% weight is doing its job. Beauty cannot outvote a garage queue when the user listed parking as very important and a newborn is in the back seat. Grotte di Catullo would make walking worse; we already assumed they skip it.",
-      "pros": ["Scaliger castle on water", "Thermal/lido mythos"],
-      "cons": ["Severe parking", "ZTL fines", "Crush", "Long peninsula if you chase beaches"],
-      "why_suitable": "A child-free couple who loves leaving at 07:00.",
-      "why_not_suitable": "This family. Do not add it because people expect it.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": false }
+      "scores": {
+        "parking": 28,
+        "baby": 55,
+        "beauty": 93,
+        "food": 80,
+        "walking": 58,
+        "safety": 85,
+        "travel_effort": 70,
+        "total": 64
+      },
+      "explanation": "Parking is 28 because the peninsula is a ZTL with lots that die by 10:00 and a Colombare backup that adds a long walk. That 20% weight is doing its job. Beauty cannot outvote a garage queue when parking is very important and a newborn is in the back seat.",
+      "pros": [
+        "On the menu because you will hear about it. Beautiful castle, ugly parking. Arrive before 08:30 or do not go. Skip Grotte di Catullo. Leave before the peninsula becomes a queue."
+      ],
+      "cons": [
+        "Grotte di Catullo, Lido delle Bionde further down the peninsula, 11:00 arrival."
+      ],
+      "why_suitable": "People will tell you Sirmione is mandatory. The math says otherwise. If you still go, you go early, you do the Scaliger castle and a coffee, you skip Grotte di Catullo (a hike), and you leave before 13:15. An 11:00 arrival in August is how the morning dies.",
+      "why_not_suitable": "Do not go. Wet cobbles plus ZTL plus a garage hunt is how the morning dies. Use Verona, Desenzano cafes, or Zeni.",
+      "flags": {
+        "mandatory_venice": false,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     },
     {
-      "id": "venice",
-      "name": "Venice",
+      "id": "venice-train",
+      "name": "Venice by lake-station train",
       "category": "city",
-      "scores": { "parking": 70, "baby": 45, "beauty": 95, "food": 75, "walking": 35, "safety": 70, "travel_effort": 40, "total": 63 },
-      "explanation": "Scored honestly on the winning access mode (Peschiera train), not on a fantasy vaporetto from the apartment. Parking 70 is Peschiera station, not Tronchetto. Baby 45 and walking 35 are the bridges. Beauty 95 is deserved. Effort 40 is a long, early day. Total 63 would not win a fair fight — it is mandatory anyway. Do not inflate it.",
-      "pros": ["Once-in-a-trip place", "Train removes lagoon driving", "Infant usually free on regional trains"],
-      "cons": ["Bridges", "Crowds", "Early start", "No beach", "Pickpockets at trophy spots"],
-      "why_suitable": "They asked for Venice. The train plan makes it survivable.",
-      "why_not_suitable": "Without a carrier, or if trains are on strike — then skip, do not drive the lagoon as a 'fix'.",
-      "flags": { "mandatory_venice": true, "mandatory_ferry": false, "base_day": false }
-    },
-    {
-      "id": "cisano-base",
-      "name": "Cisano / Bardolino beaches",
-      "category": "base-day",
-      "scores": { "parking": 80, "baby": 92, "beauty": 74, "food": 80, "walking": 95, "safety": 95, "travel_effort": 98, "total": 86 },
-      "explanation": "High score, but flagged base_day. It must not occupy a slot in the four trips. Use on the two rest days.",
-      "pros": ["Home for naps", "Real beach time", "Best stroller"],
-      "cons": ["Not a day trip"],
-      "why_suitable": "The other two days of the six.",
-      "why_not_suitable": "As one of the four 'trips'.",
-      "flags": { "mandatory_venice": false, "mandatory_ferry": false, "base_day": true }
+      "scores": {
+        "parking": 70,
+        "baby": 45,
+        "beauty": 95,
+        "food": 75,
+        "walking": 35,
+        "safety": 70,
+        "travel_effort": 40,
+        "total": 63
+      },
+      "explanation": "Scored on the winning access mode (Peschiera train), not on a fantasy vaporetto from the apartment. Parking 70 is the station lot, not Tronchetto. Baby 45 and walking 35 are the bridges. Beauty 95 is deserved. Effort 40 is a long, early day. Total 63 would not win a fair fight — it is on the menu because you asked for Venice.",
+      "pros": [
+        "The one city that is worth the early alarm: drive to Peschiera, train to Santa Lucia, a small loop, hard leave at 15:20. Bridges are real. Score stays honest. Carrier-primary."
+      ],
+      "cons": [
+        "San Marco queues, Murano, Burano, gondola as default, Rialto bridge climb."
+      ],
+      "why_suitable": "We compared four ways in. Driving to Tronchetto or Piazzale Roma maximises car-seat time, garage cost, and lagoon stress. Mestre adds a city you do not need. Coach tours steal nap control and often return after 18:00. Winner: twenty minutes to Peschiera station, a direct train to Venezia Santa Lucia (~1h28). You arrive in Venice, not in a garage. Then you do a small day and you leave.",
+      "why_not_suitable": "Keep the train — rain is better on a regional seat than in a lagoon traffic jam. Shorten the outdoor loop, sit in cafes, leave Venice by 14:40 if miserable. Strike: do not drive Tronchetto as a save. Swap to Sigurtà lunch or Zeni. Verify scioperi the night before.",
+      "flags": {
+        "mandatory_venice": true,
+        "mandatory_ferry": false,
+        "base_day": false
+      }
     }
   ],
   "ranking": [
     "sigurta-borghetto",
-    "lake-garda-ferry",
+    "bardolino-wine-oil",
+    "garda-ferry",
+    "cavaion-wine",
     "cisano-base",
-    "peschiera",
+    "castellaro-lagusello",
+    "peschiera-lido",
+    "soave",
+    "garda-town",
+    "valpolicella-sangiorgio",
     "lazise",
-    "torri",
-    "garda-punta",
+    "torri-car",
+    "mantova",
     "desenzano",
     "salo",
-    "riva",
+    "garda-punta",
+    "vicenza",
+    "padova",
+    "brescia",
     "verona",
+    "riva",
     "malcesine",
     "sirmione",
-    "venice"
+    "venice-train"
   ],
-  "recommended_non_mandatory_ids": ["sigurta-borghetto", "peschiera"],
+  "recommended_non_mandatory_ids": [
+    "sigurta-borghetto",
+    "peschiera-lido",
+    "bardolino-wine-oil"
+  ],
+  "menu_ids": [
+    "sigurta-borghetto",
+    "bardolino-wine-oil",
+    "garda-ferry",
+    "cavaion-wine",
+    "cisano-base",
+    "castellaro-lagusello",
+    "peschiera-lido",
+    "soave",
+    "garda-town",
+    "valpolicella-sangiorgio",
+    "lazise",
+    "torri-car",
+    "mantova",
+    "desenzano",
+    "salo",
+    "garda-punta",
+    "vicenza",
+    "padova",
+    "brescia",
+    "verona",
+    "sirmione",
+    "venice-train"
+  ],
   "scoring_notes": [
-    "cisano-base excluded from the four trips despite 86 because it is not a day trip.",
-    "lazise 82 lost to peschiera 84: beach + distinct fortress, and less overlap with the Bardolino harbor the family already has.",
-    "torri excluded because the ferry loop already includes it.",
-    "sirmione lost on parking math, not on taste.",
-    "venice last among headline names and still included."
+    "Menu is 22 same-day loops; the family picks 5–6 across a 6-day stay.",
+    "cisano-base and bardolino-wine-oil are rest-day products, still on the menu.",
+    "sirmione remains on the menu with a dawn protocol; parking 28 is not inflated.",
+    "venice last among headline names and still included.",
+    "malcesine and riva scored and omitted.",
+    "Verona is a real city day, not rain-only; baby/walking stay honest."
   ]
 }

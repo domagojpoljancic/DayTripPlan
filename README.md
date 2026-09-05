@@ -1,6 +1,6 @@
 # Italy Trip Planner
 
-> **Status:** Pipeline-ready Cursor project with a generated Bardolino family guide. Unzip, open in Cursor, run `/generate-bardolino-guide`. A production HTML guide already lives in `output/`.
+> **Status:** Offline family guide in `output/bardolino-trip-guide.html` — **22 same-day loops**, browse-first list (city + lake + beach + food + easy + close, with sort), score tooltips, full agency guide pages. Pipeline JSON in `shared/` matches. Unzip, open in Cursor, or run `/generate-bardolino-guide`.
 
 An autonomous multi-agent Cursor project that builds a **premium offline HTML travel guide** for a family staying in **Bardolino, Lake Garda, Italy**.
 
@@ -30,7 +30,7 @@ Open that file on a laptop or phone. No internet. No build step. No framework.
 | One-click Cursor command `/generate-bardolino-guide` | **Works** | Orchestrator launches the full pipeline |
 | Shared family + scoring rules | **Works** | Locked in `PLAN.md` and agent files |
 | Sample pipeline outputs in `shared/` | **Works** | Research, local, Venice, scores, itinerary, UX, QA |
-| Final offline HTML guide | **Works** | Simpler browse-first UI; lake + city day trips |
+| Final offline HTML guide | **Works** | 22 trips; browse-first cards with descriptions; city + lake filters; score tooltips; JS-rendered guide pages |
 | Live web preview (dev server) | **Works** | `./scripts/serve.sh` |
 | Schema validator | **Works** | `python3 scripts/validate_pipeline.py` |
 | Real-time ferry/train tickets | **TBD at travel time** | Guide tells you exactly which official sites to check the night before |
@@ -56,7 +56,7 @@ Mandatory trips (the system still decides *how*):
 1. **Venice** (compare driving, park-outside, train, organized transport)
 2. **Lake Garda boat/ferry day** (need not be a full day)
 
-The other two trips are chosen by weighted scoring, not fame.
+The rest of the menu is scored the same way. The family picks **5–6 loops** from about **22** same-day options.
 
 ---
 
@@ -123,7 +123,7 @@ python3 scripts/validate_pipeline.py
 1. Research, local-expert, and Venice agents run **in parallel**.
 2. Results are merged into a destination pool.
 3. Scoring agent ranks every candidate.
-4. Itinerary architect locks **exactly four** Bardolino-based day trips.
+4. Itinerary architect locks a **menu of same-day loops** (at least four; the live guide is ~22 — they pick 5–6 in a 6-day stay).
 5. UX designer writes the information architecture.
 6. Frontend developer writes a single HTML file.
 7. QA hunts unrealistic timing, parking lies, baby traps, and missing fields.

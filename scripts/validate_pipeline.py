@@ -143,8 +143,8 @@ def main() -> int:
         errors.append(err)
     else:
         trips = itinerary.get("trips") if itinerary else None
-        if not trips or len(trips) != 4:
-            errors.append(f"itinerary must contain exactly 4 trips (got {len(trips or [])})")
+        if not trips or len(trips) < 4:
+            errors.append(f"itinerary must contain at least 4 trips (got {len(trips or [])})")
         else:
             for i, t in enumerate(trips):
                 errors.extend(check_trip(t, i))
