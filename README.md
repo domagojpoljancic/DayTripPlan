@@ -1,6 +1,8 @@
 # Italy Trip Planner
 
 > **Status:** Offline family guide in `output/bardolino-trip-guide.html` — **22 same-day loops**, real Wikimedia photos, Google Maps + official links for every place and parking lot, browse-first list, score tooltips, full agency guide pages. Pipeline JSON in `shared/` matches. Unzip, open in Cursor, or run `/generate-bardolino-guide`.
+>
+> **WIP:** Product audit + ticketed improvement plan lives in [`docs/IMPROVEMENT_PLAN.md`](docs/IMPROVEMENT_PLAN.md) (not yet implemented).
 
 An autonomous multi-agent Cursor project that builds a **premium offline HTML travel guide** for a family staying in **Bardolino, Lake Garda, Italy**.
 
@@ -35,6 +37,7 @@ Open that file on a laptop or phone. No internet. No build step. No framework.
 | Schema validator | **Works** | `python3 scripts/validate_pipeline.py` |
 | Real-time ferry/train tickets | **TBD at travel time** | Guide tells you exactly which official sites to check the night before |
 | Live weather | **TBD at travel time** | Offline weather *considerations* are included; live forecasts are not |
+| Improvement plan (`docs/IMPROVEMENT_PLAN.md`) | **Works (docs only)** | Full audit + P0/P1/P2 tickets; implementation not started |
 
 ---
 
@@ -109,6 +112,7 @@ python3 scripts/validate_pipeline.py
 ├── ARCHITECTURE.md          ← data flow, dependencies, merge rules
 ├── PLAN.md                  ← locked trip rules + scoring
 ├── AGENTS.md                ← Cursor agent index
+├── docs/IMPROVEMENT_PLAN.md ← audit + prioritized execution tickets
 ├── agents/                  ← one spec per agent
 ├── prompts/                 ← bootstrap / execute / review / improve
 ├── schemas/                 ← JSON contracts + HTML requirements
