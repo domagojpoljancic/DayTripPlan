@@ -28,6 +28,8 @@
       --fs-h3: 1.25rem;
       --fs-h2: 1.75rem;
       --fs-h1: clamp(1.75rem, 4vw, 2.25rem);
+      --must: #9a3412;
+      --must-bg: color-mix(in srgb, var(--terra) 18%, transparent);
     }
     html[data-theme="dark"] {
       --ink: #e7f0f2;
@@ -40,6 +42,8 @@
       --card: #13242c;
       --line: rgba(231, 240, 242, 0.12);
       --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      --must: #fdba74;
+      --must-bg: color-mix(in srgb, var(--terra) 28%, transparent);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -295,6 +299,37 @@
       display: flex; justify-content: space-between; gap: 8px;
       padding: 8px 0; border-bottom: 1px solid var(--line); font-size: var(--fs-s);
     }
+
+    .badge-must {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: var(--fs-k); letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 700; color: var(--must); background: var(--must-bg);
+      border: 1px solid color-mix(in srgb, var(--must) 35%, transparent);
+      border-radius: 999px; padding: 4px 10px; min-height: 28px;
+    }
+    .must-rail {
+      margin: 0 0 24px; padding: 20px; border: 1px solid var(--line);
+      border-radius: var(--radius); background: var(--card);
+    }
+    .must-rail > p { margin: 0 0 12px; color: var(--ink-soft); font-size: var(--fs-s); }
+    .must-rail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .must-rail article {
+      border: 1px solid var(--line); border-radius: 12px; padding: 16px;
+      cursor: pointer; background: color-mix(in srgb, var(--foam) 55%, var(--card));
+      display: flex; flex-direction: column; gap: 8px; min-height: 100%;
+    }
+    .must-rail article:hover { box-shadow: var(--shadow); }
+    .must-rail h3 { font-size: 1.05rem; margin: 0; }
+    .must-rail .meta { margin: 0; }
+    table.cmp.sticky-name th:first-child,
+    table.cmp.sticky-name td:first-child {
+      position: sticky; left: 0; z-index: 1;
+      background: var(--card); box-shadow: 4px 0 8px rgba(11,58,74,0.06);
+    }
+    table.cmp tbody tr[data-trip] { cursor: pointer; }
+    table.cmp tbody tr[data-trip]:hover { background: color-mix(in srgb, var(--sand) 35%, transparent); }
+    #compare { margin-top: 8px; }
+
     table.cmp { width: 100%; border-collapse: collapse; font-size: var(--fs-s); min-width: 640px; }
     .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
     table.cmp th, table.cmp td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -320,12 +355,12 @@
     }
     #print-guides { display: none; }
     @media (max-width: 860px) {
-      .cards, .glance, .visual, .there-grid, .baby-grid, .cost-grid, .grid-2 { grid-template-columns: 1fr; }
+      .cards, .glance, .visual, .there-grid, .baby-grid, .cost-grid, .grid-2, .must-rail-grid { grid-template-columns: 1fr; }
       nav.desk { display: none; }
       .hamburger { display: inline-flex; }
     }
     @media print {
-      header.top, #detail-bar, .toolbar, .hamburger, .icon-btn, .sheet, .heart, .row-actions, #trips, #detail { display: none !important; }
+      header.top, #detail-bar, .toolbar, .hamburger, .icon-btn, .sheet, .heart, .row-actions, #trips, #must-do, #compare, #detail { display: none !important; }
       #print-guides, #print-guides .guide, #pack, #practical { display: block !important; }
       html, body { background: white; color: #111; }
       a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; word-break: break-all; }
@@ -343,6 +378,7 @@
       <a class="wordmark" href="#top">Bardolino<span>Home before dinner</span></a>
       <nav class="desk" aria-label="Primary">
         <a href="#trips">Trips</a>
+        <a href="#compare">Compare</a>
         <a href="#pack">Pack</a>
         <a href="#practical">Notes</a>
         <button class="icon-btn" id="fav-count" type="button">♥ 0</button>
@@ -355,6 +391,7 @@
   <div class="sheet" id="sheet" hidden>
     <button class="icon-btn" id="close-menu" type="button">Close</button>
     <a href="#trips">Trips</a>
+    <a href="#compare">Compare</a>
     <a href="#pack">Pack</a>
     <a href="#practical">Notes</a>
     <button class="icon-btn" id="theme-btn-m" type="button">Dark</button>
@@ -391,6 +428,7 @@
           <button type="button" data-filter="food">Food</button>
           <button type="button" data-filter="easy">Easy</button>
           <button type="button" data-filter="close" title="Under about 20 minutes from the apartment">Close</button>
+          <button type="button" data-filter="saved">Saved</button>
         </div>
         <div class="sort-wrap">
           <label>Sort
@@ -405,8 +443,39 @@
           <p class="menu-count" id="menu-count"></p>
         </div>
       </div>
+      <div class="must-rail browse-only" id="must-do" aria-labelledby="must-title">
+        <p class="kicker" id="must-title">Must do</p>
+        <p>Venice and a Garda ferry day stay on the menu regardless of sort. Venice scores low on comfort by design — bridges and crowds are real; the value is the city, not the family score.</p>
+        <div class="must-rail-grid" id="must-cards"></div>
+      </div>
       <p class="empty" id="filter-empty">Nothing in this filter. Tap All — the menu is still here.</p>
+      <p class="empty" id="saved-empty">No saved trips yet — tap the heart on any day.</p>
       <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="panel browse-only" id="compare" aria-labelledby="compare-title">
+      <p class="kicker">Line them up</p>
+      <h2 id="compare-title">Compare</h2>
+      <p class="lead" style="margin-top:0">Same filter and sort as the cards. Tap a row to open the full plan.</p>
+      <div class="table-scroll">
+        <table class="cmp sticky-name" id="compare-table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Score</th>
+              <th scope="col">Leave</th>
+              <th scope="col">Return</th>
+              <th scope="col">Drive</th>
+              <th scope="col">Parking</th>
+              <th scope="col">Stroller</th>
+              <th scope="col">Beach</th>
+              <th scope="col">Food</th>
+              <th scope="col">Difficulty</th>
+            </tr>
+          </thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
     </section>
 
     <div id="detail"></div>
@@ -705,9 +774,21 @@
 
       function matchesFilter(trip) {
         if (filter === "all") return true;
+        if (filter === "saved") return favOn(trip.id);
         if (filter === "easy") return trip.difficulty === "easy";
         if (filter === "close") return trip.driveMin <= 20 && (trip.tags || []).indexOf("city") === -1;
         return (trip.tags || []).indexOf(filter) !== -1;
+      }
+
+      function mandatoryBadge(trip) {
+        return trip.mandatory ? '<span class="badge-must">Must do</span>' : "";
+      }
+
+      function foodHighlight(trip) {
+        var food = (trip.there && trip.there.food) || (trip.restaurants && trip.restaurants[0]) || "";
+        if (!food) return "—";
+        food = String(food);
+        return food.length > 42 ? food.slice(0, 40).replace(/\s+\S*$/, "") + "…" : food;
       }
 
       function sortedTrips() {
@@ -726,12 +807,51 @@
         return list;
       }
 
+      function renderMustDo() {
+        var rootEl = document.getElementById("must-cards");
+        if (!rootEl) return;
+        var list = TRIPS.filter(function (t) { return t.mandatory; });
+        rootEl.innerHTML = list.map(function (trip) {
+          return '<article data-trip="' + esc(trip.id) + '" role="button" tabindex="0">' +
+            mandatoryBadge(trip) +
+            "<h3>" + esc(trip.name) + "</h3>" +
+            '<div class="meta"><span><b>' + trip.scores.total + "/100</b></span>" +
+            "<span>" + esc(trip.leave) + "–" + esc(trip.home) + "</span>" +
+            "<span>Parking " + esc(trip.parkingWord) + "</span></div>" +
+            '<div class="row-actions"><button class="btn" type="button" data-open="' + esc(trip.id) + '">Open trip</button>' +
+            heartBtn(trip.id) + "</div></article>";
+        }).join("");
+      }
+
+      function renderCompare() {
+        var body = document.getElementById("compare-body");
+        if (!body) return;
+        var list = sortedTrips();
+        body.innerHTML = list.map(function (trip) {
+          return '<tr data-trip="' + esc(trip.id) + '">' +
+            "<td>" + esc(trip.name) + (trip.mandatory ? ' <span class="badge-must">Must do</span>' : "") + "</td>" +
+            '<td><span style="font-variant-numeric:tabular-nums">' + trip.scores.total + "</span></td>" +
+            "<td>" + esc(trip.leave) + "</td>" +
+            "<td>" + esc(trip.home) + "</td>" +
+            "<td>" + esc(trip.driveLabel) + "</td>" +
+            "<td>" + esc(trip.parkingWord) + "</td>" +
+            "<td>" + esc(trip.strollerWord) + "</td>" +
+            "<td>" + (trip.beach ? "Yes" : "No") + "</td>" +
+            "<td>" + esc(foodHighlight(trip)) + "</td>" +
+            "<td>" + esc(trip.difficulty[0].toUpperCase() + trip.difficulty.slice(1)) + "</td>" +
+            "</tr>";
+        }).join("");
+      }
+
       function renderCards() {
         var list = sortedTrips();
         var rootEl = document.getElementById("cards");
         var empty = document.getElementById("filter-empty");
+        var savedEmpty = document.getElementById("saved-empty");
         var count = document.getElementById("menu-count");
-        empty.classList.toggle("show", list.length === 0);
+        var isSaved = filter === "saved";
+        empty.classList.toggle("show", list.length === 0 && !isSaved);
+        if (savedEmpty) savedEmpty.classList.toggle("show", list.length === 0 && isSaved);
         count.textContent = list.length ? list.length + " trips" : "";
         rootEl.innerHTML = list.map(function (trip) {
           var ph = photosOf(trip)[0];
@@ -739,6 +859,7 @@
           return '<article class="card" data-trip="' + esc(trip.id) + '">' +
             img +
             '<div class="card-top"><h3>' + esc(trip.name) + "</h3>" + scoreControl(trip) + "</div>" +
+            (trip.mandatory ? '<div>' + mandatoryBadge(trip) + "</div>" : "") +
             '<p class="card-desc">' + esc(trip.short) + "</p>" +
             '<div class="meta"><span><b>' + esc(trip.leave) + "–" + esc(trip.home) + "</b></span>" +
             "<span>" + esc(trip.driveLabel) + "</span><span>" + esc(trip.difficulty[0].toUpperCase() + trip.difficulty.slice(1)) + "</span>" +
@@ -746,7 +867,17 @@
             '<div class="row-actions"><button class="btn" type="button" data-open="' + esc(trip.id) + '">Open trip</button>' +
             heartBtn(trip.id) + "</div></article>";
         }).join("");
+        renderMustDo();
+        renderCompare();
         paintFavCount();
+      }
+
+      function setFilter(next) {
+        filter = next || "all";
+        document.querySelectorAll(".filters button").forEach(function (b) {
+          b.setAttribute("aria-pressed", b.getAttribute("data-filter") === filter ? "true" : "false");
+        });
+        renderCards();
       }
 
       function breakdownHtml(trip) {
@@ -781,7 +912,7 @@
         }
         return '<article class="guide" id="trip-' + esc(trip.id) + '">' +
           '<header class="guide-hero">' +
-            '<p class="eyebrow">' + (trip.mandatory ? "On the menu · worth planning" : "On the menu") + " · " + trip.scores.total + "/100</p>" +
+            '<p class="eyebrow">' + (trip.mandatory ? mandatoryBadge(trip) + " · " : "") + "On the menu · " + trip.scores.total + "/100</p>" +
             "<h2>" + esc(trip.name) + "</h2>" +
             '<p class="lead">' + esc(trip.short) + "</p>" +
             '<div class="pills"><span class="pill">Leave ' + esc(trip.leave) + '</span><span class="pill">Home ' + esc(trip.home) + '</span><span class="pill">' + esc(trip.driveLabel) + '</span><span class="pill">' + esc(trip.difficulty) + "</span></div>" +
@@ -863,7 +994,29 @@
           e.preventDefault();
           e.stopPropagation();
           toggleFav(fav.getAttribute("data-fav"));
-          paintFavCount();
+          if (document.body.classList.contains("view-detail")) {
+            paintFavCount();
+            var btn = fav;
+            if (btn && btn.classList.contains("heart")) {
+              var id = btn.getAttribute("data-fav");
+              btn.setAttribute("aria-pressed", favOn(id) ? "true" : "false");
+              btn.textContent = favOn(id) ? "♥ Saved" : "♡ Save";
+            }
+          } else {
+            renderCards();
+          }
+          return;
+        }
+        var cmpRow = t.closest("#compare-body tr[data-trip]");
+        if (cmpRow) {
+          e.preventDefault();
+          openTrip(cmpRow.getAttribute("data-trip"));
+          return;
+        }
+        var mustCard = t.closest("#must-cards article[data-trip]");
+        if (mustCard && !t.closest(".heart") && !t.closest("[data-open]")) {
+          e.preventDefault();
+          openTrip(mustCard.getAttribute("data-trip"));
           return;
         }
         var open = t.closest("[data-open]");
@@ -898,11 +1051,13 @@
 
       document.querySelectorAll(".filters button").forEach(function (btn) {
         btn.addEventListener("click", function () {
-          document.querySelectorAll(".filters button").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
-          btn.setAttribute("aria-pressed", "true");
-          filter = btn.getAttribute("data-filter");
-          renderCards();
+          setFilter(btn.getAttribute("data-filter"));
         });
+      });
+      document.getElementById("fav-count").addEventListener("click", function () {
+        setFilter(filter === "saved" ? "all" : "saved");
+        var trips = document.getElementById("trips");
+        if (trips) trips.scrollIntoView({ behavior: "smooth", block: "start" });
       });
       document.getElementById("sort").addEventListener("change", function () {
         sortMode = this.value;
