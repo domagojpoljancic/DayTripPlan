@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://italy-trip-planner.local/schemas/itinerary.schema.json",
   "title": "BardolinoFamilyItinerary",
+  "description": "Browseable menu of ~18–22 same-day Bardolino loops. Venice and a Lake Garda ferry day are mandatory entries. The family picks about 5–6 outing days across a 6-day stay; two base/nap days at the apartment are expected and may appear in base_days, not as extra trips.",
   "type": "object",
   "additionalProperties": true,
   "required": ["generated_at", "base", "trips", "ranking_overview"],
@@ -10,10 +11,16 @@
     "base": { "type": "string", "const": "Bardolino" },
     "trips": {
       "type": "array",
-      "minItems": 4,
+      "description": "Full browseable menu (~18–22 same-day loops). Must include Venice and a Garda ferry day with mandatory: true.",
+      "minItems": 18,
+      "maxItems": 25,
       "items": { "$ref": "#/$defs/trip" }
     },
-    "ranking_overview": { "type": "array", "minItems": 4 },
+    "ranking_overview": {
+      "type": "array",
+      "description": "All menu trips in score order (same count as trips).",
+      "minItems": 18
+    },
     "suggested_sequence": { "type": "array" },
     "rejected": { "type": "array" },
     "base_days": { "type": "array" },

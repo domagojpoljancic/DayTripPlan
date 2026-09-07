@@ -4,7 +4,7 @@ Single file, offline, mobile-first. Feel: a small travel studio, not a blog and 
 
 ## Brand
 
-**Wordmark:** `Bardolino` in display serif, subtitle `Six days · four loops · home before dinner`.
+**Wordmark:** `Bardolino` in display serif, subtitle `Six days · pick 5–6 · home before dinner`.
 
 **Palette**
 
@@ -35,22 +35,22 @@ Single file, offline, mobile-first. Feel: a small travel studio, not a blog and 
 ### Hero
 
 Eyebrow: `Lake Garda · family edition`
-H1: `Four day trips. Apartment every night.`
-Lead: one sentence on Bardolino base, baby, 18:00 rule.
+H1: `A menu of day trips. Apartment every night.`
+Lead: one sentence on Bardolino base, baby, 18:00 rule, and picking ~5–6 loops across six days (two base/nap days at home).
 Fact chips: `6 days` `Car` `Stroller` `Baby < 6 months` `Back by 18:00`
 
 ### Ranking
 
-Horizontal list of four score marks (number in a ring). Sorted by score. Caption: `Ranked for parking, baby, beauty, food, walking, safety, effort — not for fame.`
+Horizontal score marks for the full menu (~18–22 trips), sorted by score. Caption: `Ranked for parking, baby, beauty, food, walking, safety, effort — not for fame.` Venice and the Garda ferry carry a mandatory badge even when they rank lower on comfort.
 
 ### Filters
 
 Chips: All · Beach · Food · Easiest · Boat · City  
-Empty state: `Nothing in this filter. The four trips are still below if you reset.`
+Empty state: `Nothing in this filter. Reset to see the full menu.`
 
-### Trip cards (4)
+### Trip cards (menu)
 
-Always visible: name, score, leave–return, drive km, difficulty, parking difficulty, 4 highlights, favorite heart, `Open trip` button.
+Always visible: name, score, leave–return, drive km, difficulty, parking difficulty, mandatory badge when applicable, favorite heart, `Open trip` button. Card copy leads with one decisive line (parking + leave→home); do not hide the short description.
 
 ### Operating rules (expanded by default)
 
@@ -60,7 +60,7 @@ Nap at home, carrier vs stroller, verify trains/ferries tonight.
 
 One `section` per trip, `id="trip-{id}"`.
 
-Order on page: ranking order (Sigurtà, ferry, Peschiera, Venice) so the easiest wins sit first; Venice is last because it is the hard day, not because it is unimportant. Note that Venice is mandatory in a small pill.
+Order on page: ranking order (highest scores first). Venice is lower in the list because it is the hard day, not because it is optional — it is mandatory. The Garda ferry day is also mandatory.
 
 Sub-nav inside chapter: Timeline · Transport · Experience · Family · Costs · Backup
 
