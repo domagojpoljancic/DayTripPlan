@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -11,13 +12,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SHARED = ROOT / "shared"
 OUTPUT = ROOT / "output" / "bardolino-trip-guide.html"
+IMAGES = ROOT / "output" / "images"
 
+# Keep in parity with schemas/html_requirements.md forbidden dependencies.
 FORBIDDEN_HTML = [
     "cdn.",
     "unpkg",
     "fonts.googleapis",
+    "fonts.gstatic",
     "cdn.jsdelivr",
     "tailwindcss.com",
+    "react",
 ]
 
 
@@ -104,6 +109,104 @@ def check_trip(t: dict, idx: int) -> list[str]:
     return errors
 
 
+def extract_html_trips(html: str) -> list[dict] | None:
+    """Parse generated or legacy const TRIPS from the HTML."""
+    begin = html.find("/* BEGIN_GENERATED_TRIPS */")
+    if begin != -1:
+        chunk = html[begin:]
+        m = re.search(r"const TRIPS\s*=\s*(\[.*?\]);\s*/\*\s*END_GENERATED_TRIPS\s*\*/", chunk, re.S)
+        if not m:
+            return None
+        return json.loads(m.group(1))
+    m = re.search(r"const TRIPS\s*=\s*(\[.*?\]);\s*\n\s*const WEIGHTS", html, re.S)
+    if not m:
+        return None
+    return json.loads(m.group(1))
+
+
+def referenced_image_paths(html: str, photos_block: str | None = None) -> set[str]:
+    """Collect images/* paths referenced in HTML (PHOTOS payload + img src)."""
+    paths: set[str] = set()
+    for match in re.finditer(r"images/[A-Za-z0-9._\-]+\.(?:jpe?g|png|webp|gif)", html, re.I):
+        paths.add(match.group(0))
+    return paths
+
+
+def check_image_integrity(html: str) -> tuple[list[str], list[str]]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    if not IMAGES.exists():
+        errors.append("missing output/images/")
+        return errors, warnings
+
+    # Duplicate content hashes across image files
+    hashes: dict[str, list[str]] = {}
+    for path in sorted(IMAGES.iterdir()):
+        if not path.is_file():
+            continue
+        if path.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp", ".gif"}:
+            continue
+        digest = hashlib.md5(path.read_bytes()).hexdigest()
+        hashes.setdefault(digest, []).append(path.name)
+    for digest, names in hashes.items():
+        if len(names) > 1:
+            errors.append(f"duplicate image content (md5 {digest[:12]}…): {', '.join(names)}")
+
+    # Missing files referenced by the guide
+    for rel in sorted(referenced_image_paths(html)):
+        full = ROOT / "output" / rel
+        if not full.exists():
+            errors.append(f"HTML references missing image: {rel}")
+
+    return errors, warnings
+
+
+def check_html_itinerary_parity(html: str, itinerary: dict) -> tuple[list[str], list[str]]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    try:
+        html_trips = extract_html_trips(html)
+    except json.JSONDecodeError as exc:
+        errors.append(f"could not parse const TRIPS from HTML: {exc}")
+        return errors, warnings
+    if html_trips is None:
+        errors.append("HTML missing parseable const TRIPS block")
+        return errors, warnings
+
+    itin_trips = itinerary.get("trips") or []
+    html_ids = [t.get("id") for t in html_trips]
+    itin_ids = [t.get("id") for t in itin_trips]
+    if html_ids != itin_ids:
+        only_html = sorted(set(html_ids) - set(itin_ids))
+        only_itin = sorted(set(itin_ids) - set(html_ids))
+        errors.append(
+            "HTML TRIPS ids diverge from shared/itinerary.json "
+            f"(html={len(html_ids)} itin={len(itin_ids)}; "
+            f"only_html={only_html or '—'}; only_itin={only_itin or '—'}; "
+            f"order_match={html_ids == itin_ids})"
+        )
+
+    # Mandatory trip presence warning
+    mandatory = [t for t in itin_trips if t.get("mandatory")]
+    if not mandatory:
+        warnings.append("no mandatory trips flagged in itinerary.json")
+    else:
+        names = " ".join(t.get("name", "").lower() for t in mandatory)
+        if "venice" not in names and "venezia" not in names:
+            warnings.append("mandatory set missing Venice")
+        if "ferry" not in names and "boat" not in names and "battello" not in names:
+            warnings.append("mandatory set missing ferry/boat day")
+        html_by_id = {t.get("id"): t for t in html_trips}
+        for t in mandatory:
+            ht = html_by_id.get(t.get("id"))
+            if not ht:
+                errors.append(f"mandatory trip {t.get('id')} missing from HTML TRIPS")
+            elif not ht.get("mandatory"):
+                errors.append(f"mandatory trip {t.get('id')} not flagged mandatory in HTML")
+
+    return errors, warnings
+
+
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -141,6 +244,7 @@ def main() -> int:
     itinerary, err = load_json(SHARED / "itinerary.json")
     if err:
         errors.append(err)
+        itinerary = None
     else:
         trips = itinerary.get("trips") if itinerary else None
         if not trips or len(trips) < 4:
@@ -158,6 +262,7 @@ def main() -> int:
 
     if not OUTPUT.exists():
         errors.append("missing output/bardolino-trip-guide.html")
+        html = ""
     else:
         html = OUTPUT.read_text(encoding="utf-8", errors="replace")
         low = html.lower()
@@ -178,6 +283,15 @@ def main() -> int:
         ):
             if section not in low:
                 warnings.append(f"HTML may be missing '{section}' copy")
+
+        img_errs, img_warns = check_image_integrity(html)
+        errors.extend(img_errs)
+        warnings.extend(img_warns)
+
+        if itinerary:
+            parity_errs, parity_warns = check_html_itinerary_parity(html, itinerary)
+            errors.extend(parity_errs)
+            warnings.extend(parity_warns)
 
     print("Italy Trip Planner — pipeline validation")
     print("========================================")
