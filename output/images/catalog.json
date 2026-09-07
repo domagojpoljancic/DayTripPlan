@@ -41,11 +41,11 @@
     {
       "file": "bardolino-wine-oil-1.jpg",
       "src": "images/bardolino-wine-oil-1.jpg",
-      "credit": "Elliott Brown from Birmingham, United Kingdom · CC BY 2.0",
-      "title": "File:Bardolino - Lake Garda - Villa delle Rose (4826572594).jpg",
-      "width": 3648,
-      "source": "commons:Bardolino lakefront",
-      "orig": "https://upload.wikimedia.org/wikipedia/commons/3/34/Bardolino_-_Lake_Garda_-_Villa_delle_Rose_%284826572594%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "credit": "Adert · CC BY-SA 4.0",
+      "title": "File:Porto di Bardolino.jpg",
+      "width": 3264,
+      "source": "wikipedia:it:Bardolino",
+      "orig": "https://upload.wikimedia.org/wikipedia/commons/2/28/Porto_di_Bardolino.jpg?utm_source=it.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     {
       "file": "bardolino-wine-oil-2.jpg",
@@ -59,11 +59,11 @@
     {
       "file": "bardolino-wine-oil-3.jpg",
       "src": "images/bardolino-wine-oil-3.jpg",
-      "credit": "No machine-readable author provided. RicciSpeziari~commonswiki assumed (based on copyright claims). · CC BY-SA 3.0",
-      "title": "File:Bardolino Porta San Giovanni.JPG",
-      "width": 600,
-      "source": "wikipedia:en:Bardolino",
-      "orig": "https://upload.wikimedia.org/wikipedia/commons/9/92/Bardolino_Porta_San_Giovanni.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+      "credit": "Adert · CC BY-SA 4.0",
+      "title": "File:Villa Carrara Bottagisio Bardolino.jpg",
+      "width": 3232,
+      "source": "wikipedia:it:Bardolino",
+      "orig": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Villa_Carrara_Bottagisio_Bardolino.jpg?utm_source=it.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     {
       "file": "bardolino-wine-oil-4.jpg",
@@ -122,22 +122,40 @@
     {
       "file": "cavaion-wine-2.jpg",
       "src": "images/cavaion-wine-2.jpg",
-      "credit": "Gyozvr · CC BY-SA 4.0",
-      "title": "File:Villa Mosconi Bertani and Amarone della Valpolicella Classico vineyards.jpg",
-      "width": 2730,
-      "source": "commons:Vigneti Valpolicella",
-      "orig": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Villa_Mosconi_Bertani_and_Amarone_della_Valpolicella_Classico_vineyards.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "credit": "Dguendel · CC BY 3.0",
+      "title": "File:Bardolino-Agriturismo La Rocca.JPG",
+      "width": 4272,
+      "source": "commons:manual",
+      "orig": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Bardolino-Agriturismo_La_Rocca.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "cavaion-wine-3.jpg",
+      "src": "images/cavaion-wine-3.jpg",
+      "credit": "Pe-sa · CC BY 3.0",
+      "title": "File:BardolinoNachtansicht.JPG",
+      "width": 3800,
+      "source": "commons:manual",
+      "orig": "https://upload.wikimedia.org/wikipedia/commons/0/08/BardolinoNachtansicht.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+    },
+    {
+      "file": "cavaion-wine-4.jpg",
+      "src": "images/cavaion-wine-4.jpg",
+      "credit": "Michal Osmenda from Brussels, Belgium · CC BY-SA 2.0",
+      "title": "File:2009 Bardolino Masi from Frescaripa (5946384123).jpg",
+      "width": 2848,
+      "source": "commons:manual",
+      "orig": "https://upload.wikimedia.org/wikipedia/commons/c/c3/2009_Bardolino_Masi_from_Frescaripa_%285946384123%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     }
   ],
   "cisano-base": [
     {
       "file": "cisano-base-1.jpg",
       "src": "images/cisano-base-1.jpg",
-      "credit": "Mateus2019 · CC BY-SA 3.0",
-      "title": "File:2021 — Erste Julireise Mateus2019 — Batch (235).jpg",
-      "width": 3648,
-      "source": "commons:Cisano Bardolino beach",
-      "orig": "https://upload.wikimedia.org/wikipedia/commons/4/43/2021_%E2%80%94_Erste_Julireise_Mateus2019_%E2%80%94_Batch_%28235%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+      "credit": "Davy1509 · CC BY-SA 4.0",
+      "title": "File:Cisano di Bardolino 120919 - Porto 01.jpg",
+      "width": 3264,
+      "source": "commons:Cisano di Bardolino porto",
+      "orig": "https://upload.wikimedia.org/wikipedia/commons/2/20/Cisano_di_Bardolino_120919_-_Porto_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
     },
     {
       "file": "cisano-base-3.jpg",
