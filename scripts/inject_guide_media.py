@@ -350,9 +350,9 @@ def _parking_word(difficulty: str | None) -> str:
     hard afternoons ("Easy if… Hard if you hunt…").
     """
     text = (difficulty or "").strip().lower()
-    for word in ("severe", "hard", "moderate", "easy"):
-        if text == word or text.startswith(word + " ") or text.startswith(word + "—") or text.startswith(word + "-") or text.startswith(word + ","):
-            return word
+    m = re.match(r"(severe|hard|moderate|easy)\b", text)
+    if m:
+        return m.group(1)
     return "moderate"
 
 
