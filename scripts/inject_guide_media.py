@@ -344,12 +344,16 @@ def photos_payload() -> dict:
 
 
 def _parking_word(difficulty: str | None) -> str:
+    """Severity badge from the leading parking_difficulty word only.
+
+    Do not scan the whole sentence — copy often contrasts easy mornings with
+    hard afternoons ("Easy if… Hard if you hunt…").
+    """
     text = (difficulty or "").strip().lower()
     for word in ("severe", "hard", "moderate", "easy"):
-        if text.startswith(word) or f" {word}" in text or text == word:
+        if text == word or text.startswith(word + " ") or text.startswith(word + "—") or text.startswith(word + "-") or text.startswith(word + ","):
             return word
-    first = re.split(r"[\s—\-–,]", text, maxsplit=1)[0]
-    return first or "moderate"
+    return "moderate"
 
 
 def _join_list(value) -> str:
