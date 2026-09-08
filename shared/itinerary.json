@@ -88,37 +88,37 @@
         {
           "time": "09:00",
           "title": "Drive inland",
-          "detail": "SR249 south, then signed Valeggio / Sigurtà. Ignore every Gardaland arrow."
+          "detail": "Take the lake road south, then follow signs for Valeggio / Sigurtà. Ignore any Gardaland signs."
         },
         {
           "time": "09:35",
           "title": "Park at Sigurtà",
-          "detail": "Rosso or Giallo lot. Stroller out, hats on."
+          "detail": "Use the Rosso or Giallo car park. Get the stroller out and put hats on."
         },
         {
           "time": "09:45",
-          "title": "Short garden loop",
-          "detail": "Shade first. Rose avenue viewpoint, a lawn sit. Not every labelled path."
+          "title": "Short garden walk",
+          "detail": "Stay in the shade. See the rose avenue viewpoint and sit on a lawn. Do not try to cover every path."
         },
         {
           "time": "11:15",
-          "title": "Optional panoramic train",
-          "detail": "If anyone is tired. This is a rest, not an extra attraction."
+          "title": "Optional park train",
+          "detail": "Only if someone is tired. Treat it as a rest, not another attraction."
         },
         {
           "time": "12:00",
           "title": "Borghetto mills",
-          "detail": "Five-minute drive. Signed village lots — never mill lanes. Twenty to thirty minutes on foot."
+          "detail": "Five-minute drive. Park in the signed village lots — never on the narrow mill lanes. Walk 20–30 minutes."
         },
         {
           "time": "13:00",
-          "title": "Tortellini in Valeggio",
-          "detail": "In brodo or burro e salvia. Sit. This is the destination."
+          "title": "Tortellini lunch in Valeggio",
+          "detail": "Order tortellini in broth or with butter and sage. Sit down properly. This is the highlight of the day."
         },
         {
           "time": "15:40",
-          "title": "Drive back",
-          "detail": "SR249 may be busier; you have margin. Apartment by 16:20."
+          "title": "Drive home",
+          "detail": "The lake road may be busier, but you still have time. Back at the apartment by about 16:20."
         }
       ],
       "rationale": "Named lots, shade, toilets, and a panoramic train if anyone folds — parking and baby both near the top of the scale. Beauty is river-and-garden rather than a famous castle, which is the point of the ranking.",
@@ -211,27 +211,27 @@
         {
           "time": "09:30",
           "title": "Slow breakfast at the apartment",
-          "detail": "No alarm heroics. Pack the carrier anyway."
+          "detail": "No early rush. Still pack the baby carrier."
         },
         {
           "time": "10:15",
-          "title": "Museo del Vino Zeni",
-          "detail": "Short indoor loop. Taste or skip the glass if you are driving the 800 metres home."
+          "title": "Wine museum at Cantina Zeni",
+          "detail": "A short indoor visit. Taste a little wine, or skip the glass if you are driving the short way home."
         },
         {
           "time": "11:30",
-          "title": "Olive strip / Museo dell’Olio if open",
-          "detail": "Lungolago toward Cisano. Stroller, shade, no hike."
+          "title": "Olive shore / oil museum if open",
+          "detail": "Walk the lakeside path toward Cisano. Stroller-friendly, shady, no hike."
         },
         {
           "time": "12:45",
-          "title": "Lunch inland Bardolino",
-          "detail": "Not the photo-menu pier. One street back."
+          "title": "Lunch inland in Bardolino",
+          "detail": "Avoid the touristy waterfront menus. Choose a place one street back from the pier."
         },
         {
           "time": "14:20",
-          "title": "Apartment nap",
-          "detail": "This is the point of the product. Gelato after 17:00."
+          "title": "Home for the baby’s nap",
+          "detail": "That nap is the point of this easy day. Save gelato for after 17:00."
         }
       ],
       "rationale": "Parking is the apartment or a named cantina lot; baby score is near-max because you can go home between stops. Beauty is local hillside, not a postcard castle — honest, and still a better morning than a forced city.",
@@ -329,37 +329,37 @@
         {
           "time": "09:20",
           "title": "Change the baby at home",
-          "detail": "Boats are a bad nappy room."
+          "detail": "Boat toilets are a bad place for a nappy change."
         },
         {
           "time": "09:40",
-          "title": "Imbarcadero Bardolino",
-          "detail": "Tickets about 20 minutes early. Seasonal PDF from last night."
+          "title": "Bardolino ferry pier",
+          "detail": "Buy or collect tickets about 20 minutes early. Check yesterday’s timetable on navigazionelaghi.it."
         },
         {
           "time": "10:10",
           "title": "Boat toward Garda / Torri",
-          "detail": "Exact sailing from navigazionelaghi.it. Sit in the cabin if the deck is harsh."
+          "detail": "Confirm the exact sailing time. Sit inside the cabin if the open deck feels windy or rough."
         },
         {
           "time": "10:40",
-          "title": "Garda pause",
-          "detail": "Coffee, shade, photos. Do not overstay. This is not the Punta swim day."
+          "title": "Short stop in Garda town",
+          "detail": "Coffee, shade, a few photos. Do not linger — this is not the beach day at Punta San Vigilio."
         },
         {
           "time": "11:20",
-          "title": "Torri del Benaco",
-          "detail": "Castle courtyard and harbour. Skip museum stairs."
+          "title": "Arrive Torri del Benaco",
+          "detail": "See the castle courtyard and harbour. Skip the museum stairs with the baby."
         },
         {
           "time": "12:30",
           "title": "Lunch in Torri",
-          "detail": "One street off the first pier if the menus are laminated."
+          "detail": "Eat one street back from the pier if the waterfront menus look touristy."
         },
         {
           "time": "14:40",
           "title": "Return boat",
-          "detail": "Leave earlier if clouds stack. Apartment about 16:10."
+          "detail": "Leave earlier if clouds build up. Back at the apartment around 16:10."
         }
       ],
       "rationale": "Parking is almost a perfect score because the car stays home. Baby is 80, not 95: gangways, sun, and possible swell are real, and a carrier plus a short timetable is the fix — not a longer cruise.",
@@ -450,33 +450,33 @@
       "timeline": [
         {
           "time": "09:40",
-          "title": "Inland via Calmasino / Cavaion",
-          "detail": "Not the lake road. Cool bag, hats, one booked or walk-in estate."
+          "title": "Drive inland to Cavaion",
+          "detail": "Go via Calmasino / Cavaion, not along the lake. Bring a cool bag, hats, and one planned winery."
         },
         {
           "time": "10:00",
-          "title": "Park at the cantina lot",
-          "detail": "Signed visitor bays. Photo the row. Stroller or carrier."
+          "title": "Park at the winery",
+          "detail": "Use the signed visitor parking. Take a quick photo of where you parked so you can find the car later."
         },
         {
           "time": "10:10",
           "title": "One cellar visit",
-          "detail": "Keep it under 50 minutes. Spit or skip alcohol if you are the driver."
+          "detail": "Keep it under 50 minutes. If you are driving, spit tastings or skip alcohol."
         },
         {
           "time": "11:20",
-          "title": "Village pause in Cavaion",
-          "detail": "Bar, shade, nappy. Not a second tasting."
+          "title": "Pause in Cavaion village",
+          "detail": "Coffee, shade, and a nappy change. Do not add a second tasting."
         },
         {
           "time": "12:15",
-          "title": "Lunch",
-          "detail": "Simple inland kitchen — risotto, grilled vegetables, a plate of cheese."
+          "title": "Lunch inland",
+          "detail": "Simple food — risotto, grilled vegetables, or a cheese plate."
         },
         {
           "time": "14:10",
           "title": "Drive home",
-          "detail": "Apartment by 14:50. Afternoon cot."
+          "detail": "Apartment by about 14:50 for the afternoon nap."
         }
       ],
       "rationale": "Cantina visitor lots are the parking story — short, signed, usually empty compared with harbour towns. Baby score is high because this is indoor, air-conditioned, and close enough to abort. Food is the second priority after beaches, and this is how you honour it without a city.",
@@ -573,27 +573,27 @@
         {
           "time": "09:30",
           "title": "Slow breakfast",
-          "detail": "No alarm heroics."
+          "detail": "No early rush."
         },
         {
           "time": "10:30",
-          "title": "Lungolago or Cisano olive shore",
-          "detail": "Stroller, shade tent, feet in water. Pebble/concrete, not Caribbean sand."
+          "title": "Cisano or Bardolino lakeside",
+          "detail": "Stroller, shade tent, feet in the water. Expect pebbles or concrete, not soft sand."
         },
         {
           "time": "12:30",
-          "title": "Lunch inland Bardolino",
-          "detail": "Skip the photo-menu pier."
+          "title": "Lunch inland in Bardolino",
+          "detail": "Skip the touristy pier restaurants."
         },
         {
           "time": "14:00",
-          "title": "Apartment nap",
-          "detail": "This is the point."
+          "title": "Home for the nap",
+          "detail": "That rest is the point of this base day."
         },
         {
           "time": "17:30",
           "title": "Harbour gelato",
-          "detail": "After you are already home. Dinner always here."
+          "detail": "Only after you are already home. Dinner stays in Bardolino."
         }
       ],
       "rationale": "Baby and walking nearly max out because the cot is ten minutes away. Beauty is honest east-shore olive, not Punta. Effort is almost perfect: this is not a trip, and that is why it scores like a gift.",
@@ -685,27 +685,27 @@
         {
           "time": "09:30",
           "title": "Drive inland past Peschiera",
-          "detail": "Toward Monzambano / Castellaro. Not the lake foot."
+          "detail": "Head toward Monzambano / Castellaro. Stay inland — this is not a lakeside stop."
         },
         {
           "time": "10:15",
-          "title": "Village car park",
-          "detail": "Signed P at the edge. Walk in. Do not squeeze through the gate."
+          "title": "Park at the village edge",
+          "detail": "Use the signed car park outside the walls. Walk in. Do not try to drive through the gate."
         },
         {
           "time": "10:25",
-          "title": "Walls and lagoon loop",
-          "detail": "Thirty to forty minutes. Carrier for cobbles. One viewpoint, then sit."
+          "title": "Walls and little lake loop",
+          "detail": "30–40 minutes. Use the carrier on cobbles. One viewpoint, then sit."
         },
         {
           "time": "12:15",
           "title": "Lunch if the trattoria is open",
-          "detail": "Monday closures are real. Have a Valeggio backup in the pocket."
+          "detail": "Many places close on Monday. Keep Valeggio as a backup lunch stop."
         },
         {
           "time": "14:40",
           "title": "Drive home",
-          "detail": "Apartment by 15:40. Do not add Borghetto ‘because it’s close’."
+          "detail": "Apartment by about 15:40. Do not add Borghetto ‘because it is close’."
         }
       ],
       "rationale": "A village car park with a short walk beats every harbour scramble. Baby is high because the loop is small and the streets empty out. Food is a notch below Valeggio — one trattoria, not a destination cuisine — and the score says so.",
@@ -800,38 +800,38 @@
       "timeline": [
         {
           "time": "09:10",
-          "title": "Drive SR249 south",
-          "detail": "Before it clogs. Inland via Calmasino if maps show a jam."
+          "title": "Drive south on the lake road",
+          "detail": "Leave before traffic builds. If maps show a jam, go inland via Calmasino."
         },
         {
           "time": "09:35",
-          "title": "Parcheggio Fortezza",
-          "detail": "Stroller out, hats on. Not a historic-centre door."
+          "title": "Park at Fortezza car park",
+          "detail": "Get the stroller out and hats on. Do not try to park at a historic-centre doorway."
         },
         {
           "time": "09:45",
-          "title": "Walls and canals",
-          "detail": "Slow circuit. Watch bikes."
+          "title": "Walk the walls and canals",
+          "detail": "A slow loop. Watch for bikes."
         },
         {
           "time": "11:15",
-          "title": "Coffee",
-          "detail": "Feed the baby in shade. Wall cafe with water both sides."
+          "title": "Coffee break",
+          "detail": "Feed the baby in the shade. Choose a wall café with water views if you can."
         },
         {
           "time": "12:15",
           "title": "Short lunch",
-          "detail": "Near Porta Verona. Not a 90-minute tasting menu."
+          "detail": "Near Porta Verona. Not a long tasting-menu meal."
         },
         {
           "time": "13:15",
-          "title": "Lido sit",
-          "detail": "Feet in water, shade tent, not a swim lesson."
+          "title": "Beach / lido sit",
+          "detail": "Feet in the water under a shade tent. Not a swimming lesson."
         },
         {
           "time": "15:10",
           "title": "Drive home",
-          "detail": "Beat the late-afternoon lake road. Apartment ~15:50. Gelato can wait until Bardolino at 17:30."
+          "detail": "Leave before the late-afternoon lake road gets bad. Apartment around 15:50. Save gelato for Bardolino later."
         }
       ],
       "rationale": "Beaches are priority one; this is the easiest proper swim-and-stroll that still feels like going somewhere. Beauty is military-picturesque, scored 78 on purpose. Parking is not Sirmione, and that 20% weight is why this beats the famous castle.",
@@ -922,33 +922,33 @@
       "timeline": [
         {
           "time": "09:15",
-          "title": "East toward Soave",
-          "detail": "A4 or SS11. Garage/lot outside the walls, never the centro pin."
+          "title": "Drive east to Soave",
+          "detail": "Use the A4 or SS11. Park outside the town walls — never follow GPS into the centre."
         },
         {
           "time": "10:05",
           "title": "Park outside the walls",
-          "detail": "Signed P Castello / Vittoria. Walk in through a gate."
+          "detail": "Look for signed Castello / Vittoria parking. Walk in through a town gate."
         },
         {
           "time": "10:20",
-          "title": "Centro loop",
-          "detail": "Piazza, streets, a wine window. Skip the keep stairs."
+          "title": "Old-town walk",
+          "detail": "Piazza, side streets, maybe a wine shop window. Skip climbing the castle keep stairs."
         },
         {
           "time": "12:30",
           "title": "Lunch in town",
-          "detail": "Sit. Soave Classico if someone else is driving; the driver drinks water."
+          "detail": "Sit down. If someone else can drive later, try Soave Classico; the driver drinks water."
         },
         {
           "time": "14:40",
           "title": "One more slow street, then the car",
-          "detail": "No ‘quick Verona on the way home’."
+          "detail": "Do not add ‘a quick Verona on the way home’."
         },
         {
           "time": "16:00",
-          "title": "Apartment",
-          "detail": "Nap margin before 18:00."
+          "title": "Back at the apartment",
+          "detail": "Nap time left before 18:00."
         }
       ],
       "rationale": "Parking outside the walls is the whole Soave trick, and it works — 85 is earned. Baby is high for a castle town because the centro is compact and mostly flat. Effort 80 is the A4/local 45 minutes, not a logistics drama.",
@@ -1040,28 +1040,28 @@
       "timeline": [
         {
           "time": "09:20",
-          "title": "SR249 north",
-          "detail": "Ten minutes. If the first lot is full, the next signed P — not Punta."
+          "title": "Drive north to Garda",
+          "detail": "About 10 minutes on the lake road. If the first car park is full, use the next signed one — not Punta San Vigilio."
         },
         {
           "time": "09:35",
-          "title": "Via dei Mulini or lungolago lot",
-          "detail": "Walk to the piazza. Stroller out."
+          "title": "Park near the centre",
+          "detail": "Via dei Mulini or a lakeside signed lot. Walk to the piazza with the stroller."
         },
         {
           "time": "09:45",
           "title": "Promenade and piazza",
-          "detail": "Forty minutes easy. Palaces, harbour, one shop if you want."
+          "detail": "An easy 40 minutes: harbour, buildings, one shop if you want."
         },
         {
           "time": "12:00",
-          "title": "Lunch one street back",
-          "detail": "Inland of the first waterfront row."
+          "title": "Lunch one street inland",
+          "detail": "Eat behind the first waterfront row of restaurants."
         },
         {
           "time": "14:20",
           "title": "Drive home",
-          "detail": "Apartment ~15:10. Nap. Do not continue to Torri unless this was a ferry-cancellation day."
+          "detail": "Apartment around 15:10 for a nap. Do not continue to Torri unless a ferry day was cancelled."
         }
       ],
       "rationale": "Parking is 70 — town lots, not the Punta bay tax, and not apartment-easy either. Baby and walking are high because the lungolago is flat. Effort is excellent: ten minutes north. Distinct from the ferry’s Garda pause and from Punta’s swim.",
@@ -1151,28 +1151,28 @@
       "timeline": [
         {
           "time": "09:20",
-          "title": "Inland via Affi",
-          "detail": "A22 exit Affi, then Valpolicella signs toward San Giorgio. Not SR249 north."
+          "title": "Drive inland via Affi",
+          "detail": "Take the A22 Affi exit, then follow Valpolicella signs to San Giorgio. Do not go north on the lake road."
         },
         {
           "time": "10:05",
-          "title": "Village lot",
-          "detail": "Signed P near the pieve. If full, the next terrace lot — do not invent roadside parking."
+          "title": "Park in the village",
+          "detail": "Use signed parking near the church. If full, the next terrace lot — do not invent roadside parking."
         },
         {
           "time": "10:15",
-          "title": "Church square and terrace",
-          "detail": "Twenty to thirty minutes. View from the piazza. No ridge walk."
+          "title": "Church square and viewpoint",
+          "detail": "20–30 minutes. Enjoy the view from the square. No ridge hike."
         },
         {
           "time": "12:00",
           "title": "Lunch",
-          "detail": "A Valpolicella kitchen. Amarone on the list is not a command; the driver drinks water."
+          "detail": "A Valpolicella restaurant. An Amarone on the menu is optional; the driver drinks water."
         },
         {
           "time": "14:40",
           "title": "Drive home",
-          "detail": "Apartment ~15:50. Do not add Verona."
+          "detail": "Apartment around 15:50. Do not add Verona."
         }
       ],
       "rationale": "Parking at the village is usually a signed lot, not a miracle. Baby 80 because there is a gentle slope and one square — fine, not Cisano. Food is the reason to come. Effort 78 is forty minutes via Affi, honest for a village this small.",
@@ -1266,28 +1266,28 @@
       "timeline": [
         {
           "time": "09:20",
-          "title": "SR249 south",
-          "detail": "Twelve minutes. Before the late-morning clot."
+          "title": "Drive south to Lazise",
+          "detail": "About 12 minutes on the lake road. Leave before late-morning traffic."
         },
         {
           "time": "09:35",
-          "title": "Park at signed wall-side lots",
-          "detail": "Not the harbour door. Harbor bays are a trap."
+          "title": "Park by the town walls",
+          "detail": "Use signed lots near the walls. Do not chase a spot right at the harbour."
         },
         {
           "time": "09:45",
-          "title": "Walls and harbour",
-          "detail": "Thirty-minute loop. Plane trees, a gate, a sit."
+          "title": "Walls and harbour walk",
+          "detail": "A 30-minute loop: gates, plane trees, a sit by the water."
         },
         {
           "time": "12:15",
-          "title": "Lunch one street back",
-          "detail": "Inland. Not the laminated pier."
+          "title": "Lunch one street inland",
+          "detail": "Eat inland. Skip the touristy pier menus."
         },
         {
           "time": "14:40",
-          "title": "Home",
-          "detail": "Before the SR249 clot. Nap at the apartment."
+          "title": "Drive home",
+          "detail": "Leave before the lake road clogs. Nap at the apartment."
         }
       ],
       "rationale": "Effort is almost perfect — it is next door. Parking is a notch below Peschiera’s fortress lots, which is why it sits under Peschiera. Distinctness is the hidden cost: it is your harbour with different walls. Still a legitimate six-day menu item.",
@@ -1378,28 +1378,28 @@
       "timeline": [
         {
           "time": "09:15",
-          "title": "North via Garda on SR249",
-          "detail": "Twenty-two minutes off-peak. Add ten if you left late."
+          "title": "Drive north via Garda",
+          "detail": "About 22 minutes off-peak on the lake road. Add 10 minutes if you leave late."
         },
         {
           "time": "09:40",
-          "title": "Harbor / castle lots",
-          "detail": "If full, upper-town lots and walk down."
+          "title": "Park by the harbour or castle",
+          "detail": "If those lots are full, park higher in town and walk down."
         },
         {
           "time": "10:00",
-          "title": "Piazzetta and castle courtyard",
-          "detail": "Skip museum stairs."
+          "title": "Square and castle courtyard",
+          "detail": "Stay on flat ground. Skip the museum stairs."
         },
         {
           "time": "12:30",
-          "title": "Lunch one street off the pier",
-          "detail": "Lake fish inland of the first row."
+          "title": "Lunch near the pier",
+          "detail": "Choose lake fish one street back from the first waterfront row."
         },
         {
           "time": "15:20",
           "title": "Drive home",
-          "detail": "SR249 south can crawl. Apartment ~16:00."
+          "detail": "The lake road south can crawl. Apartment around 16:00."
         }
       ],
       "rationale": "Beauty is high; parking is tighter than Peschiera, correctly. Effort 78 because SR249 north spends luck you do not need if the boat is running. Ranked as the honest ferry backup, not a duplicate headline.",
@@ -1491,28 +1491,28 @@
       "timeline": [
         {
           "time": "09:00",
-          "title": "Drive via Peschiera toward Mantova",
-          "detail": "A22 or local roads. Pin a garage, never Piazza Sordello as driving."
+          "title": "Drive to Mantua",
+          "detail": "Go via Peschiera. Navigate to a car park / garage — never to Piazza Sordello as a driving destination."
         },
         {
           "time": "10:00",
-          "title": "Centro garage",
-          "detail": "Pallone / signed P. Photo the floor and the row."
+          "title": "Park in a centre garage",
+          "detail": "Use ASTER Castello or Pradella-class parking. Take a quick photo of the level and bay so you can find the car."
         },
         {
           "time": "10:15",
-          "title": "Piazza Sordello loop",
-          "detail": "Then Piazza delle Erbe. Slow. Carrier if cobbles annoy the stroller."
+          "title": "Piazza Sordello and nearby squares",
+          "detail": "Then Piazza delle Erbe. Go slowly. Switch to the carrier if cobbles fight the stroller."
         },
         {
           "time": "13:00",
           "title": "Lunch",
-          "detail": "Pumpkin tortelli if you did not already do Valeggio. Sit indoors."
+          "detail": "Try pumpkin tortelli if you did not already eat in Valeggio. Sit indoors."
         },
         {
           "time": "15:30",
           "title": "Back to the car",
-          "detail": "No Palazzo Ducale ticket queue. Home ~16:30."
+          "detail": "Skip the long Palazzo Ducale ticket queue. Home around 16:30."
         }
       ],
       "rationale": "Food and beauty carry the city brief. Walking 70 is honest cobbles, not a hike. Parking 68 is a centro garage with a ZTL you must obey. Effort 72 is a 50-minute drive — easier than Padua or Brescia, harder than Soave.",
@@ -1605,28 +1605,28 @@
       "timeline": [
         {
           "time": "09:00",
-          "title": "South around the lake foot",
-          "detail": "Via Peschiera. Add 15 minutes in peak."
+          "title": "Drive to the south end of the lake",
+          "detail": "Via Peschiera. Add about 15 minutes in busy traffic."
         },
         {
           "time": "09:50",
-          "title": "Harbor / castle-area garage",
-          "detail": "Signed P. Photo the ticket."
+          "title": "Park near the harbour or castle",
+          "detail": "Use a signed garage or lot. Keep the parking ticket photo or stub."
         },
         {
           "time": "10:00",
-          "title": "Promenade loop",
-          "detail": "Forty minutes easy."
+          "title": "Promenade walk",
+          "detail": "An easy 40 minutes along the waterfront."
         },
         {
           "time": "12:30",
           "title": "Sit-down lunch",
-          "detail": "Broader menu than Bardolino harbour."
+          "detail": "Broader menus than Bardolino harbour."
         },
         {
           "time": "14:00",
-          "title": "Optional lido sit",
-          "detail": "Then home by 16:00."
+          "title": "Optional beach sit, then home",
+          "detail": "A short lido stop if energy allows. Home by 16:00."
         }
       ],
       "rationale": "Competent larger town. Parking is a harbour garage, not a gift. Beauty 72 is honest — it is a working town, not a dream. Effort 75 is the drive around the lake foot. It loses to Peschiera on identity and to Sigurtà on baby/parking.",
@@ -1716,28 +1716,28 @@
       "timeline": [
         {
           "time": "08:50",
-          "title": "Drive south then west",
-          "detail": "Via Peschiera / Desenzano. Peak can be 80 minutes — leave early."
+          "title": "Drive south, then west to Salò",
+          "detail": "Via Peschiera / Desenzano. In peak traffic this can take up to 80 minutes — leave early."
         },
         {
           "time": "10:00",
-          "title": "Lungolago-adjacent paid lot",
-          "detail": "If full, upper lots and walk down."
+          "title": "Park near the lakeside promenade",
+          "detail": "If the closest paid lots are full, park higher up and walk down."
         },
         {
           "time": "10:15",
-          "title": "Long promenade, slow",
-          "detail": "Stroller. Sit. This is the scenery."
+          "title": "Long promenade walk",
+          "detail": "Stroller-friendly and slow. The scenery is the point."
         },
         {
           "time": "12:45",
           "title": "Lunch",
-          "detail": "This is the food reason to come."
+          "detail": "This is the food reason to come to Salò."
         },
         {
           "time": "15:00",
-          "title": "Drive back with margin",
-          "detail": "Home ~16:20. Do not add Gardone / Vittoriale."
+          "title": "Drive home with time to spare",
+          "detail": "Apartment around 16:20. Do not add Gardone or the Vittoriale."
         }
       ],
       "rationale": "Food and promenade are excellent. Travel effort 62 is the tax: you drive around the south, not the fun car ferry. That 10% weight is doing its job. Only pick this if the week still has a long-energy day left.",
@@ -1831,28 +1831,28 @@
       "timeline": [
         {
           "time": "08:40",
-          "title": "Drive north",
-          "detail": "If the bay lot looks full from the road, abort to Garda town lots."
+          "title": "Drive north toward the bay",
+          "detail": "If the bay car park looks full from the road, abort and use Garda town parking instead."
         },
         {
           "time": "09:00",
-          "title": "Paid Punta / Baia parking",
-          "detail": "Walk ~6 minutes plus the pedestrian underpass."
+          "title": "Park at Baia delle Sirene / Punta",
+          "detail": "Paid parking. Then about 6 minutes on foot, including the pedestrian underpass."
         },
         {
           "time": "09:15",
-          "title": "Shade under olives, feet in water",
-          "detail": "Carrier on pebbles. This is a sit, not a swim lesson."
+          "title": "Sit under the olive trees",
+          "detail": "Feet in the water. Use the carrier on pebbles. This is a sit day, not a swimming lesson."
         },
         {
           "time": "12:00",
-          "title": "Garda town coffee",
-          "detail": "If the bay bar is a crush."
+          "title": "Coffee in Garda town if needed",
+          "detail": "If the bay bar is too crowded."
         },
         {
           "time": "14:00",
-          "title": "Home",
-          "detail": "Real nap. Do not add Malcesine."
+          "title": "Home for a real nap",
+          "detail": "Do not add Malcesine."
         }
       ],
       "rationale": "Beauty almost maxes. Parking at the bay is 48, and the 20% weight hurts, correctly. A weekday dawn-ish attempt can work; a scored headline trip cannot pretend the lot is easy. Do not inflate this.",
@@ -1942,23 +1942,23 @@
       "timeline": [
         {
           "time": "09:00",
-          "title": "A4 toward Vicenza",
-          "detail": "Park in a signed garage off the centro. Not a piazza pin."
+          "title": "Drive to Vicenza on the A4",
+          "detail": "Park in a signed garage outside the historic centre — not at a piazza pin."
         },
         {
           "time": "10:20",
-          "title": "Corso Palladio",
-          "detail": "Piazza dei Signori. One coffee, one slow street."
+          "title": "Walk Corso Palladio",
+          "detail": "See Piazza dei Signori. One coffee, one slow street."
         },
         {
           "time": "13:00",
-          "title": "Lunch",
-          "detail": "Then the car by 15:00."
+          "title": "Lunch, then leave by 15:00",
+          "detail": "Eat, then get back to the car in time for the drive."
         },
         {
           "time": "16:20",
-          "title": "Apartment",
-          "detail": "Margin before 18:00."
+          "title": "Back at the apartment",
+          "detail": "Still with margin before 18:00."
         }
       ],
       "rationale": "Walking 72 is a straight corso with some cobbles — better than Venice, not a garden path. Baby 70 is honest city density. Effort 65 is about 65 minutes on the A4. Beauty is architecture, scored 80, not a lake 94.",
@@ -2048,28 +2048,28 @@
       "timeline": [
         {
           "time": "08:45",
-          "title": "A4 toward Padova",
-          "detail": "Garage, not historic-centre GPS."
+          "title": "Drive to Padua on the A4",
+          "detail": "Park in a garage. Do not follow GPS into the historic centre."
         },
         {
           "time": "10:10",
-          "title": "Piazza delle Erbe / della Frutta",
-          "detail": "One market loop. Carrier in the crush."
+          "title": "Market squares",
+          "detail": "A short loop of Piazza delle Erbe / della Frutta. Use the carrier in the crowds."
         },
         {
           "time": "11:30",
-          "title": "Prato della Valle sit",
-          "detail": "Stroller-friendly oval. Do not lap it twice."
+          "title": "Sit at Prato della Valle",
+          "detail": "Stroller-friendly oval park. Walk it once — do not lap it twice."
         },
         {
           "time": "13:00",
-          "title": "Lunch under porticoes",
-          "detail": "Sit. This city knows coffee."
+          "title": "Lunch under the porticoes",
+          "detail": "Sit down. Padua is excellent for coffee and a proper meal."
         },
         {
           "time": "15:20",
           "title": "Hard leave for the drive",
-          "detail": "Home ~16:40. No Venice add-on."
+          "detail": "Home around 16:40. Do not add Venice the same day."
         }
       ],
       "rationale": "Porticoes help baby and rain; walking 62 is still a city with tram tracks and a huge oval to resist circling twice. Effort 62 is ~70 minutes — inside the cap, not casual. Food is a university-town 86. Do not add Venice ‘since we’re halfway’.",
@@ -2158,33 +2158,33 @@
       "timeline": [
         {
           "time": "08:50",
-          "title": "West on the A4",
-          "detail": "Toward Brescia. Pin Piazza Vittoria parking, not Castello as driving."
+          "title": "Drive west on the A4",
+          "detail": "Head to Brescia. Navigate to Piazza Vittoria parking, not to the castle as a driving destination."
         },
         {
           "time": "10:15",
-          "title": "Centro garage",
-          "detail": "Photo the row. Stroller for the old town."
+          "title": "Park in a centre garage",
+          "detail": "Take a quick photo of where you parked. Use the stroller for the old town."
         },
         {
           "time": "10:30",
           "title": "Piazzas and old town",
-          "detail": "Piazza della Loggia, a slow loop. Roman fragments as backdrop."
+          "detail": "Piazza della Loggia and a slow loop. Roman ruins are a backdrop, not a hike."
         },
         {
           "time": "12:00",
           "title": "Optional lower castle park",
-          "detail": "Only if energy and a gentle path. No keep stairs, no viewpoint hike."
+          "detail": "Only if you still have energy and a gentle path. No keep stairs, no viewpoint climb."
         },
         {
           "time": "13:00",
-          "title": "Lunch in the centro",
+          "title": "Lunch in the centre",
           "detail": "Sit indoors."
         },
         {
           "time": "15:15",
-          "title": "Hard leave",
-          "detail": "Home ~16:45. Margin before 18:00 is thinner than lake days — obey it."
+          "title": "Hard leave for home",
+          "detail": "Apartment around 16:45. Timing is tighter than lake days — stick to it."
         }
       ],
       "rationale": "Parking 70 is Piazza Vittoria / lower lots — doable. Walking 65 because the castle is a hill; we score the old-town-plus-lower-terrace version, not the keep. Effort 60 is ~75 minutes. Bergamo Alta is hillier and tighter on 18:00 — we are not selling it.",
@@ -2274,18 +2274,18 @@
       "timeline": [
         {
           "time": "09:00",
-          "title": "Inland toward Verona",
-          "detail": "Follow garage signs, never the historic-centre pin."
+          "title": "Drive inland to Verona",
+          "detail": "Follow garage signs. Never follow GPS into the historic centre."
         },
         {
           "time": "09:50",
-          "title": "Arena / Cittadella garage",
-          "detail": "Photo the floor and the row."
+          "title": "Park at Arena / Cittadella garage",
+          "detail": "Take a quick photo of the floor and bay so you can find the car later."
         },
         {
           "time": "10:10",
           "title": "Arena from the outside",
-          "detail": "Plus one arcade sit. Skip Juliet’s house."
+          "detail": "See the Arena and sit in one arcade. Skip Juliet’s house."
         },
         {
           "time": "12:30",
@@ -2299,8 +2299,8 @@
         },
         {
           "time": "16:40",
-          "title": "Apartment",
-          "detail": "Margin before 18:00."
+          "title": "Back at the apartment",
+          "detail": "Margin left before 18:00."
         }
       ],
       "rationale": "Food and beauty are why Verona is on the menu as sightseeing, not as a wet-weather apology. Baby 54 and walking 56 are cobbles, ZTL, and the Arena crush — honest. Parking 62 is an Arena-class garage if you follow signs, not if you pin the centro.",
@@ -2391,28 +2391,28 @@
       "timeline": [
         {
           "time": "07:45",
-          "title": "Drive south",
-          "detail": "Last kilometres crawl after 09:30."
+          "title": "Drive south early",
+          "detail": "The last kilometres crawl after about 09:30."
         },
         {
           "time": "08:20",
-          "title": "Parcheggio Monte Baldo",
-          "detail": "Or Marconi if a space exists. If both full: Colombare overflow (~18 min flat walk) — or abort to Peschiera."
+          "title": "Park at Monte Baldo",
+          "detail": "Or Marconi if a space exists. If both are full: Colombare overflow (~18 minutes flat walk), or abort to Peschiera."
         },
         {
           "time": "08:30",
-          "title": "Scaliger castle + old town coffee",
-          "detail": "Do not enter the ZTL by car."
+          "title": "Castle and old-town coffee",
+          "detail": "Walk in. Do not drive into the limited-traffic zone (ZTL)."
         },
         {
           "time": "11:30",
-          "title": "Optional short lido sit",
-          "detail": "Only if the baby is content. Not the Grotte."
+          "title": "Optional short beach sit",
+          "detail": "Only if the baby is content. Skip the Grotte di Catullo."
         },
         {
           "time": "13:15",
           "title": "Leave the peninsula",
-          "detail": "Home ~14:20."
+          "detail": "Home around 14:20."
         }
       ],
       "rationale": "Parking is 28 because the peninsula is a ZTL with lots that die by 10:00 and a Colombare backup that adds a long walk. That 20% weight is doing its job. Beauty cannot outvote a garage queue when parking is very important and a newborn is in the back seat.",
@@ -2503,52 +2503,52 @@
         {
           "time": "07:15",
           "title": "Leave the apartment",
-          "detail": "Carrier packed, bottles, change kit, tickets downloaded."
+          "detail": "Pack the carrier, bottles, change kit, and download train tickets the night before."
         },
         {
           "time": "07:40",
-          "title": "Park Piazzale Stazione, Peschiera",
-          "detail": "Photo the row."
+          "title": "Park at Peschiera station",
+          "detail": "Use Piazzale Stazione. Take a quick photo of where you parked so you can find the car later."
         },
         {
           "time": "08:10",
-          "title": "Train toward Venezia S. Lucia",
-          "detail": "Exact minute from last night’s Trenitalia check. Direct preferred."
+          "title": "Train to Venezia Santa Lucia",
+          "detail": "Board the train time you checked on Trenitalia last night. Prefer a direct train."
         },
         {
           "time": "09:40",
-          "title": "Santa Lucia",
-          "detail": "Change nappy. Carrier on. Stroller folded."
+          "title": "Arrive Santa Lucia station",
+          "detail": "Change the nappy, put the baby in the carrier, and fold the stroller."
         },
         {
           "time": "10:00",
-          "title": "Canal rest",
-          "detail": "Line 1 if the boat is calm; otherwise Lista di Spagna."
+          "title": "First canal pause",
+          "detail": "Take vaporetto Line 1 only if the water is calm; otherwise walk Lista di Spagna on foot."
         },
         {
           "time": "12:00",
-          "title": "Lunch off the Rialto flow",
-          "detail": "Indoor seats."
+          "title": "Lunch away from Rialto crowds",
+          "detail": "Choose a place with indoor seats, off the main Rialto tourist flow."
         },
         {
           "time": "14:30",
-          "title": "Begin return drift",
-          "detail": "No new sestiere."
+          "title": "Start drifting back toward the station",
+          "detail": "Do not open a new neighbourhood. Stay on the return path."
         },
         {
           "time": "15:20",
           "title": "Hard leave from Santa Lucia",
-          "detail": "On a train by this time. Not 15:21."
+          "detail": "Be on a train by 15:20. Not 15:21."
         },
         {
           "time": "16:55",
-          "title": "Back at the car",
-          "detail": "Water, nappy, 20-minute drive."
+          "title": "Back at the car in Peschiera",
+          "detail": "Water, a nappy change if needed, then about 20 minutes’ drive."
         },
         {
           "time": "17:25",
-          "title": "Apartment Bardolino",
-          "detail": "Before 18:00 with margin."
+          "title": "Apartment in Bardolino",
+          "detail": "Home before 18:00 with a little margin."
         }
       ],
       "venice_modes_included": true,
