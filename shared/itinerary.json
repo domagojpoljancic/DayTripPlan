@@ -5,7 +5,7 @@
     {
       "id": "sigurta-borghetto",
       "name": "Sigurtà gardens and Borghetto mills",
-      "mandatory": false,
+      "mandatory": true,
       "score": 90,
       "why_selected": "Famous-lake lists skip inland Valeggio. You should not. This is the highest-scoring day in the menu: easy parking, a stroller-native garden, and a lunch with a name. You are not here to collect a castle queue. You are here because a six-month-old and a good plate of tortellini can share the same morning.",
       "difficulty": "easy",
