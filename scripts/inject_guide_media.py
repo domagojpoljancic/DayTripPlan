@@ -20,6 +20,33 @@ ITINERARY = ROOT / "shared" / "itinerary.json"
 TRIPS_BEGIN = "    /* BEGIN_GENERATED_TRIPS */\n"
 TRIPS_END = "\n    /* END_GENERATED_TRIPS */"
 
+# Approximate destination centroids for Open-Meteo forecasts (WGS84).
+# Documented approximations — good enough for a 1–3 day summary, not hiking GPS.
+COORDS = {
+    "sigurta-borghetto": (45.3530, 10.7330),  # Parco Sigurtà / Valeggio
+    "bardolino-wine-oil": (45.5480, 10.7240),  # Cantina Zeni, Bardolino
+    "garda-ferry": (45.5470, 10.7210),  # Bardolino imbarcadero
+    "cavaion-wine": (45.5400, 10.7710),  # Cavaion Veronese
+    "cisano-base": (45.5280, 10.7300),  # Cisano di Bardolino
+    "castellaro-lagusello": (45.3700, 10.6500),  # Castellaro Lagusello
+    "peschiera-lido": (45.4390, 10.6930),  # Peschiera del Garda
+    "soave": (45.4190, 11.2460),  # Soave castle town
+    "garda-town": (45.5780, 10.7110),  # Garda town centre
+    "valpolicella-sangiorgio": (45.5360, 10.8500),  # San Giorgio di Valpolicella
+    "lazise": (45.5050, 10.7330),  # Lazise walls
+    "torri-car": (45.6100, 10.6870),  # Torri del Benaco
+    "mantova": (45.1560, 10.7910),  # Mantua centro
+    "desenzano": (45.4690, 10.5350),  # Desenzano harbour
+    "salo": (45.6060, 10.5210),  # Salò lungolago
+    "garda-punta": (45.5790, 10.6820),  # Punta San Vigilio / Baia
+    "vicenza": (45.5460, 11.5470),  # Vicenza centro
+    "padova": (45.4070, 11.8760),  # Padova Prato della Valle
+    "brescia": (45.5410, 10.2120),  # Brescia centro
+    "verona": (45.4380, 10.9920),  # Verona Arena
+    "sirmione": (45.4930, 10.6060),  # Sirmione peninsula
+    "venice-train": (45.4400, 12.3160),  # Venice historic centre (not Peschiera station)
+}
+
 # Place + parking: Google Maps search URLs and official operator/tourism pages.
 # Parking "official" is the operator or comune mobility page — never a random blog.
 LINKS = {
@@ -396,8 +423,16 @@ def trip_to_html(trip: dict) -> dict:
         )
 
     parking_diff = transport.get("parking_difficulty") or ""
+    trip_id = trip["id"]
+    # Prefer itinerary lat/lon when present; else documented COORDS map.
+    lat = trip.get("lat")
+    lon = trip.get("lon")
+    if lat is None or lon is None:
+        pair = COORDS.get(trip_id)
+        if pair:
+            lat, lon = pair
     return {
-        "id": trip["id"],
+        "id": trip_id,
         "name": trip["name"],
         "short": trip.get("short") or "",
         "tags": tags,
@@ -419,6 +454,8 @@ def trip_to_html(trip: dict) -> dict:
         "mapsUrl": transport.get("maps_url") or "",
         "mapsLot": transport.get("maps_lot") or transport.get("parking_location") or "",
         "mapsAddress": transport.get("maps_address") or "",
+        "lat": lat,
+        "lon": lon,
         "timeline": timeline,
         "getting": {
             "mode": transport.get("mode_summary") or "",
