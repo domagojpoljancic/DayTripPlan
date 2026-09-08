@@ -10,7 +10,7 @@ Locked before any agent runs. Do not renegotiate with the user.
 | Pattern | Bardolino → day trip → Bardolino |
 | Nights elsewhere | 0 |
 | Days of stay | 6 |
-| Number of recommended day trips | **exactly 4** |
+| Trip menu | **~18–22 same-day loops** (browseable; family picks **5–6** across the stay) |
 | Car | Yes, every day |
 | Baby | Under 6 months |
 | Stroller | Yes |
@@ -18,7 +18,7 @@ Locked before any agent runs. Do not renegotiate with the user.
 | Drive cap | ~2 hours one way |
 | Return | Before 18:00 |
 
-Six days, four trips: two recovery / beach-at-base / nap days are expected and should be acknowledged in the HTML (not as extra trips).
+Six days on site: expect **5–6 outing days** from the menu plus **two recovery / beach-at-base / nap days** at the apartment. Base days are acknowledged in the HTML (not as extra menu entries). Trip data lives in `shared/itinerary.json` (source of truth for the shipped guide).
 
 ## Priorities (user)
 
@@ -62,7 +62,7 @@ Each criterion is 0–100. Higher **travel effort** score means *less* effort (e
 
 ### 1. Venice
 
-Must appear in the final four.
+Must appear in the menu (mandatory flag).
 
 The system **must decide the best way**. Compare at least:
 
@@ -77,7 +77,7 @@ Do not automatically choose the obvious option.
 
 ### 2. Lake Garda boat / ferry day
 
-Must appear in the final four.
+Must appear in the menu (mandatory flag).
 
 - Include a real Navigazione Laghi (or equivalent) boat/ferry experience
 - May start from Bardolino or a nearby imbarcadero
@@ -85,9 +85,9 @@ Must appear in the final four.
 - Must return home before 18:00
 - Car may remain in Bardolino — that is a feature
 
-### 3–4. Scored selections
+### Other menu entries
 
-Chosen by the Scoring + Itinerary agents from the research pool.
+The remaining ~16–20 loops are scored selections from the research pool, surfaced as a browseable menu (not a locked four-day itinerary).
 
 **Illegal justifications:** “It’s the most famous.” “Everyone does Sirmione.” “Gardaland is for families” (irrelevant for a 6-month-old).
 
@@ -109,7 +109,7 @@ Agents must evaluate, not necessarily visit:
 - Valeggio sul Mincio / Borghetto / Sigurtà
 - Verona
 - Venice (mandatory)
-- Bardolino-local beaches (Cisano, etc.) as *base-day* options, not as one of the four trips unless scoring demands a beach day-trip distinct from the ferry
+- Bardolino-local beaches (Cisano, etc.) as *base-day* options — ideal for nap/recovery days, distinct from the mandatory ferry outing
 
 Gardaland, Caneva, and theme parks are out of scope for a 6-month-old.
 
@@ -130,7 +130,7 @@ Single file: `output/bardolino-trip-guide.html`
 
 Design target: Apple + Airbnb + Google Travel + Lonely Planet. Premium travel product.
 
-Must include homepage hero, four-trip overview, ranking, filters, expandable sections, timeline, comparison table, maps buttons, favorites, checklist, dark mode, print mode, mobile nav, packing, baby checklist, weather, etiquette, emergency, tourist traps, rainy-day plan.
+Must include homepage hero, trip-menu overview, ranking, filters, expandable sections, timeline, comparison table, maps buttons, favorites, checklist, dark mode, print mode, mobile nav, packing, baby checklist, weather, etiquette, emergency, tourist traps, rainy-day plan. Venice and the Garda ferry day must be visible as mandatory picks in the menu.
 
 ## Suggested day-of-week logic (itinerary may apply)
 

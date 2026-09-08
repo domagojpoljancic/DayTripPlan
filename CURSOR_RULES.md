@@ -29,7 +29,7 @@ These rules bind **every** agent. They override convenience, fame, and “typica
 14. Score with the locked weights in `PLAN.md`. Show the math.
 15. Venice is mandatory, but the **mode of access** is not. Compare driving, park-outside, train, and organized transport. Optimize for baby, stroller, comfort, stress, realistic timing. Do not auto-pick “drive to Piazza San Marco” (illegal) or “everyone drives to Piazzale Roma.”
 16. The boat/ferry day is mandatory. It may be a half day. It must still return before 18:00.
-17. Exactly **four** trips in the final itinerary. Research may include many candidates.
+17. The product is a **menu of ~18–22 same-day loops** in `shared/itinerary.json`, not a locked four-trip itinerary. Venice and the Lake Garda ferry day are **mandatory** menu entries. The family picks about **5–6** outing days across a **6-day** stay; two base/nap days at the apartment are expected. Research may include many candidates; the shipped menu is the browseable set.
 
 ## Content honesty
 

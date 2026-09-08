@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Inject local Wikimedia photos plus Google Maps / official links into the HTML guide."""
+"""Generate guide media + trip data into the offline HTML.
+
+Source of truth for trip content: shared/itinerary.json
+This script emits `const TRIPS` (plus PHOTOS / LINKS helpers) into
+output/bardolino-trip-guide.html. Opening the HTML needs no build step;
+running this script is build-time codegen only.
+"""
 from __future__ import annotations
 
 import json
@@ -9,6 +15,37 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / "output" / "bardolino-trip-guide.html"
 CATALOG = ROOT / "output" / "images" / "catalog.json"
+ITINERARY = ROOT / "shared" / "itinerary.json"
+
+TRIPS_BEGIN = "    /* BEGIN_GENERATED_TRIPS */\n"
+TRIPS_END = "\n    /* END_GENERATED_TRIPS */"
+
+# Approximate destination centroids for Open-Meteo forecasts (WGS84).
+# Documented approximations — good enough for a 1–3 day summary, not hiking GPS.
+COORDS = {
+    "sigurta-borghetto": (45.3530, 10.7330),  # Parco Sigurtà / Valeggio
+    "bardolino-wine-oil": (45.5480, 10.7240),  # Cantina Zeni, Bardolino
+    "garda-ferry": (45.5470, 10.7210),  # Bardolino imbarcadero
+    "cavaion-wine": (45.5400, 10.7710),  # Cavaion Veronese
+    "cisano-base": (45.5280, 10.7300),  # Cisano di Bardolino
+    "castellaro-lagusello": (45.3700, 10.6500),  # Castellaro Lagusello
+    "peschiera-lido": (45.4390, 10.6930),  # Peschiera del Garda
+    "soave": (45.4190, 11.2460),  # Soave castle town
+    "garda-town": (45.5780, 10.7110),  # Garda town centre
+    "valpolicella-sangiorgio": (45.5360, 10.8500),  # San Giorgio di Valpolicella
+    "lazise": (45.5050, 10.7330),  # Lazise walls
+    "torri-car": (45.6100, 10.6870),  # Torri del Benaco
+    "mantova": (45.1560, 10.7910),  # Mantua centro
+    "desenzano": (45.4690, 10.5350),  # Desenzano harbour
+    "salo": (45.6060, 10.5210),  # Salò lungolago
+    "garda-punta": (45.5790, 10.6820),  # Punta San Vigilio / Baia
+    "vicenza": (45.5460, 11.5470),  # Vicenza centro
+    "padova": (45.4070, 11.8760),  # Padova Prato della Valle
+    "brescia": (45.5410, 10.2120),  # Brescia centro
+    "verona": (45.4380, 10.9920),  # Verona Arena
+    "sirmione": (45.4930, 10.6060),  # Sirmione peninsula
+    "venice-train": (45.4400, 12.3160),  # Venice historic centre (not Peschiera station)
+}
 
 # Place + parking: Google Maps search URLs and official operator/tourism pages.
 # Parking "official" is the operator or comune mobility page — never a random blog.
@@ -333,6 +370,170 @@ def photos_payload() -> dict:
     return out
 
 
+def _parking_word(difficulty: str | None) -> str:
+    """Severity badge from the leading parking_difficulty word only.
+
+    Do not scan the whole sentence — copy often contrasts easy mornings with
+    hard afternoons ("Easy if… Hard if you hunt…").
+    """
+    text = (difficulty or "").strip().lower()
+    m = re.match(r"(severe|hard|moderate|easy)\b", text)
+    if m:
+        return m.group(1)
+    return "moderate"
+
+
+def _join_list(value) -> str:
+    if isinstance(value, list):
+        return "; ".join(str(v) for v in value if v)
+    return str(value or "")
+
+
+def trip_to_html(trip: dict) -> dict:
+    """Map one itinerary.json trip into the HTML `TRIPS` object shape."""
+    transport = trip.get("transport") or {}
+    experience = trip.get("experience") or {}
+    family = trip.get("family") or {}
+    costs = trip.get("costs") or {}
+    backup = trip.get("backup") or {}
+    scores = dict(trip.get("scores") or {})
+    if "total" not in scores and trip.get("score") is not None:
+        scores["total"] = trip["score"]
+
+    km = transport.get("driving_distance_km")
+    minutes = transport.get("driving_duration_minutes")
+    drive_label = f"{km} km · {minutes} min" if km is not None and minutes is not None else ""
+
+    beaches = experience.get("beaches") or []
+    tags = trip.get("tags") or []
+    beach = bool(beaches) or "beach" in tags
+
+    gems = experience.get("hidden_gems") or []
+    restaurants = experience.get("restaurants") or []
+    coffee_stops = experience.get("coffee_stops") or []
+
+    timeline = []
+    for step in trip.get("timeline") or []:
+        timeline.append(
+            {
+                "t": step.get("time") or step.get("t") or "",
+                "h": step.get("title") or step.get("h") or "",
+                "d": step.get("detail") or step.get("d") or "",
+            }
+        )
+
+    parking_diff = transport.get("parking_difficulty") or ""
+    trip_id = trip["id"]
+    # Prefer itinerary lat/lon when present; else documented COORDS map.
+    lat = trip.get("lat")
+    lon = trip.get("lon")
+    if lat is None or lon is None:
+        pair = COORDS.get(trip_id)
+        if pair:
+            lat, lon = pair
+    return {
+        "id": trip_id,
+        "name": trip["name"],
+        "short": trip.get("short") or "",
+        "tags": tags,
+        "scores": scores,
+        "rationale": trip.get("rationale") or "",
+        "leave": trip.get("best_departure") or "",
+        "home": trip.get("expected_return") or "",
+        "driveKm": km if km is not None else 0,
+        "driveMin": minutes if minutes is not None else 0,
+        "driveLabel": drive_label,
+        "difficulty": trip.get("difficulty") or "moderate",
+        "parkingWord": _parking_word(parking_diff),
+        "beach": beach,
+        "strollerWord": trip.get("stroller_word")
+        or ("Yes" if str(experience.get("stroller_friendliness", "")).lower().startswith("yes") else "Mixed"),
+        "cover": trip.get("cover") or "lake",
+        "why": trip.get("why_selected") or "",
+        "glanceDrive": trip.get("glance_drive") or (f"{minutes} min" if minutes is not None else ""),
+        "mapsUrl": transport.get("maps_url") or "",
+        "mapsLot": transport.get("maps_lot") or transport.get("parking_location") or "",
+        "mapsAddress": transport.get("maps_address") or "",
+        "lat": lat,
+        "lon": lon,
+        "timeline": timeline,
+        "getting": {
+            "mode": transport.get("mode_summary") or "",
+            "route": transport.get("route") or "",
+            "lot": transport.get("parking_location") or "",
+            "cost": transport.get("parking_cost") or "",
+            "difficulty": parking_diff,
+            "backup": transport.get("parking_backup") or "",
+            "ztl": transport.get("ztl") or "",
+            "notes": transport.get("notes") or "",
+        },
+        "there": {
+            "walk": experience.get("walking_route") or "",
+            "skip": experience.get("skip") or "",
+            "gem": experience.get("place_gem") or (gems[0] if gems else ""),
+            "food": experience.get("place_food") or (restaurants[0] if restaurants else ""),
+            "coffee": experience.get("place_coffee") or (coffee_stops[0] if coffee_stops else ""),
+        },
+        "babyNotes": {
+            "changing": family.get("baby_changing") or "",
+            "rest": family.get("places_to_rest") or "",
+            "carrier": family.get("stroller_notes") or "",
+            "crowds": _join_list(family.get("crowded_areas_to_avoid")),
+        },
+        "costs": {
+            "parking": costs.get("parking") or "",
+            "food": costs.get("food_estimate") or costs.get("food") or "",
+            "tickets": costs.get("tickets") or "",
+            "ferry": costs.get("ferry") or "€0",
+        },
+        "rain": backup.get("rainy_day_alternative") or "",
+        "viewpoints": experience.get("viewpoints") or [],
+        "restaurants": restaurants,
+        "coffeeStops": coffee_stops,
+        "gems": gems,
+        "walkingDuration": experience.get("walking_duration") or "",
+        "stroller": experience.get("stroller_friendliness") or "",
+        "mandatory": bool(trip.get("mandatory")),
+        "veniceModes": trip.get("venice_modes"),
+        "beaches": beaches,
+    }
+
+
+def trips_payload() -> list[dict]:
+    data = json.loads(ITINERARY.read_text(encoding="utf-8"))
+    trips = data.get("trips") or []
+    if len(trips) < 4:
+        raise SystemExit(f"itinerary.json has too few trips ({len(trips)})")
+    return [trip_to_html(t) for t in trips]
+
+
+def inject_trips(html: str, trips: list[dict]) -> str:
+    """Replace the TRIPS const with generated JSON between stable anchors."""
+    payload = json.dumps(trips, ensure_ascii=False, separators=(",", ":"))
+    block = f"{TRIPS_BEGIN}    const TRIPS = {payload};{TRIPS_END}"
+
+    if "/* BEGIN_GENERATED_TRIPS */" in html and "/* END_GENERATED_TRIPS */" in html:
+        start = html.find("/* BEGIN_GENERATED_TRIPS */")
+        # rewind to line start
+        line_start = html.rfind("\n", 0, start) + 1
+        end = html.find("/* END_GENERATED_TRIPS */")
+        if end == -1:
+            raise SystemExit("END_GENERATED_TRIPS anchor missing")
+        end = end + len("/* END_GENERATED_TRIPS */")
+        return html[:line_start] + block + html[end:]
+
+    # First-time wrap: replace bare `const TRIPS = ...;` before WEIGHTS
+    marker = "    const TRIPS = "
+    start = html.find(marker)
+    if start == -1:
+        raise SystemExit("const TRIPS anchor not found")
+    end = html.find(";\n    const WEIGHTS", start)
+    if end == -1:
+        raise SystemExit("const WEIGHTS anchor after TRIPS not found")
+    end += 1  # include the semicolon
+    return html[:start] + block + html[end:]
+
+
 def inject_css(html: str) -> str:
     needle = "    .visual {\n      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; align-items: stretch;\n    }"
     if ".gallery-hero img" in html:
@@ -412,14 +613,17 @@ def inject_js(html: str, photos: dict, links: dict) -> str:
 
 def main() -> None:
     photos = photos_payload()
+    trips = trips_payload()
     missing = [k for k in LINKS if not photos.get(k)]
     print("photos trips", sum(1 for v in photos.values() if v), "of", len(LINKS))
+    print("generated TRIPS", len(trips), "from", ITINERARY.relative_to(ROOT))
     if missing:
         print("no photos yet:", ", ".join(missing))
-    html = HTML.read_text()
+    html = HTML.read_text(encoding="utf-8")
+    html = inject_trips(html, trips)
     html = inject_css(html)
     html = inject_js(html, photos, LINKS)
-    HTML.write_text(html)
+    HTML.write_text(html, encoding="utf-8")
     print("updated", HTML)
 
 

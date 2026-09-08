@@ -37,7 +37,11 @@
         "parking_cost": "Park lots typically free/unattended. Village lots cheap or free. Budget €0–5.",
         "parking_difficulty": "Easy — the parking win of the holiday.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parco%20Giardino%20Sigurtà",
-        "notes": "Buy Sigurtà tickets online in tulip/high season. Ages 0–4 usually free — verify sigurta.it."
+        "notes": "Buy Sigurtà tickets online in tulip/high season. Ages 0–4 usually free — verify sigurta.it.",
+        "maps_lot": "Parco Giardino Sigurtà — Rosso / Giallo lots",
+        "maps_address": "Via Cavour, 1, 37067 Valeggio sul Mincio VR",
+        "parking_backup": "Italmark / Via Cavour lots in Valeggio if the village edge is busy.",
+        "ztl": "No Bardolino-style ZTL trap here. Do not follow GPS into Borghetto mill lanes; they are not a car park."
       },
       "experience": {
         "walking_route": "Forty-five to sixty minutes easy on porphyry avenues, plus a short mill-village amble. Cap it. The park will happily sell you a 10 km day you do not want.",
@@ -57,7 +61,11 @@
         ],
         "hidden_gems": [
           "Mill race light if you still leave by 15:40"
-        ]
+        ],
+        "skip": "The full garden circuit, golf-cart FOMO, and driving into mill lanes for a closer photo.",
+        "place_food": "Tortellini di Valeggio is the lunch to spend on. The park cafe is a snack, not the point.",
+        "place_coffee": "A Valeggio bar after the village photos. Not a third course.",
+        "place_gem": "The mill race at Borghetto in late light — only if you still leave by 15:40."
       },
       "family": {
         "baby_changing": "Accessible toilets on the Sigurtà main circuit. Change on arrival so Borghetto is not a hunt.",
@@ -112,7 +120,10 @@
           "title": "Drive back",
           "detail": "SR249 may be busier; you have margin. Apartment by 16:20."
         }
-      ]
+      ],
+      "rationale": "Named lots, shade, toilets, and a panoramic train if anyone folds — parking and baby both near the top of the scale. Beauty is river-and-garden rather than a famous castle, which is the point of the ranking.",
+      "glance_drive": "28 min inland",
+      "stroller_word": "Yes"
     },
     {
       "id": "bardolino-wine-oil",
@@ -149,7 +160,11 @@
         "parking_cost": "€0–4.",
         "parking_difficulty": "Easy.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Museo%20del%20Vino%20Zeni%20Bardolino",
-        "notes": "Confirm Zeni opening hours the night before. Mondays can be quiet."
+        "notes": "Confirm Zeni opening hours the night before. Mondays can be quiet.",
+        "maps_lot": "Cantina Zeni / Museo del Vino visitor parking",
+        "maps_address": "Via Costabella, 9, 37011 Bardolino VR",
+        "parking_backup": "Bardolino centro paid lots if Zeni’s small bays are full — then walk.",
+        "ztl": "Stay out of the tiny one-way harbour cuts. You do not need them."
       },
       "experience": {
         "walking_route": "Twenty to forty minutes total, all stroller, broken by indoor rooms.",
@@ -169,7 +184,11 @@
         ],
         "hidden_gems": [
           "Olive strip when the harbour is loud"
-        ]
+        ],
+        "skip": "A ‘since we’re up, let’s add Lazise’ add-on. That turns a rest day into a trip.",
+        "place_food": "Inland trattoria or the apartment kitchen. This is not a tasting-menu day.",
+        "place_coffee": "Any bar on Via Goffredo Mameli — indoor chairs, not the waterfront selfie rail.",
+        "place_gem": "The olive trees between Bardolino and Cisano when the harbour is loud."
       },
       "family": {
         "baby_changing": "Go home. That is the luxury of a base-town morning.",
@@ -214,7 +233,10 @@
           "title": "Apartment nap",
           "detail": "This is the point of the product. Gelato after 17:00."
         }
-      ]
+      ],
+      "rationale": "Parking is the apartment or a named cantina lot; baby score is near-max because you can go home between stops. Beauty is local hillside, not a postcard castle — honest, and still a better morning than a forced city.",
+      "glance_drive": "Walk or 8 min",
+      "stroller_word": "Yes"
     },
     {
       "id": "garda-ferry",
@@ -252,7 +274,11 @@
         "parking_cost": "€0 if you walk; otherwise a few euros local rate. Budget €0–8.",
         "parking_difficulty": "Easy — the easiest parking day of the holiday.",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Imbarcadero%20Bardolino%20Navigazione%20Laghi",
-        "notes": "Buy tickets early. Check Navigazione Laghi the night before. Infant fares: verify current policy."
+        "notes": "Buy tickets early. Check Navigazione Laghi the night before. Infant fares: verify current policy.",
+        "maps_lot": "Apartment first; else Imbarcadero / lungolago bays",
+        "maps_address": "Piazzale Nazioni Unite / Imbarcadero, 37011 Bardolino VR",
+        "parking_backup": "Bardolino centro paid lots a few minutes’ walk. Wind can cancel boats: decide by 09:00.",
+        "ztl": "None that matters. Do not block the landing ‘for a minute’."
       },
       "experience": {
         "walking_route": "Thirty to forty minutes on land. Castle interior stairs optional and skippable.",
@@ -276,7 +302,11 @@
         ],
         "hidden_gems": [
           "Optional Torri↔Maderno hop only if ahead of timetable"
-        ]
+        ],
+        "skip": "Riva, Malcesine, the Maderno car traghetto ‘for fun’, and a Baia delle Sirene detour unless the baby is angelic and the timetable agrees.",
+        "place_food": "Torri trattoria inland of the first row. Garda is coffee, not a second lunch.",
+        "place_coffee": "Garda waterfront bar with shade; Bardolino gelato on return — you are already home.",
+        "place_gem": "Foot-passenger Torri↔Maderno only if you are ahead of timetable. Never chase it."
       },
       "family": {
         "baby_changing": "Bardolino cafe before boarding; Torri cafe on arrival. Not the boat WC.",
@@ -331,7 +361,10 @@
           "title": "Return boat",
           "detail": "Leave earlier if clouds stack. Apartment about 16:10."
         }
-      ]
+      ],
+      "rationale": "Parking is almost a perfect score because the car stays home. Baby is 80, not 95: gangways, sun, and possible swell are real, and a carrier plus a short timetable is the fix — not a longer cruise.",
+      "glance_drive": "Walk to dock",
+      "stroller_word": "Fold"
     },
     {
       "id": "cavaion-wine",
@@ -368,7 +401,11 @@
         "parking_cost": "Usually free at the cantina. Budget €0–3.",
         "parking_difficulty": "Easy if you pick one estate with a visible P. Hard if you hunt cellar doors without signs.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Cavaion%20Veronese",
-        "notes": "Email or call one cantina the night before. Walk-ins work on quiet weekdays; Saturdays want a booking. Driver drinks water."
+        "notes": "Email or call one cantina the night before. Walk-ins work on quiet weekdays; Saturdays want a booking. Driver drinks water.",
+        "maps_lot": "Signed visitor parking at a Cavaion / Costermano-road cantina",
+        "maps_address": "Cavaion Veronese VR — SP31 / Via Provincia cantina lots (pick one estate, park on their signed gravel)",
+        "parking_backup": "Cavaion village square / church-adjacent bays, then walk. Affi supermarket if you abort.",
+        "ztl": "None. Rural roads, not cameras."
       },
       "experience": {
         "walking_route": "Ten to twenty minutes around the courtyard and village. This is not a vineyard hike.",
@@ -387,7 +424,11 @@
         ],
         "hidden_gems": [
           "Lake glimpse from the cantina car park"
-        ]
+        ],
+        "skip": "A three-cantina crawl, San Zeno viewpoint, and ‘we’re halfway to Valpolicella so let’s keep going’.",
+        "place_food": "Inland trattoria in Cavaion or Calmasino. Better value than Bardolino harbour.",
+        "place_coffee": "Bar in Cavaion centro. Indoor, quick.",
+        "place_gem": "The view back to the lake from the first terrace behind Cavaion — from the car park, not a trail."
       },
       "family": {
         "baby_changing": "Ask at the cantina; most have a WC. Otherwise the village bar.",
@@ -437,7 +478,10 @@
           "title": "Drive home",
           "detail": "Apartment by 14:50. Afternoon cot."
         }
-      ]
+      ],
+      "rationale": "Cantina visitor lots are the parking story — short, signed, usually empty compared with harbour towns. Baby score is high because this is indoor, air-conditioned, and close enough to abort. Food is the second priority after beaches, and this is how you honour it without a city.",
+      "glance_drive": "14 min inland",
+      "stroller_word": "Yes"
     },
     {
       "id": "cisano-base",
@@ -475,7 +519,11 @@
         "parking_cost": "€0–6.",
         "parking_difficulty": "Easy.",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Cisano%20Bardolino%20spiaggia",
-        "notes": "Bring your own shade. Lido umbrellas are optional euros, not a requirement."
+        "notes": "Bring your own shade. Lido umbrellas are optional euros, not a requirement.",
+        "maps_lot": "Walk from the apartment; else Cisano lungolago paid bays",
+        "maps_address": "Lungolago / Via Gardesana, Cisano di Bardolino VR",
+        "parking_backup": "Walk back to Bardolino lots. Always abort toward home, never toward Lazise.",
+        "ztl": "None that matters."
       },
       "experience": {
         "walking_route": "Twenty to forty minutes, all stroller, plus a sit.",
@@ -498,7 +546,11 @@
         ],
         "hidden_gems": [
           "Olive strip when the harbour is loud"
-        ]
+        ],
+        "skip": "Turning this into ‘we should have gone to Sirmione’ guilt. Also skip water-park signs.",
+        "place_food": "Apartment kitchen or an inland trattoria. Gelato is dessert, not lunch.",
+        "place_coffee": "Any inland bar. Sit inside if the promenade is a fry pan.",
+        "place_gem": "Museo dell’Olio / olive strip when the harbour is loud."
       },
       "family": {
         "baby_changing": "Go home. That is the luxury.",
@@ -543,7 +595,10 @@
           "title": "Harbour gelato",
           "detail": "After you are already home. Dinner always here."
         }
-      ]
+      ],
+      "rationale": "Baby and walking nearly max out because the cot is ten minutes away. Beauty is honest east-shore olive, not Punta. Effort is almost perfect: this is not a trip, and that is why it scores like a gift.",
+      "glance_drive": "Walk or 8 min",
+      "stroller_word": "Yes"
     },
     {
       "id": "castellaro-lagusello",
@@ -579,7 +634,11 @@
         "parking_cost": "Often free or a low hourly. Budget €0–5.",
         "parking_difficulty": "Easy in the morning. Awkward if you arrive at Saturday lunch.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Castellaro%20Lagusello",
-        "notes": "This is a 90-minute visit plus lunch. It is not a half-day hike around the lagoon."
+        "notes": "This is a 90-minute visit plus lunch. It is not a half-day hike around the lagoon.",
+        "maps_lot": "Parcheggio Castellaro Lagusello (village edge)",
+        "maps_address": "Via Castello / village car park, 46040 Castellaro Lagusello, Monzambano MN",
+        "parking_backup": "Monzambano centro lots and skip Castellaro if the lane is blocked — rare, but aborting is allowed.",
+        "ztl": "The historic kernel is not for cars. Park outside and walk. No Sirmione-scale cameras, still no squeezing."
       },
       "experience": {
         "walking_route": "Thirty to forty-five minutes on cobbles and a flat lagoon path. Cap it. No circuit of the whole water.",
@@ -599,7 +658,11 @@
         ],
         "hidden_gems": [
           "Far-corner lagoon bench away from the first viewpoint"
-        ]
+        ],
+        "skip": "Combining with Sigurtà/Borghetto the same day. Combining with Mantua ‘since we’re south’.",
+        "place_food": "One village trattoria if open; otherwise drive 10 minutes to Valeggio and do tortellini without the garden.",
+        "place_coffee": "The bar on the tiny piazza. If it is closed, you are on a short-visit day — that is fine.",
+        "place_gem": "The lagoon from the walls at the far quiet corner, away from the first viewpoint bench."
       },
       "family": {
         "baby_changing": "Bar WC if open; otherwise a nappy in the car before the loop.",
@@ -644,7 +707,10 @@
           "title": "Drive home",
           "detail": "Apartment by 15:40. Do not add Borghetto ‘because it’s close’."
         }
-      ]
+      ],
+      "rationale": "A village car park with a short walk beats every harbour scramble. Baby is high because the loop is small and the streets empty out. Food is a notch below Valeggio — one trattoria, not a destination cuisine — and the score says so.",
+      "glance_drive": "38 min inland",
+      "stroller_word": "Mixed"
     },
     {
       "id": "peschiera-lido",
@@ -682,7 +748,11 @@
         "parking_cost": "Typical Garda hourly. Plan €6–12 for the stay.",
         "parking_difficulty": "Moderate at ~09:30. Hard after 11:30 in August.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Fortezza%20Peschiera%20del%20Garda",
-        "notes": "Skip every Gardaland sign. Nearest east-shore ER pointer is also here (Pederzoli) — know it, do not tour it."
+        "notes": "Skip every Gardaland sign. Nearest east-shore ER pointer is also here (Pederzoli) — know it, do not tour it.",
+        "maps_lot": "Parcheggio Fortezza / signed wall-side lots",
+        "maps_address": "Viale della Fortezza / wall-side parking, 37019 Peschiera del Garda VR",
+        "parking_backup": "Station-area overflow (Piazzale Stazione) and walk. Different use from the Venice day — do not stack them.",
+        "ztl": "Not Sirmione, but do not follow GPS through pedestrian cuts on the fortress."
       },
       "experience": {
         "walking_route": "Thirty-five to forty-five minutes plus a beach sit.",
@@ -704,7 +774,11 @@
         ],
         "hidden_gems": [
           "Quieter wall stretches away from the bus-tour pause"
-        ]
+        ],
+        "skip": "Gardaland, a second village, and the harbour bus-photo corner at noon.",
+        "place_food": "Simple lunch, gelato as dessert.",
+        "place_coffee": "Wall cafe with water both sides.",
+        "place_gem": "Quieter wall stretches away from the bus-tour pause."
       },
       "family": {
         "baby_changing": "Lido changing rooms in season; otherwise a cafe WC before the beach sit.",
@@ -759,7 +833,10 @@
           "title": "Drive home",
           "detail": "Beat the late-afternoon lake road. Apartment ~15:50. Gelato can wait until Bardolino at 17:30."
         }
-      ]
+      ],
+      "rationale": "Beaches are priority one; this is the easiest proper swim-and-stroll that still feels like going somewhere. Beauty is military-picturesque, scored 78 on purpose. Parking is not Sirmione, and that 20% weight is why this beats the famous castle.",
+      "glance_drive": "20 min south",
+      "stroller_word": "Yes"
     },
     {
       "id": "soave",
@@ -795,7 +872,11 @@
         "parking_cost": "Typically €1.50–2.50/h. Plan €6–12.",
         "parking_difficulty": "Easy in the morning. Moderate Saturday lunch.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Castello%20Soave",
-        "notes": "Castle keep is a climb. The product is the town, not the ramparts with a newborn."
+        "notes": "Castle keep is a climb. The product is the town, not the ramparts with a newborn.",
+        "maps_lot": "Parcheggio Castello / signed lots outside the walls",
+        "maps_address": "Via Castello / Piazzale della Vittoria lots, 37038 Soave VR",
+        "parking_backup": "Slightly further lots on the ring and a 8-minute walk to a gate.",
+        "ztl": "Historic centre is restricted. Day visitors park outside and walk. Cameras exist — do not ‘just nip in’."
       },
       "experience": {
         "walking_route": "Forty to fifty minutes of flat-to-gentle streets. Stop. Sit. Do not add the keep.",
@@ -815,7 +896,11 @@
         ],
         "hidden_gems": [
           "Quieter north streets inside the walls"
-        ]
+        ],
+        "skip": "The keep with a stroller, a second town (Verona) on the way home, and cellar-hopping beyond one tasting.",
+        "place_food": "A sit-down lunch in the centro. This is a wine town; eat like it.",
+        "place_coffee": "Piazza bar with indoor backup.",
+        "place_gem": "The walk along the inside of the walls in the quieter north streets."
       },
       "family": {
         "baby_changing": "Cafe WCs in the centro. Change before you enter the walls if the baby is due.",
@@ -865,7 +950,10 @@
           "title": "Apartment",
           "detail": "Nap margin before 18:00."
         }
-      ]
+      ],
+      "rationale": "Parking outside the walls is the whole Soave trick, and it works — 85 is earned. Baby is high for a castle town because the centro is compact and mostly flat. Effort 80 is the A4/local 45 minutes, not a logistics drama.",
+      "glance_drive": "45 min east",
+      "stroller_word": "Yes"
     },
     {
       "id": "garda-town",
@@ -903,7 +991,11 @@
         "parking_cost": "€6–12 typical.",
         "parking_difficulty": "Moderate late morning. Easy at 09:35 on a weekday.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Via%20dei%20Mulini%20Garda",
-        "notes": "This loop is the town. Punta is scored separately and honestly."
+        "notes": "This loop is the town. Punta is scored separately and honestly.",
+        "maps_lot": "Parcheggio Via dei Mulini / signed lungolago P",
+        "maps_address": "Via dei Mulini / lungolago signed lots, 37016 Garda VR",
+        "parking_backup": "Upper-town lots and walk down. If everything is full, abort home — you live next door.",
+        "ztl": "Small one-ways. Follow P, not ‘centro storico’ pins."
       },
       "experience": {
         "walking_route": "Thirty-five to forty-five minutes flat. Sit. Do not add a headland.",
@@ -922,7 +1014,11 @@
         ],
         "hidden_gems": [
           "Park edge west of the main piazza"
-        ]
+        ],
+        "skip": "Punta San Vigilio, Torri, Malcesine, and a second lunch.",
+        "place_food": "One street back. Lake fish or a simple pasta. The first row is a postcard tax.",
+        "place_coffee": "Piazza bar with shade.",
+        "place_gem": "The little park edges west of the main piazza when the harbour is a crush."
       },
       "family": {
         "baby_changing": "Cafe WCs on the piazza. Change before the promenade if due.",
@@ -967,7 +1063,10 @@
           "title": "Drive home",
           "detail": "Apartment ~15:10. Nap. Do not continue to Torri unless this was a ferry-cancellation day."
         }
-      ]
+      ],
+      "rationale": "Parking is 70 — town lots, not the Punta bay tax, and not apartment-easy either. Baby and walking are high because the lungolago is flat. Effort is excellent: ten minutes north. Distinct from the ferry’s Garda pause and from Punta’s swim.",
+      "glance_drive": "10 min north",
+      "stroller_word": "Yes"
     },
     {
       "id": "valpolicella-sangiorgio",
@@ -1003,7 +1102,11 @@
         "parking_cost": "Often free or a few euros. Budget €0–6.",
         "parking_difficulty": "Easy on a weekday morning. Moderate if a wedding occupies the square.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/San%20Giorgio%20di%20Valpolicella",
-        "notes": "Ingannapoltron is the hamlet nickname. The product is the terrace, not a hike to a cross."
+        "notes": "Ingannapoltron is the hamlet nickname. The product is the terrace, not a hike to a cross.",
+        "maps_lot": "Village / church square signed parking",
+        "maps_address": "Piazza della Pieve / village lots, San Giorgio di Valpolicella, 37015 Sant'Ambrogio di Valpolicella VR",
+        "parking_backup": "Sant'Ambrogio village lots and a shorter visit, or abort to Cavaion — closer, flatter.",
+        "ztl": "Tiny historic kernel. Park where signed. Do not block the church face."
       },
       "experience": {
         "walking_route": "Twenty-five to forty minutes including a slope to the square. Then sit. That is the walk budget.",
@@ -1022,7 +1125,11 @@
         ],
         "hidden_gems": [
           "West view from the piazza wall after the tour van leaves"
-        ]
+        ],
+        "skip": "Ridge paths, a second village, Verona on the return, and cellar number two.",
+        "place_food": "This is a food day. One proper lunch. Ripasso on the table is optional.",
+        "place_coffee": "The village bar. If it is sleepy, that is the charm.",
+        "place_gem": "The view west from the piazza wall when the tour van has left."
       },
       "family": {
         "baby_changing": "Bar or restaurant WC. Change in the car on arrival if the square looks event-busy.",
@@ -1067,7 +1174,10 @@
           "title": "Drive home",
           "detail": "Apartment ~15:50. Do not add Verona."
         }
-      ]
+      ],
+      "rationale": "Parking at the village is usually a signed lot, not a miracle. Baby 80 because there is a gentle slope and one square — fine, not Cisano. Food is the reason to come. Effort 78 is forty minutes via Affi, honest for a village this small.",
+      "glance_drive": "40 min via Affi",
+      "stroller_word": "Mixed"
     },
     {
       "id": "lazise",
@@ -1105,7 +1215,11 @@
         "parking_cost": "€5–10.",
         "parking_difficulty": "Moderate late morning. Easy at 09:35.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Lazise%20centro",
-        "notes": "Optional tiny lido south of town — only if the baby wants water. Not the point."
+        "notes": "Optional tiny lido south of town — only if the baby wants water. Not the point.",
+        "maps_lot": "Signed P toward the walls — not the harbour door",
+        "maps_address": "Signed edge-of-centre lots toward the Scaliger walls, 37017 Lazise VR",
+        "parking_backup": "Inland supermarket lots, 10–12 minute walk.",
+        "ztl": "Do not follow GPS into the harbour funnel."
       },
       "experience": {
         "walking_route": "Thirty to forty minutes. All stroller on the main loop.",
@@ -1126,7 +1240,11 @@
         ],
         "hidden_gems": [
           "Wall stretch away from the first gelato kiosk"
-        ]
+        ],
+        "skip": "Saturday 13:00 harbour selfie crush, and stacking with Peschiera the same day.",
+        "place_food": "Inland, not the pier.",
+        "place_coffee": "Under the trees, then home.",
+        "place_gem": "The wall stretch away from the first gelato kiosk."
       },
       "family": {
         "baby_changing": "Cafes. Change before the harbour loop if due.",
@@ -1171,7 +1289,10 @@
           "title": "Home",
           "detail": "Before the SR249 clot. Nap at the apartment."
         }
-      ]
+      ],
+      "rationale": "Effort is almost perfect — it is next door. Parking is a notch below Peschiera’s fortress lots, which is why it sits under Peschiera. Distinctness is the hidden cost: it is your harbour with different walls. Still a legitimate six-day menu item.",
+      "glance_drive": "12 min south",
+      "stroller_word": "Yes"
     },
     {
       "id": "torri-car",
@@ -1208,7 +1329,11 @@
         "parking_cost": "€6–12.",
         "parking_difficulty": "Moderate; tighter than Peschiera. Fills mid-morning.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Torri%20del%20Benaco%20imbarcadero",
-        "notes": "Do not also book the ferry loop the same week unless Torri became the favourite piazza."
+        "notes": "Do not also book the ferry loop the same week unless Torri became the favourite piazza.",
+        "maps_lot": "Harbor / castle-adjacent signed lots",
+        "maps_address": "Imbarcadero / castle-adjacent parking, 37010 Torri del Benaco VR",
+        "parking_backup": "Upper-town lots and walk down.",
+        "ztl": "Small waterfront cuts. Follow P."
       },
       "experience": {
         "walking_route": "Thirty minutes harbour-scale. Castle interior stairs optional and skippable.",
@@ -1227,7 +1352,11 @@
         ],
         "hidden_gems": [
           "Quiet harbour edge toward the olives"
-        ]
+        ],
+        "skip": "Malcesine ‘since we’re already north’. Cable cars. A second castle.",
+        "place_food": "Lake fish inland of the first row.",
+        "place_coffee": "Piazzetta.",
+        "place_gem": "The quiet side of the harbour toward the olive edge."
       },
       "family": {
         "baby_changing": "Cafe on arrival.",
@@ -1272,7 +1401,10 @@
           "title": "Drive home",
           "detail": "SR249 south can crawl. Apartment ~16:00."
         }
-      ]
+      ],
+      "rationale": "Beauty is high; parking is tighter than Peschiera, correctly. Effort 78 because SR249 north spends luck you do not need if the boat is running. Ranked as the honest ferry backup, not a duplicate headline.",
+      "glance_drive": "22 min north",
+      "stroller_word": "Harbor yes"
     },
     {
       "id": "mantova",
@@ -1309,7 +1441,11 @@
         "parking_cost": "~€8–14.",
         "parking_difficulty": "Moderate. Morning arrival is civilised.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Pallone%20Mantova",
-        "notes": "Skip Palazzo Ducale interiors with a newborn. The skyline is free."
+        "notes": "Skip Palazzo Ducale interiors with a newborn. The skyline is free.",
+        "maps_lot": "Parcheggio Pallone / signed centro garages outside ZTL",
+        "maps_address": "Parcheggio Pallone / Prato di Santa Caterina class lots, 46100 Mantova",
+        "parking_backup": "Slightly further lot and walk the walls. Do not enter ZTL.",
+        "ztl": "Camera-enforced historic centre. Day visitors do not drive into the piazzas."
       },
       "experience": {
         "walking_route": "Forty-five to fifty-five minutes of cobbles, broken by sits. Cap at an hour.",
@@ -1329,7 +1465,11 @@
         ],
         "hidden_gems": [
           "Lakeside glance without a circuit"
-        ]
+        ],
+        "skip": "Palazzo Ducale ticket queues, Palazzo Te (extra walk), and adding Borghetto on the way home.",
+        "place_food": "Pumpkin tortelli, risotto, a serious lunch. This is why the food score is 90.",
+        "place_coffee": "Piazza delle Erbe portico.",
+        "place_gem": "A lakeside glance from the edge of the centro — look, don’t start a circuit."
       },
       "family": {
         "baby_changing": "Cafe WCs. Change on arrival at a bar near the garage.",
@@ -1374,7 +1514,10 @@
           "title": "Back to the car",
           "detail": "No Palazzo Ducale ticket queue. Home ~16:30."
         }
-      ]
+      ],
+      "rationale": "Food and beauty carry the city brief. Walking 70 is honest cobbles, not a hike. Parking 68 is a centro garage with a ZTL you must obey. Effort 72 is a 50-minute drive — easier than Padua or Brescia, harder than Soave.",
+      "glance_drive": "50 min south",
+      "stroller_word": "Mixed"
     },
     {
       "id": "desenzano",
@@ -1411,7 +1554,11 @@
         "parking_cost": "€8–15.",
         "parking_difficulty": "Moderate. Saturday market and evening are the fill risk — you will be gone.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Desenzano%20del%20Garda%20porto",
-        "notes": "Train hub if you ever need it. Today you are here for the promenade, not a platform."
+        "notes": "Train hub if you ever need it. Today you are here for the promenade, not a platform.",
+        "maps_lot": "Harbor / castle-area signed garage or lot",
+        "maps_address": "Porto / Castello signed parking, 25015 Desenzano del Garda BS",
+        "parking_backup": "Station area and walk.",
+        "ztl": "Follow P. Do not enter tight harbour cuts."
       },
       "experience": {
         "walking_route": "Forty minutes plus an optional lido sit.",
@@ -1432,7 +1579,11 @@
         ],
         "hidden_gems": [
           "Quieter west promenade"
-        ]
+        ],
+        "skip": "Sirmione add-on, castle keep, stacking with Peschiera.",
+        "place_food": "A real sit-down. This town can cook.",
+        "place_coffee": "Porticoes / indoor if the wind is up.",
+        "place_gem": "Quieter west stretches of the promenade away from the first gelato."
       },
       "family": {
         "baby_changing": "Better cafe density than villages.",
@@ -1477,7 +1628,10 @@
           "title": "Optional lido sit",
           "detail": "Then home by 16:00."
         }
-      ]
+      ],
+      "rationale": "Competent larger town. Parking is a harbour garage, not a gift. Beauty 72 is honest — it is a working town, not a dream. Effort 75 is the drive around the lake foot. It loses to Peschiera on identity and to Sigurtà on baby/parking.",
+      "glance_drive": "40 min around the foot",
+      "stroller_word": "Yes"
     },
     {
       "id": "salo",
@@ -1513,7 +1667,11 @@
         "parking_cost": "€8–16.",
         "parking_difficulty": "Moderate.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Salò%20lungolago",
-        "notes": "Gardone Vittoriale is a demanding villa hillside. Skip it with this baby."
+        "notes": "Gardone Vittoriale is a demanding villa hillside. Skip it with this baby.",
+        "maps_lot": "Lungolago-adjacent paid lots",
+        "maps_address": "Lungolago Zanardelli signed parking, 25087 Salò BS",
+        "parking_backup": "Upper lots, walk down.",
+        "ztl": "Follow P. Waterfront one-ways."
       },
       "experience": {
         "walking_route": "Forty to fifty minutes of promenade, then lunch. Not a hike into Gardone.",
@@ -1532,7 +1690,11 @@
         ],
         "hidden_gems": [
           "Quieter north lungolago past the first cafe cluster"
-        ]
+        ],
+        "skip": "Vittoriale, Isola del Garda, Maderno lidos unless you are absurdly ahead — usually skip.",
+        "place_food": "Stronger than east-shore tourist strips. Spend here.",
+        "place_coffee": "A Liberty cafe with indoor rooms.",
+        "place_gem": "The quieter north stretch of the lungolago past the first cafe cluster."
       },
       "family": {
         "baby_changing": "Cafes along the promenade.",
@@ -1577,7 +1739,10 @@
           "title": "Drive back with margin",
           "detail": "Home ~16:20. Do not add Gardone / Vittoriale."
         }
-      ]
+      ],
+      "rationale": "Food and promenade are excellent. Travel effort 62 is the tax: you drive around the south, not the fun car ferry. That 10% weight is doing its job. Only pick this if the week still has a long-energy day left.",
+      "glance_drive": "55 min around the south",
+      "stroller_word": "Yes"
     },
     {
       "id": "garda-punta",
@@ -1614,7 +1779,11 @@
         "parking_cost": "€8–20 seasonal.",
         "parking_difficulty": "Hard. Fills weekday-late and Saturday 11:00.",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Baia%20delle%20Sirene%20Punta%20San%20Vigilio",
-        "notes": "A scored trip cannot pretend this lot is easy. Beauty does not outvote a full car park with a baby in the back seat."
+        "notes": "A scored trip cannot pretend this lot is easy. Beauty does not outvote a full car park with a baby in the back seat.",
+        "maps_lot": "Baia delle Sirene / Punta San Vigilio paid parking",
+        "maps_address": "Località Punta San Vigilio, 37016 Garda VR",
+        "parking_backup": "Garda town parking (Via dei Mulini). Enjoy the harbour, skip the bay.",
+        "ztl": "None like Sirmione. The constraint is capacity, not cameras."
       },
       "experience": {
         "walking_route": "Short. Pebbles. Then sit.",
@@ -1636,7 +1805,11 @@
         ],
         "hidden_gems": [
           "Olive shade at the edge of the bay"
-        ]
+        ],
+        "skip": "Peak Saturday, Malcesine, and combining with the ferry Garda stop.",
+        "place_food": "Bay bar if calm; otherwise Garda town.",
+        "place_coffee": "Garda town if the bay is a crush.",
+        "place_gem": "Olive shade at the edge of the bay, away from the first towel line."
       },
       "family": {
         "baby_changing": "Limited at the bay. Do a change in Garda or in the car.",
@@ -1681,7 +1854,10 @@
           "title": "Home",
           "detail": "Real nap. Do not add Malcesine."
         }
-      ]
+      ],
+      "rationale": "Beauty almost maxes. Parking at the bay is 48, and the 20% weight hurts, correctly. A weekday dawn-ish attempt can work; a scored headline trip cannot pretend the lot is easy. Do not inflate this.",
+      "glance_drive": "12 min, if the lot exists",
+      "stroller_word": "Carrier at water"
     },
     {
       "id": "vicenza",
@@ -1717,7 +1893,11 @@
         "parking_cost": "~€8–14.",
         "parking_difficulty": "Moderate.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Vicenza%20Piazza%20dei%20Signori",
-        "notes": "Teatro Olimpico is skippable. The street is the visit."
+        "notes": "Teatro Olimpico is skippable. The street is the visit.",
+        "maps_lot": "Centro garages (Corso / Duomo / Piazza Castello class)",
+        "maps_address": "Parcheggio Piazza Castello / centro signed garages, 36100 Vicenza",
+        "parking_backup": "Station-area garage and a longer walk or a short bus — usually unnecessary at 10:00.",
+        "ztl": "Camera-enforced. Day visitors do not drive Corso Palladio."
       },
       "experience": {
         "walking_route": "Forty to fifty minutes on a straight corso, broken by a piazza sit.",
@@ -1736,7 +1916,11 @@
         ],
         "hidden_gems": [
           "Quieter end of Corso toward the park"
-        ]
+        ],
+        "skip": "Teatro Olimpico interiors with a queue, Villa Rotonda (extra drive and a hill), and adding Padua.",
+        "place_food": "A centro lunch. Not destination cuisine like Mantua, still proper.",
+        "place_coffee": "Piazza dei Signori portico.",
+        "place_gem": "The quieter end of Corso toward the park when the piazza is busy."
       },
       "family": {
         "baby_changing": "Cafe WCs on the corso.",
@@ -1776,7 +1960,10 @@
           "title": "Apartment",
           "detail": "Margin before 18:00."
         }
-      ]
+      ],
+      "rationale": "Walking 72 is a straight corso with some cobbles — better than Venice, not a garden path. Baby 70 is honest city density. Effort 65 is about 65 minutes on the A4. Beauty is architecture, scored 80, not a lake 94.",
+      "glance_drive": "65 min A4",
+      "stroller_word": "Yes on Corso"
     },
     {
       "id": "padova",
@@ -1812,7 +1999,11 @@
         "parking_cost": "~€10–16.",
         "parking_difficulty": "Moderate.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Padova%20Prato%20della%20Valle",
-        "notes": "Do not add Venice. That blows 18:00."
+        "notes": "Do not add Venice. That blows 18:00.",
+        "maps_lot": "Padova centro garages (follow P) or Prato / Fiera class",
+        "maps_address": "Parcheggio Prato della Valle / centro signed garages, 35123 Padova",
+        "parking_backup": "Park near the station and walk or tram one stop if centre garages look full.",
+        "ztl": "Camera-enforced. Day visitors do not drive the market piazzas."
       },
       "experience": {
         "walking_route": "Forty-five to fifty-five minutes including market stones, broken by a Prato sit.",
@@ -1831,7 +2022,11 @@
         ],
         "hidden_gems": [
           "Portico table two minutes off the market roar"
-        ]
+        ],
+        "skip": "Scrovegni timed entry, the Santo interior queue, and Venice.",
+        "place_food": "Market energy plus a sit-down. Spritz is optional; the driver drinks water.",
+        "place_coffee": "Under porticoes. This is a coffee city.",
+        "place_gem": "A portico table two minutes off the market roar."
       },
       "family": {
         "baby_changing": "Cafe WCs. Station-quality if you used the backup lot.",
@@ -1876,7 +2071,10 @@
           "title": "Hard leave for the drive",
           "detail": "Home ~16:40. No Venice add-on."
         }
-      ]
+      ],
+      "rationale": "Porticoes help baby and rain; walking 62 is still a city with tram tracks and a huge oval to resist circling twice. Effort 62 is ~70 minutes — inside the cap, not casual. Food is a university-town 86. Do not add Venice ‘since we’re halfway’.",
+      "glance_drive": "70 min A4",
+      "stroller_word": "Yes on Prato"
     },
     {
       "id": "brescia",
@@ -1911,7 +2109,11 @@
         "parking_cost": "~€8–15.",
         "parking_difficulty": "Moderate.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Piazza%20Vittoria%20Brescia",
-        "notes": "Castle keep is a climb. The sold day is old town + optional lower park. Bergamo Alta is omitted: too hilly, 18:00 too tight."
+        "notes": "Castle keep is a climb. The sold day is old town + optional lower park. Bergamo Alta is omitted: too hilly, 18:00 too tight.",
+        "maps_lot": "Parcheggio Piazza Vittoria / centro garages — not the keep",
+        "maps_address": "Piazza della Vittoria garages, 25122 Brescia. Castle keep lots are a hill — skip.",
+        "parking_backup": "Station-area garages and a walk or metro-tram hop if you understand it — usually Vittoria is enough at 10:15.",
+        "ztl": "Camera-enforced centro. Garage, then walk."
       },
       "experience": {
         "walking_route": "Forty-five to fifty-five minutes in the old town. Lower castle park only if it stays easy. Total still under an hour of walking.",
@@ -1930,7 +2132,11 @@
         ],
         "hidden_gems": [
           "Piazza della Loggia in the midday pause"
-        ]
+        ],
+        "skip": "Keep stairs, a viewpoint hike, Santa Giulia museum marathon, and Bergamo ‘on the way’ (it is not).",
+        "place_food": "A centro trattoria. Brescia eats well; you do not need a tasting menu.",
+        "place_coffee": "Under the loggia.",
+        "place_gem": "Piazza della Loggia when the midday pause empties it."
       },
       "family": {
         "baby_changing": "Cafe WC on arrival near the garage.",
@@ -1980,7 +2186,10 @@
           "title": "Hard leave",
           "detail": "Home ~16:45. Margin before 18:00 is thinner than lake days — obey it."
         }
-      ]
+      ],
+      "rationale": "Parking 70 is Piazza Vittoria / lower lots — doable. Walking 65 because the castle is a hill; we score the old-town-plus-lower-terrace version, not the keep. Effort 60 is ~75 minutes. Bergamo Alta is hillier and tighter on 18:00 — we are not selling it.",
+      "glance_drive": "75 min west",
+      "stroller_word": "Old town yes"
     },
     {
       "id": "verona",
@@ -2016,7 +2225,11 @@
         "parking_cost": "Typically €2–3/h. Plan €10–18.",
         "parking_difficulty": "Moderate. Avoid Arena opera event days.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Arena%20Verona",
-        "notes": "This is city sightseeing. Rain is a bonus (arcades), not the only excuse to come."
+        "notes": "This is city sightseeing. Rain is a bonus (arcades), not the only excuse to come.",
+        "maps_lot": "Parcheggio Arena / Cittadella-class garage",
+        "maps_address": "Parcheggio Arena, Piazza Cittadella area, 37121 Verona",
+        "parking_backup": "Slightly further garage and walk.",
+        "ztl": "Camera-enforced. Day visitors do not drive into the centro."
       },
       "experience": {
         "walking_route": "Cap at ~55 minutes of actual walking, broken by sits. Not a river-loop plus a castle.",
@@ -2035,7 +2248,11 @@
         ],
         "hidden_gems": [
           "Quiet arcade two streets off Piazza Bra"
-        ]
+        ],
+        "skip": "Casa di Giulietta, opera-night traffic, Castelvecchio ‘if we hurry’, and adding Soave.",
+        "place_food": "Excellent if you sit away from the balcony. This is a 90 on food.",
+        "place_coffee": "Portico with indoor rooms.",
+        "place_gem": "A quiet arcade two streets off Piazza Bra."
       },
       "family": {
         "baby_changing": "Garage/cafe WC on arrival. Do not wait for a picturesque WC.",
@@ -2085,7 +2302,10 @@
           "title": "Apartment",
           "detail": "Margin before 18:00."
         }
-      ]
+      ],
+      "rationale": "Food and beauty are why Verona is on the menu as sightseeing, not as a wet-weather apology. Baby 54 and walking 56 are cobbles, ZTL, and the Arena crush — honest. Parking 62 is an Arena-class garage if you follow signs, not if you pin the centro.",
+      "glance_drive": "40 min inland",
+      "stroller_word": "Carrier in crush"
     },
     {
       "id": "sirmione",
@@ -2120,7 +2340,11 @@
         "parking_cost": "~€2.20–2.50/h; daily often €16–25.",
         "parking_difficulty": "Severe after 09:30.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Parcheggio%20Monte%20Baldo%20Sirmione",
-        "notes": "We did not inflate the parking score. Beauty 93 is already generous."
+        "notes": "We did not inflate the parking score. Beauty 93 is already generous.",
+        "maps_lot": "Parcheggio Monte Baldo (largest) or Marconi (tiny)",
+        "maps_address": "Parcheggio Monte Baldo, Via Giosuè Carducci, 25019 Sirmione BS",
+        "parking_backup": "Colombare overflow, ~18 minutes flat walk. Or abort to Peschiera — a better day.",
+        "ztl": "Historic centre cameras 24/7. Day visitors do not drive past the castle bridge."
       },
       "experience": {
         "walking_route": "Castle + lanes only. Grotte di Catullo is a hike — skip.",
@@ -2141,7 +2365,11 @@
         ],
         "hidden_gems": [
           "Castle moat in early light before the coaches"
-        ]
+        ],
+        "skip": "Grotte di Catullo, Lido delle Bionde further down the peninsula, 11:00 arrival.",
+        "place_food": "Coffee and a simple lunch if you stay; do not linger for a famous restaurant.",
+        "place_coffee": "Old town, then leave.",
+        "place_gem": "The castle moat in early light, before the coach pause."
       },
       "family": {
         "baby_changing": "Cafe WC after parking. The peninsula is a poor nappy hunt later.",
@@ -2186,7 +2414,10 @@
           "title": "Leave the peninsula",
           "detail": "Home ~14:20."
         }
-      ]
+      ],
+      "rationale": "Parking is 28 because the peninsula is a ZTL with lots that die by 10:00 and a Colombare backup that adds a long walk. That 20% weight is doing its job. Beauty cannot outvote a garage queue when parking is very important and a newborn is in the back seat.",
+      "glance_drive": "31 min, if traffic agrees",
+      "stroller_word": "Mixed"
     },
     {
       "id": "venice-train",
@@ -2221,7 +2452,11 @@
         "parking_cost": "About €1.50/hour or ~€15/day. Confirm the board on the day.",
         "parking_difficulty": "Moderate — arrive by 07:40.",
         "maps_url": "https://www.google.com/maps/dir/Bardolino,%20VR,%20Italy/Peschiera%20del%20Garda%20station",
-        "notes": "Prefer a direct train ~1h28. Verify Trenitalia the night before. Infant typically free on regional trains."
+        "notes": "Prefer a direct train ~1h28. Verify Trenitalia the night before. Infant typically free on regional trains.",
+        "maps_lot": "Peschiera del Garda station, Piazzale Stazione (24/7)",
+        "maps_address": "Piazzale Stazione, 37019 Peschiera del Garda VR",
+        "parking_backup": "Mestre garages only if this lot is truly full (it rarely should be at this hour). Historic Venice is car-free; do not follow GPS into mainland ZTL.",
+        "ztl": "Do not drive into Venice. Do not ‘save’ a strike by aiming at Tronchetto."
       },
       "experience": {
         "walking_route": "Forty to fifty-five minutes of actual walking, broken by sits and one optional vaporetto. Not ‘see Venice’.",
@@ -2241,7 +2476,11 @@
         ],
         "hidden_gems": [
           "Any quiet campo 4 minutes off Strada Nova"
-        ]
+        ],
+        "skip": "San Marco queues, Murano, Burano, gondola as default, Rialto bridge climb.",
+        "place_food": "Sit-down one street off the bridge. Skip laminated photo menus.",
+        "place_coffee": "Indoor chairs. Lista di Spagna if you skip the boat.",
+        "place_gem": "Any quiet campo four minutes off Strada Nova."
       },
       "family": {
         "baby_changing": "Santa Lucia on arrival. Do not wait for a picturesque WC that does not exist on a bridge.",
@@ -2312,7 +2551,40 @@
           "detail": "Before 18:00 with margin."
         }
       ],
-      "venice_modes_included": true
+      "venice_modes_included": true,
+      "rationale": "Scored on the winning access mode (Peschiera train), not on a fantasy vaporetto from the apartment. Parking 70 is the station lot, not Tronchetto. Baby 45 and walking 35 are the bridges. Beauty 95 is deserved. Effort 40 is a long, early day. Total 63 would not win a fair fight — it is on the menu because you asked for Venice.",
+      "glance_drive": "20 min + train",
+      "stroller_word": "Carrier",
+      "venice_modes": [
+        {
+          "mode": "A. Drive Tronchetto / Piazzale Roma",
+          "infant": "Low",
+          "stress": "High — traffic, €21–45 garage, then a boat",
+          "timing": "Fragile in peaks",
+          "verdict": "Rejected"
+        },
+        {
+          "mode": "B. Park Mestre + train",
+          "infant": "OK",
+          "stress": "Extra urban layer",
+          "timing": "Fine",
+          "verdict": "Backup only"
+        },
+        {
+          "mode": "C. Peschiera station + train",
+          "infant": "Best",
+          "stress": "One parking, then seats",
+          "timing": "Direct ~1h28",
+          "verdict": "Winner"
+        },
+        {
+          "mode": "D. Organized Garda coach",
+          "infant": "Poor",
+          "stress": "No leave-early vote",
+          "timing": "Often after 18:00",
+          "verdict": "Rejected"
+        }
+      ]
     }
   ],
   "ranking_overview": [

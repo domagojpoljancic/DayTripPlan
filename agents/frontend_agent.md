@@ -36,7 +36,7 @@ It must feel like a startup’s travel app, not like exported ChatGPT.
 
 ## Content rules
 
-- Use the itinerary; do not invent a fifth trip
+- Render every trip in `shared/itinerary.json`; do not add loops that are not in the menu JSON
 - Every required trip field must appear in the UI
 - Real copy. No lorem. No “Welcome to your app”
 - Include packing, baby checklist, weather, etiquette, emergency, tourist traps, rainy plan

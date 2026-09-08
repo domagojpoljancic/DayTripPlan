@@ -70,7 +70,7 @@ output/bardolino-trip-guide.html
 - Filters
 - Expandable sections
 - Timeline view
-- Comparison table of the four trips
+- Comparison table of the trip menu (all filtered loops; sticky first column on mobile)
 - Maps buttons
 - Official site buttons (place + parking)
 - Favorites (`localStorage`)
