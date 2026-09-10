@@ -359,6 +359,102 @@
     .forecast-source {
       margin: 12px 0 0; font-size: var(--fs-k); color: var(--ink-soft);
     }
+
+    #base-weather {
+      margin: 8px 0 8px;
+    }
+    #base-weather .kicker { margin-bottom: 4px; }
+    #base-weather h2 {
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      margin: 0 0 8px;
+    }
+    #base-weather > .lead {
+      margin: 0 0 16px;
+      font-size: var(--fs-s);
+      max-width: 36rem;
+    }
+    .base-weather-panel {
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--water) 10%, var(--card)) 0%, var(--card) 48%, color-mix(in srgb, var(--sand) 35%, var(--card)) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 20px 16px;
+      box-shadow: var(--shadow);
+    }
+    .base-weather-days {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .base-weather-days li {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 100%;
+      padding: 14px 12px;
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--foam) 70%, transparent);
+      border: 1px solid var(--line);
+    }
+    .base-weather-days li.today {
+      border-color: color-mix(in srgb, var(--water) 45%, var(--line));
+      background: color-mix(in srgb, var(--water) 12%, var(--foam));
+    }
+    .base-weather-days .day {
+      display: block;
+      font-size: var(--fs-k);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 650;
+    }
+    .base-weather-days .cond {
+      display: block;
+      font-family: var(--serif);
+      font-size: var(--fs-s);
+      line-height: 1.3;
+      color: var(--ink);
+      min-height: 2.4em;
+    }
+    .base-weather-days .temp {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 650;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+    .base-weather-days .temp small {
+      display: block;
+      margin-top: 2px;
+      font-size: var(--fs-k);
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+    .base-weather-days .meta-f {
+      display: block;
+      margin-top: auto;
+      font-size: var(--fs-k);
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+    @media (max-width: 980px) {
+      .base-weather-days {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 4px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .base-weather-days li {
+        flex: 0 0 148px;
+        scroll-snap-align: start;
+      }
+    }
     .breakdown { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
     .breakdown ul { list-style: none; padding: 0; margin: 0 0 16px; }
     .breakdown li {
@@ -427,7 +523,7 @@
       .hamburger { display: inline-flex; }
     }
     @media print {
-      header.top, #detail-bar, .toolbar, .hamburger, .icon-btn, .sheet, .heart, .row-actions, #trips, #compare, #detail { display: none !important; }
+      header.top, #detail-bar, .toolbar, .hamburger, .icon-btn, .sheet, .heart, .row-actions, #trips, #compare, #detail, #base-weather { display: none !important; }
       #print-guides, #print-guides .guide, #pack, #practical { display: block !important; }
       html, body { background: white; color: #111; }
       a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; word-break: break-all; }
@@ -480,6 +576,15 @@
         <span class="chip">Stroller</span>
         <span class="chip">Car every day</span>
         <span class="chip">Back by 18:00</span>
+      </div>
+    </section>
+
+    <section class="panel browse-only" id="base-weather" aria-labelledby="base-weather-title">
+      <p class="kicker">Apartment base</p>
+      <h2 id="base-weather-title">Bardolino · 7-day weather</h2>
+      <p class="lead">Plan the week from home. High wind or heavy rain: rethink the ferry and the pebble beaches.</p>
+      <div class="base-weather-panel forecast" id="bardolino-week-forecast">
+        <p class="forecast-status">Loading Bardolino forecast…</p>
       </div>
     </section>
 
@@ -1036,6 +1141,38 @@
         }
       }
 
+      function weatherLabel(code) {
+        var c = Number(code);
+        if (c === 0) return "Clear";
+        if (c === 1) return "Mostly clear";
+        if (c === 2) return "Partly cloudy";
+        if (c === 3) return "Overcast";
+        if (c === 45 || c === 48) return "Fog";
+        if (c === 51 || c === 53 || c === 55) return "Drizzle";
+        if (c === 56 || c === 57) return "Freezing drizzle";
+        if (c === 61 || c === 63 || c === 65) return "Rain";
+        if (c === 66 || c === 67) return "Freezing rain";
+        if (c === 71 || c === 73 || c === 75 || c === 77) return "Snow";
+        if (c === 80 || c === 81 || c === 82) return "Showers";
+        if (c === 85 || c === 86) return "Snow showers";
+        if (c === 95) return "Thunderstorm";
+        if (c === 96 || c === 99) return "Storm + hail";
+        return "Mixed";
+      }
+
+      function todayIsoRome() {
+        try {
+          return new Intl.DateTimeFormat("en-CA", {
+            timeZone: "Europe/Rome",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+          }).format(new Date());
+        } catch (e) {
+          return new Date().toISOString().slice(0, 10);
+        }
+      }
+
       function renderForecast(el, data) {
         var daily = data && data.daily;
         if (!daily || !daily.time || !daily.time.length) {
@@ -1064,6 +1201,44 @@
           '<p class="forecast-source">Open-Meteo · next ' + n + " days at the destination. High wind or heavy rain: rethink the ferry.</p>";
       }
 
+      function renderBaseWeekForecast(el, data) {
+        var daily = data && data.daily;
+        if (!daily || !daily.time || !daily.time.length) {
+          forecastFallback(el, "Needs data — Bardolino forecast unavailable offline");
+          return;
+        }
+        var n = Math.min(7, daily.time.length);
+        var today = todayIsoRome();
+        var items = [];
+        for (var i = 0; i < n; i++) {
+          var iso = daily.time[i];
+          var tmax = daily.temperature_2m_max[i];
+          var tmin = daily.temperature_2m_min[i];
+          var rain = daily.precipitation_sum[i];
+          var pop = daily.precipitation_probability_max ? daily.precipitation_probability_max[i] : null;
+          var wind = daily.wind_speed_10m_max ? daily.wind_speed_10m_max[i] : null;
+          var uv = daily.uv_index_max ? daily.uv_index_max[i] : null;
+          var code = daily.weather_code ? daily.weather_code[i] : null;
+          var cond = weatherLabel(code);
+          var precipLine = (rain != null ? Number(rain).toFixed(rain >= 10 ? 0 : 1) + " mm rain" : "Rain —");
+          if (pop != null) precipLine += " · " + pop + "%";
+          var windLine = wind != null ? "Wind " + Math.round(wind) + " km/h" : "Wind —";
+          var uvLine = uv != null ? "UV " + Math.round(uv) : null;
+          var meta = precipLine + "<br/>" + windLine + (uvLine ? "<br/>" + uvLine : "");
+          var cls = iso === today ? ' class="today"' : "";
+          items.push(
+            "<li" + cls + ">" +
+            '<span class="day">' + esc(formatForecastDay(iso)) + (iso === today ? " · today" : "") + "</span>" +
+            '<span class="cond">' + esc(cond) + "</span>" +
+            '<span class="temp">' + Math.round(tmax) + "°<small>Low " + Math.round(tmin) + "°</small></span>" +
+            '<span class="meta-f">' + meta + "</span></li>"
+          );
+        }
+        el.innerHTML =
+          '<ul class="base-weather-days" aria-label="Seven-day Bardolino forecast">' + items.join("") + "</ul>" +
+          '<p class="forecast-source">Open-Meteo · Bardolino apartment (45.55°N, 10.72°E) · Europe/Rome. Needs data when offline.</p>';
+      }
+
       function loadForecast(trip) {
         var el = document.getElementById("forecast-" + trip.id);
         if (!el) return;
@@ -1090,6 +1265,28 @@
           .then(function (data) { renderForecast(el, data); })
           .catch(function () {
             forecastFallback(el, "Needs data — forecast unavailable offline");
+          });
+      }
+
+      function loadBardolinoWeekForecast() {
+        var el = document.getElementById("bardolino-week-forecast");
+        if (!el) return;
+        if (typeof fetch !== "function") {
+          forecastFallback(el, "Needs data — Bardolino forecast unavailable offline");
+          return;
+        }
+        var url =
+          "https://api.open-meteo.com/v1/forecast?latitude=45.548&longitude=10.724" +
+          "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,uv_index_max" +
+          "&timezone=Europe%2FRome&forecast_days=7";
+        fetch(url)
+          .then(function (res) {
+            if (!res.ok) throw new Error("bad status");
+            return res.json();
+          })
+          .then(function (data) { renderBaseWeekForecast(el, data); })
+          .catch(function () {
+            forecastFallback(el, "Needs data — Bardolino forecast unavailable offline");
           });
       }
 
@@ -1213,6 +1410,7 @@
       renderCards();
       renderPrint();
       paintFavCount();
+      loadBardolinoWeekForecast();
       if (location.hash && location.hash.indexOf("#trip-") === 0) {
         openTrip(location.hash.replace("#trip-", ""));
       }
