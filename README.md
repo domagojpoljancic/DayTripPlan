@@ -30,7 +30,7 @@ Open that file on a laptop or phone. No internet. No build step. No framework.
 | One-click Cursor command `/generate-bardolino-guide` | **Works** | Orchestrator launches the full pipeline |
 | Shared family + scoring rules | **Works** | Locked in `PLAN.md` and agent files |
 | Sample pipeline outputs in `shared/` | **Works** | Research, local, Venice, scores, itinerary, UX, QA |
-| Final offline HTML guide | **Works** | 22 trips; real local photos; Google Maps + official place/parking links; browse-first cards; city + lake filters; score tooltips |
+| Final offline HTML guide | **Works** | 22 trips; **In town** tab (see / eat / coffee / gelato with ratings + Maps); real local photos; Google Maps + official place/parking links; browse-first cards; city + lake filters; score tooltips |
 | Live web preview (dev server) | **Works** | `./scripts/serve.sh` |
 | Schema validator | **Works** | `python3 scripts/validate_pipeline.py` |
 | Real-time ferry/train tickets | **TBD at travel time** | Guide tells you exactly which official sites to check the night before |

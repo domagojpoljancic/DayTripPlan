@@ -14,6 +14,7 @@ It must feel like a startup’s travel app, not like exported ChatGPT.
 - `shared/ui_spec.md`
 - `shared/venice_plan.json` (for the Venice comparison narrative)
 - `shared/local_recommendations.json` (gems, traps, food)
+- `shared/bardolino_local.json` (in-town see / eat / coffee / gelato)
 - `schemas/html_requirements.md`
 
 ## Output

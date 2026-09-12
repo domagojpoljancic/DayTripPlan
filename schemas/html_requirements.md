@@ -36,6 +36,7 @@ output/bardolino-trip-guide.html
 - Overview of the **trip menu** (about 18–22 same-day loops; the family picks 5–6 across a 6-day stay)
 - Filter + sort toolbar
 - Score tooltips / popovers with the seven-component breakdown
+- **In town** section: curated Bardolino see / eat / coffee / gelato with ratings + Maps
 
 ## Each trip card must show without expanding
 

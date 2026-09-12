@@ -25,7 +25,7 @@ Single file, offline, mobile-first. Feel: a small travel studio, not a blog and 
 ## Landmarks
 
 1. Skip link
-2. `header` sticky: wordmark, anchor nav (Trips, Compare, Pack, Practical), favorite count, theme toggle, print
+2. `header` sticky: wordmark, anchor nav (Trips, In town, Compare, Pack, Practical), favorite count, theme toggle, print
 3. Mobile: hamburger that opens a full-screen sheet
 4. `main`
 5. `footer` disclaimer
@@ -67,6 +67,10 @@ Sub-nav inside chapter: Timeline · Transport · Experience · Family · Costs �
 Venice chapter includes a **mode comparison** table (A–D) with the winner highlighted.
 
 Parking block is a card, not a footnote: lot name, cost, difficulty, backup, maps button + address text.
+
+## In town
+
+Browse section `#in-town` for same-base days: curated See / Eat / Coffee / Gelato picks in Bardolino (and Cisano). Each place card shows description, photo (Wikimedia), review scores (Google preferred; other providers shown when stronger), address text, Maps button, baby tip. Category filter chips. Source data: `shared/bardolino_local.json`. Cap ~10 or fewer per category.
 
 ## Comparison table
 

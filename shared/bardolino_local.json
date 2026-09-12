@@ -1,0 +1,558 @@
+{
+  "generated_at": "2026-09-12T12:00:00Z",
+  "scope": "In-town Bardolino (plus Cisano and a short drive for Al Cardellino). For base/nap days and evenings after day trips.",
+  "rating_note": "Scores pulled from Google and Tripadvisor via public listings (Restaurant Guru / Tripadvisor pages), September 2026. Ratings move — glance at Maps the night you go. When both exist, the higher score is shown first.",
+  "baby_note": "Centro is stroller-friendly on the lungolago; alleys near San Zeno are cobbled. Carrier for dinner in crowded rooms. Book evenings in August.",
+  "categories": [
+    {
+      "id": "see",
+      "label": "See",
+      "blurb": "What to walk to without leaving the apartment orbit."
+    },
+    {
+      "id": "eat",
+      "label": "Eat",
+      "blurb": "Dinner and lunch inland of the pier menus."
+    },
+    {
+      "id": "coffee",
+      "label": "Coffee",
+      "blurb": "Morning brioche and afternoon espresso."
+    },
+    {
+      "id": "gelato",
+      "label": "Gelato",
+      "blurb": "Cone after the nap, not as a meal plan."
+    }
+  ],
+  "places": [
+    {
+      "id": "lungolago",
+      "category": "see",
+      "name": "Lungolago & harbour",
+      "address": "Lungolago Cipriani → Punta Cornicello, Bardolino",
+      "description": "The daily reset: flower beds, pebble edges, ferry pier, and shade trees from Punta Mirabello to Punta Cornicello. Do this with the stroller after any hard day.",
+      "baby_tip": "Flat pavement. Watch the drop to the water; keep the buggy inland of the rail where it exists.",
+      "photo": "local-porto",
+      "maps_query": "Porto di Bardolino Lungolago",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Porto+di+Bardolino+Lungolago",
+      "ratings": [
+        {
+          "provider": "Local pick",
+          "score": null,
+          "out_of": null,
+          "count": null,
+          "note": "Promenade — not a rated venue"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "san-zeno",
+      "category": "see",
+      "name": "Chiesa di San Zeno",
+      "address": "Via San Zeno, Bardolino",
+      "description": "Small Carolingian church — one of the oldest on the lake. Ten quiet minutes, then back to the harbour. Skip if the baby is already done with interiors.",
+      "baby_tip": "Steps and a tight nave; park the stroller outside and use the carrier.",
+      "photo": "local-san-zeno",
+      "maps_query": "Chiesa di San Zeno Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Zeno+Bardolino",
+      "official_url": "https://visitbardolino.it/",
+      "ratings": [
+        {
+          "provider": "Tripadvisor",
+          "score": 4.5,
+          "out_of": 5,
+          "count": 180,
+          "note": "Attraction listing; verify current count on Tripadvisor"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "san-severo",
+      "category": "see",
+      "name": "Chiesa di San Severo",
+      "address": "Piazza San Severo, Bardolino",
+      "description": "Romanesque parish church with frescoes above the old town. Pair with a coffee on the way to the lungolago — not a museum day.",
+      "baby_tip": "Centro cobbles; stroller OK to the square, carrier inside.",
+      "photo": "local-san-severo",
+      "maps_query": "Chiesa di San Severo Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Chiesa+di+San+Severo+Bardolino",
+      "ratings": [
+        {
+          "provider": "Tripadvisor",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 120,
+          "note": "Attraction listing; verify current count on Tripadvisor"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "scaliger-tower",
+      "category": "see",
+      "name": "Torre Scaligera",
+      "address": "Near the harbour, Bardolino",
+      "description": "What remains of the Scaliger castle: a stone watchtower by the port. Photo stop, not a climb-with-baby project.",
+      "baby_tip": "View from the lungolago. Do not treat it as a fortress tour.",
+      "photo": "local-tower-area",
+      "maps_query": "Torre Scaligera Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Torre+Scaligera+Bardolino",
+      "ratings": [
+        {
+          "provider": "Local pick",
+          "score": null,
+          "out_of": null,
+          "count": null,
+          "note": "Landmark — walk past, do not queue"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "museo-vino",
+      "category": "see",
+      "name": "Museo del Vino · Cantina Zeni",
+      "address": "Via Costabella 9, Bardolino",
+      "description": "Indoor rest-day move: tools, barrels, and a tasting counter with a lake view road. Keep it under an hour with a newborn.",
+      "baby_tip": "Mostly flat floors. One adult tastes; the other walks the baby if needed.",
+      "photo": "local-panorama",
+      "maps_query": "Museo del Vino Zeni Via Costabella 9 Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Museo+del+Vino+Zeni+Via+Costabella+9+Bardolino",
+      "official_url": "https://www.zeni.it/",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.5,
+          "out_of": 5,
+          "count": 900,
+          "note": "Approx. from public listings; confirm on Maps"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "museo-olio",
+      "category": "see",
+      "name": "Museo dell'Olio · Cisano",
+      "address": "Via Peschiera 54, Cisano di Bardolino",
+      "description": "Nine rooms of presses and jars at Oleificio Cisano — the quiet south-shore twin to the wine museum. Shop olive oil on the way out.",
+      "baby_tip": "Short indoor loop. Combine with Cisano lungolago shade.",
+      "photo": "local-cisano-lungo",
+      "maps_query": "Museo dell'Olio Cisano Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Museo+dell%27Olio+Cisano+Bardolino",
+      "official_url": "https://www.museum.it/",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 400,
+          "note": "Approx. from public listings; confirm on Maps"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "cisano-shore",
+      "category": "see",
+      "name": "Cisano olive shore",
+      "address": "Lungolago Cisano, Bardolino",
+      "description": "Bardolino’s quieter neighbour beach strip — olives, pebbles, fewer pier menus. Ideal nap-day afternoon.",
+      "baby_tip": "Paved promenade. Waves on storm days; turn around early.",
+      "photo": "local-cisano-porto",
+      "maps_query": "Cisano Bardolino lungolago",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cisano+Bardolino+lungolago",
+      "ratings": [
+        {
+          "provider": "Local pick",
+          "score": null,
+          "out_of": null,
+          "count": null,
+          "note": "Shore walk — use when harbour is loud"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "villa-carrara",
+      "category": "see",
+      "name": "Villa Carrara Bottagisio",
+      "address": "Lungolago, Bardolino",
+      "description": "Lakeside villa and park used for wine festivals and events. On a quiet day it is simply a green pause with a view.",
+      "baby_tip": "Shade and lawn. Check if an event has closed the grounds.",
+      "photo": "local-villa",
+      "maps_query": "Villa Carrara Bottagisio Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa+Carrara+Bottagisio+Bardolino",
+      "ratings": [
+        {
+          "provider": "Local pick",
+          "score": null,
+          "out_of": null,
+          "count": null,
+          "note": "Park / event venue"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "al-cardellino",
+      "category": "eat",
+      "name": "Locanda Al Cardellino",
+      "address": "Via Pralesi 14, Bardolino",
+      "description": "Slightly inland of the tourist strip: meat, homemade pasta, garden tables, and a real parking story. Book ahead — this is the dinner worth the short drive.",
+      "baby_tip": "Garden seating helps with the stroller. Tuesday closed on many weeks — check.",
+      "photo": "local-lake-villa",
+      "maps_query": "Locanda Al Cardellino Via Pralesi 14 Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Locanda+Al+Cardellino+Via+Pralesi+14+Bardolino",
+      "official_url": "https://www.alcardellino.it/",
+      "price_band": "€€€",
+      "cuisine": "Italian · meat · pasta",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.8,
+          "out_of": 5,
+          "count": 2359
+        },
+        {
+          "provider": "Tripadvisor",
+          "score": 4.7,
+          "out_of": 5,
+          "count": 1421
+        },
+        {
+          "provider": "Foursquare",
+          "score": 8.5,
+          "out_of": 10,
+          "count": 18
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "biri",
+      "category": "eat",
+      "name": "Ristorante Biri",
+      "address": "Via Solferino 13, Bardolino",
+      "description": "Pizza that travellers keep returning for — including a strong gluten-free dough — plus Italian plates one street off the water. Good value for centro.",
+      "baby_tip": "Busy at peak dinner; go early (18:30) with a newborn.",
+      "photo": "local-piazza",
+      "maps_query": "Ristorante Biri Via Solferino 13 Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ristorante+Biri+Via+Solferino+13+Bardolino",
+      "price_band": "€€",
+      "cuisine": "Pizza · Italian",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.7,
+          "out_of": 5,
+          "count": 1663
+        },
+        {
+          "provider": "Tripadvisor",
+          "score": 4.5,
+          "out_of": 5,
+          "count": 725
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "dannunzio",
+      "category": "eat",
+      "name": "D'Annunzio Osteria Bistrò",
+      "address": "Bardolino centro",
+      "description": "Modern osteria with strong seafood and a Travellers’ Choice streak. Smaller room — reserve, do not wander in hungry at 20:00 in August.",
+      "baby_tip": "Intimate space; carrier over buggy if full.",
+      "photo": "local-municipio",
+      "maps_query": "D'Annunzio Osteria Restaurant Bistrò Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=D%27Annunzio+Osteria+Restaurant+Bistr%C3%B2+Bardolino",
+      "price_band": "€€€",
+      "cuisine": "Seafood · Italian",
+      "ratings": [
+        {
+          "provider": "Tripadvisor",
+          "score": 4.7,
+          "out_of": 5,
+          "count": 910
+        },
+        {
+          "provider": "Google",
+          "score": 4.6,
+          "out_of": 5,
+          "count": 689
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "piccola-osteria",
+      "category": "eat",
+      "name": "La Piccola Osteria",
+      "address": "Bardolino centro",
+      "description": "Compact osteria praised for fresh pasta and careful cooking away from laminated pier menus. Book; it is small for a reason.",
+      "baby_tip": "Tight tables — one course, then gelato walk.",
+      "photo": "local-panorama",
+      "maps_query": "La Piccola Osteria Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=La+Piccola+Osteria+Bardolino",
+      "official_url": "https://www.piccolaosteriabardolino.com/",
+      "price_band": "€€€",
+      "cuisine": "Italian · Mediterranean",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.6,
+          "out_of": 5,
+          "count": 927
+        },
+        {
+          "provider": "Tripadvisor",
+          "score": 4.5,
+          "out_of": 5,
+          "count": 914
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "la-virata",
+      "category": "eat",
+      "name": "La Virata Trattoria del Pesce",
+      "address": "Via Fosse 40, Bardolino",
+      "description": "Seafood trattoria on a side street: vongole, grilled fish, tiramisù people mention by name. Skip the first-row lake tourist traps and come here.",
+      "baby_tip": "Outdoor tables when weather allows. Split a fritto; leave before late service.",
+      "photo": "local-porto",
+      "maps_query": "La Virata Trattoria del Pesce Via Fosse 40 Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=La+Virata+Trattoria+del+Pesce+Via+Fosse+40+Bardolino",
+      "price_band": "€€",
+      "cuisine": "Seafood · Italian",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.6,
+          "out_of": 5,
+          "count": 1081
+        },
+        {
+          "provider": "Tripadvisor",
+          "score": 4.6,
+          "out_of": 5,
+          "count": 696
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "la-porta",
+      "category": "eat",
+      "name": "Ristorante Pizzeria La Porta",
+      "address": "Bardolino centro",
+      "description": "Reliable centro pizzeria-ristorante with a long Tripadvisor trail. Use when you want a table without a half-hour hunt inland.",
+      "baby_tip": "Family-friendly pace. Still book in high season.",
+      "photo": "local-lungolago",
+      "maps_query": "Ristorante Pizzeria La Porta Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Ristorante+Pizzeria+La+Porta+Bardolino",
+      "price_band": "€€",
+      "cuisine": "Pizza · Italian",
+      "ratings": [
+        {
+          "provider": "Tripadvisor",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 1388
+        },
+        {
+          "provider": "Google",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 1200,
+          "note": "Approx. review count; confirm on Maps"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "acquolina",
+      "category": "coffee",
+      "name": "Acquolina Pasticceria",
+      "address": "Near Chiesa di San Severo, Bardolino",
+      "description": "Top-rated pasticceria for cappuccino, croissants, and proper pastry — not a harbour selfie bar. Best breakfast move in town.",
+      "baby_tip": "Morning calm before the lungolago fills. High chairs vary; bring a carrier.",
+      "photo": "local-san-severo",
+      "maps_query": "Acquolina Pasticceria Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Acquolina+Pasticceria+Bardolino",
+      "price_band": "€",
+      "cuisine": "Pasticceria · coffee · gelato",
+      "ratings": [
+        {
+          "provider": "Tripadvisor",
+          "score": 4.9,
+          "out_of": 5,
+          "count": 17
+        },
+        {
+          "provider": "Google",
+          "score": 4.6,
+          "out_of": 5,
+          "count": 182
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cristallo-caffe",
+      "category": "coffee",
+      "name": "Cristallo Caffè & Gelateria",
+      "address": "Piazza Matteotti 69, Bardolino",
+      "description": "Since 1969 on the main square: espresso, brioche, artisan gelato, and a late kitchen. The default “we need a table now” stop.",
+      "baby_tip": "Shade on the piazza. Service can stretch when packed — go off-peak.",
+      "photo": "local-piazza",
+      "maps_query": "Gelateria Cristallo Piazza Matteotti 69 Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Gelateria+Cristallo+Piazza+Matteotti+69+Bardolino",
+      "official_url": "https://www.gelateriacristallo.it/",
+      "price_band": "€€",
+      "cuisine": "Coffee · gelato · pizza",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 4022
+        },
+        {
+          "provider": "Tripadvisor",
+          "score": 4.2,
+          "out_of": 5,
+          "count": 1627
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "caffe-bardolino",
+      "category": "coffee",
+      "name": "Caffè Bardolino",
+      "address": "Piazza Giacomo Matteotti, Bardolino",
+      "description": "Busy square café with cappuccino, spritz, and gelato when you want shade and people-watching after a nap.",
+      "baby_tip": "Outdoor seating; keep an eye on the piazza traffic.",
+      "photo": "local-municipio",
+      "maps_query": "Caffè Bardolino Piazza Matteotti Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caff%C3%A8+Bardolino+Piazza+Matteotti+Bardolino",
+      "price_band": "€€",
+      "cuisine": "Coffee · light food · gelato",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.3,
+          "out_of": 5,
+          "count": 1356
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cafe-italia",
+      "category": "coffee",
+      "name": "Cafè Italia",
+      "address": "Piazza Principe Amedeo 2, Bardolino",
+      "description": "Lake-facing tables for a cold drink and an espresso with a view. Pay for the location; do not expect pasticceria prices.",
+      "baby_tip": "Fans and shade help on hot afternoons. Skip if you only want a €1.20 al banco shot.",
+      "photo": "local-porto",
+      "maps_query": "Cafè Italia Piazza Principe Amedeo Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A8+Italia+Piazza+Principe+Amedeo+Bardolino",
+      "price_band": "€€",
+      "cuisine": "Coffee · lake terrace",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.2,
+          "out_of": 5,
+          "count": 1913
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cristallo-gelato",
+      "category": "gelato",
+      "name": "Gelateria Cristallo",
+      "address": "Piazza Matteotti 69, Bardolino",
+      "description": "The cone most visitors end up with — artisan scoops, coppe, and a square seat. Same house as the café; go for gelato after 17:00 when the heat drops.",
+      "baby_tip": "Takeaway cone for the lungolago walk. Avoid the dinner rush queue with a melting baby.",
+      "photo": "local-piazza",
+      "maps_query": "Gelateria Cristallo Piazza Matteotti Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Gelateria+Cristallo+Piazza+Matteotti+Bardolino",
+      "official_url": "https://www.gelateriacristallo.it/gelateria",
+      "price_band": "€",
+      "cuisine": "Gelato artigianale",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 4022
+        },
+        {
+          "provider": "Tripadvisor",
+          "score": 4.2,
+          "out_of": 5,
+          "count": 1627
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "acquolina-gelato",
+      "category": "gelato",
+      "name": "Acquolina · gelato & pastry",
+      "address": "Near Chiesa di San Severo, Bardolino",
+      "description": "Same pasticceria as the coffee pick — smaller review base, higher scores. Use when you want gelato without the Matteotti queue.",
+      "baby_tip": "Quieter than the main square. Good mid-afternoon detour.",
+      "photo": "local-san-severo",
+      "maps_query": "Acquolina Pasticceria Bar Gelateria Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Acquolina+Pasticceria+Bar+Gelateria+Bardolino",
+      "price_band": "€",
+      "cuisine": "Gelato · pasticceria",
+      "ratings": [
+        {
+          "provider": "Tripadvisor",
+          "score": 4.9,
+          "out_of": 5,
+          "count": 17
+        },
+        {
+          "provider": "Google",
+          "score": 4.6,
+          "out_of": 5,
+          "count": 182
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "cristallo-mimosa",
+      "category": "gelato",
+      "name": "Cristallo Mimosa",
+      "address": "Piazza San Nicolò 59, Bardolino",
+      "description": "Sister stop near San Nicolò — brioche, gelato, and late hours when the harbour is still warm. Backup if Matteotti is a wall of people.",
+      "baby_tip": "Closer to the church square; quicker in-and-out.",
+      "photo": "local-tower-area",
+      "maps_query": "Cristallo Mimosa Piazza San Nicolò Bardolino",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cristallo+Mimosa+Piazza+San+Nicol%C3%B2+Bardolino",
+      "price_band": "€",
+      "cuisine": "Gelato · caffè",
+      "ratings": [
+        {
+          "provider": "Google",
+          "score": 4.4,
+          "out_of": 5,
+          "count": 315
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}
